@@ -1,17 +1,20 @@
 # Lavori x soldini: pipeline siti "demo prima"
 
 Agent pronti: **1. Scout** (trova i prospect), **2. Analista** (estrae il materiale dal loro
-sito e scrive il brief) e **3. Builder** (costruisce la demo e la impacchetta per Netlify).
+sito e scrive il brief), **3. Builder** (costruisce la demo e la impacchetta per Netlify) e
+**4. Outreach** (email approvate da te, registro contatti, agenda dei richiami).
 
 ```
 lavori-soldini/
 ├── .claude/agents/          ← definizioni degli agent per Claude Code
 │   ├── scout.md
 │   ├── analista.md
-│   └── builder.md
+│   ├── builder.md
+│   └── outreach.md
 ├── scout/scout.py           ← trova aziende e dà un punteggio ai siti
 ├── analista/analista.py     ← estrae testi, contatti, logo, colori, immagini
 ├── builder/builder.py       ← prepara, controlla, fotografa e impacchetta le demo
+├── outreach/                ← outreach.py, listino.md, regole-contatto.md, risposte-tipo.md
 ├── stili/                   ← i 5 stili grafici di base (atelier, industria, trattoria, studio, bottega)
 ├── prospect/                ← CSV e report dello Scout
 ├── clienti/<azienda>/       ← contenuti.md, brief.md, img/, demo/, screenshot/, zip per Netlify
@@ -52,6 +55,8 @@ Apri Claude Code nella cartella `lavori-soldini` e scrivi per esempio:
 > usa l'analista su SUGAR s.a.s. dal CSV di Vigevano
 
 > usa il builder sulla demo di SUGAR
+
+> outreach: prepara il primo contatto per SUGAR   ·   outreach: ha risposto così: "..."   ·   outreach: agenda
 
 Lo Scout produce il report `prospect/vigevano-AAAA-MM-GG.md`, con la tabella dei
 prospect e una frase d'aggancio per ogni telefonata. L'Analista produce
@@ -246,6 +251,33 @@ Ogni demo contiene sempre `noindex` (Google non la mostra) e l'etichetta "Antepr
 non è il sito ufficiale": usi testi, foto e marchio del cliente, quindi non deve mai poter essere
 scambiata per il sito vero.
 
+## Outreach: contattare i prospect
+
+**Nessuna email parte da sola.** L'agent scrive la bozza, te la mostra intera in chat e aspetta il
+tuo ok; poi apre Gmail con l'email già compilata e **sei tu a premere Invia**.
+
+- `outreach\listino.md`: prezzi e condizioni (590 € il sito, 15 €/mese il canone, ritenuta del 20%).
+  L'agent non può promettere niente che non sia scritto lì: per cambiare un prezzo modifica il file.
+- `outreach\regole-contatto.md`: metodo scelto (prima email, poi telefonate lampo) e limiti
+  (massimo 5 email a freddo al giorno, 1 solo sollecito, frase per non essere ricontattati).
+  **Attenzione:** per il Garante privacy l'email commerciale non richiesta è illecita anche verso
+  le aziende; le regole servono a tenere il rischio basso, non lo azzerano.
+- `outreach\risposte-tipo.md`: basi per le risposte più comuni (prezzo, "abbiamo già qualcuno"…).
+- `prospect\contattati.csv`: il registro di tutti i contatti, con stato e data del prossimo
+  richiamo. Lo Scout lo usa per non riproporti aziende già sentite.
+- `clienti\<azienda>\outreach\`: bozze, risposte ricevute e storico (`registro.md`).
+
+```
+.venv\Scripts\python.exe outreach\outreach.py agenda
+.venv\Scripts\python.exe outreach\outreach.py aggiungi "SUGAR s.a.s." --da-csv prospect\vigevano.csv --email info@domoadami.com --cartella clienti\sugar-s-a-s
+.venv\Scripts\python.exe outreach\outreach.py gmail clienti\sugar-s-a-s\outreach\bozze\primo-contatto.md
+.venv\Scripts\python.exe outreach\outreach.py registra "SUGAR" --stato email_inviata --canale email
+```
+Il comando `gmail` rifiuta le bozze che non hanno `Stato: approvata`, quelle a freddo senza la
+frase per non essere ricontattati e le aziende che hanno chiesto di non essere scritte.
+Se sul PC hai più account Google, scrivi il tuo Gmail personale in `outreach\config.txt`
+(`gmail=...`) così le bozze si aprono nell'account giusto.
+
 ## Stili disponibili
 | Stile | Per chi |
 |---|---|
@@ -258,6 +290,6 @@ scambiata per il sito vero.
 Le regole di ognuno sono in `stili\<stile>\stile.md`. Per cambiare il "gusto della casa" su
 tutte le demo future modifica `stili\base.css` o lo `stile.css` dello stile.
 
-## Prossimi agent
-4. Outreach (script per la chiamata e messaggio con il link) · 5. Assistenza (bozze di
-risposta e modifiche, con approvazione umana).
+## Prossimo agent
+5. Assistenza: dopo il sì del cliente, gestione delle modifiche alla demo, preventivo,
+passaggio al sito definitivo sul suo dominio.

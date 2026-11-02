@@ -334,13 +334,20 @@ def controlla(cliente):
 
 # ---------------------------------------------------------------- anteprima, screenshot, pacchetto
 
+class GestoreSilenzioso(http.server.SimpleHTTPRequestHandler):
+    def log_message(self, *a):  # niente righe di log nel prompt
+        pass
+
+
 def anteprima(cliente, porta=8000):
     demo = cartella_demo(cliente)
-    gestore = functools.partial(http.server.SimpleHTTPRequestHandler, directory=demo)
+    gestore = functools.partial(GestoreSilenzioso, directory=demo)
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("127.0.0.1", porta), gestore) as srv:
         url = f"http://127.0.0.1:{porta}/"
-        print(f"Anteprima su {url}  (Ctrl+C per fermare)")
+        print(f"Anteprima su {url}")
+        print("È solo per te, sul tuo PC: il cliente vedrà la versione pubblicata su Netlify.")
+        print("Per chiudere premi Ctrl+C (se non risponde: Ctrl+Interr, oppure chiudi la finestra).")
         threading.Timer(0.8, lambda: webbrowser.open(url)).start()
         try:
             srv.serve_forever()

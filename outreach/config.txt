@@ -1,0 +1,4 @@
+# Impostazioni dell'Outreach (questo file resta sul PC, modificalo a mano)
+# Account Gmail da usare per aprire le bozze (utile se sul PC sei loggato con più account Google).
+# Esempio: gmail=nome.cognome@gmail.com
+gmail=
