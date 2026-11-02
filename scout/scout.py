@@ -3,9 +3,9 @@
 Scout - trova aziende con siti web vecchi e da' a ciascun sito un punteggio.
 
 Comandi:
-  python scout.py scopri  --comune Vigevano -o prospect/vigevano-grezzo.csv
-  python scout.py valuta  prospect/vigevano-grezzo.csv -o prospect/vigevano-valutati.csv
-  python scout.py tutto   --comune Vigevano -o prospect/vigevano-valutati.csv
+  python scout/scout.py scopri  --comune Vigevano -o prospect/vigevano-grezzo.csv
+  python scout/scout.py valuta  prospect/vigevano-grezzo.csv -o prospect/vigevano.csv
+  python scout/scout.py tutto   --comune Vigevano -o prospect/vigevano.csv
 
 Funziona su Windows, macOS e Linux. Dietro proxy aziendale usa le variabili
 HTTPS_PROXY / HTTP_PROXY e, se installato, il pacchetto "truststore" per
@@ -651,9 +651,13 @@ def main():
     risultati = valuta(da_valutare, a.paralleli, a.pagespeed, chiave_ps)
     risultati = [r for r in risultati if int(r.get("punteggio") or 0) >= a.min]
     tutte = scrivi_csv(a.output, risultati, CAMPI_OUTPUT, vecchie)
-    if vecchie:
-        print("\nNuove trovate in questo giro:", end="")
-    riepilogo(risultati)
+    if vecchie and not risultati:
+        print("\nNessuna azienda nuova in questo giro: erano già tutte nel file.")
+        print("Per rivalutarle con le regole aggiornate aggiungi --sovrascrivi.")
+    else:
+        if vecchie:
+            print("\nNuove trovate in questo giro:", end="")
+        riepilogo(risultati)
     if vecchie:
         print(f"(Nel file in totale: {len(tutte)} aziende.)")
     print(f"\nSalvato: {a.output}")

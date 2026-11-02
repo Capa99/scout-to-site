@@ -15,11 +15,12 @@ verificata di prospect, con un motivo concreto per chiamarle. **Non contatti mai
 Se manca la zona, chiedila. Il resto ha un valore predefinito.
 
 ## Strumenti
-Lo script è in `scout/scout.py`, con l'ambiente virtuale in `scout/.venv`.
-- Windows (Git Bash): `scout/.venv/Scripts/python.exe scout/scout.py ...`
-- macOS/Linux: `scout/.venv/bin/python scout/scout.py ...`
+Lo script è in `scout/scout.py`. L'ambiente Python, condiviso da tutti gli agent,
+è `.venv` nella cartella principale del progetto (lavora sempre da lì):
+- Windows (Git Bash): `.venv/Scripts/python.exe scout/scout.py ...`
+- macOS/Linux: `.venv/bin/python scout/scout.py ...`
 Controlla quale dei due esiste. Se nessuno esiste, di' all'utente di lanciare
-`scout/setup.bat` (Windows) o `scout/setup.sh` e fermati.
+`setup.bat` (Windows) o `setup.sh` nella cartella principale e fermati.
 
 Comandi:
 - `scopri --comune "<Comune>" [--tipi craft,office,industrial] -o prospect/<comune>-grezzo.csv`

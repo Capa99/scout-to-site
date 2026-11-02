@@ -1,5 +1,6 @@
 @echo off
-REM Installazione Scout su Windows - non servono permessi di amministratore.
+REM Installazione degli agent su Windows - non servono permessi di amministratore.
+REM Crea un solo ambiente Python (.venv) usato da tutti gli agent.
 cd /d "%~dp0"
 
 where py >nul 2>nul
@@ -27,10 +28,18 @@ echo Installo le dipendenze...
 .venv\Scripts\python.exe -m pip install --upgrade pip >nul
 .venv\Scripts\python.exe -m pip install -r requirements.txt || goto errore_pip
 
-if not exist ..\prospect mkdir ..\prospect
+if not exist prospect mkdir prospect
+if not exist clienti mkdir clienti
+
+if exist scout\.venv (
+    echo Rimuovo il vecchio ambiente scout\.venv, non serve piu'...
+    rmdir /s /q scout\.venv
+)
+
 echo.
 echo Fatto. Prova con:
-echo   .venv\Scripts\python.exe scout.py tutto --comune Vigevano -o ..\prospect\vigevano.csv
+echo   .venv\Scripts\python.exe scout\scout.py tutto --comune Vigevano -o prospect\vigevano.csv
+echo   .venv\Scripts\python.exe analista\analista.py analizza www.sito-azienda.it
 pause
 exit /b 0
 

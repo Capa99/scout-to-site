@@ -1,27 +1,31 @@
 # Lavori x soldini: pipeline siti "demo prima"
 
-Agent 1 di 5: **Scout**. Trova le aziende di una zona che hanno un sito vecchio,
-morto o assente e prepara una lista di prospect verificati da chiamare.
+Agent pronti: **1. Scout** (trova i prospect) e **2. Analista** (estrae il materiale dal
+loro sito e prepara il brief per la demo).
 
 ```
 lavori-soldini/
-├── .claude/agents/scout.md   ← definizione dell'agent per Claude Code
-├── scout/                    ← script + installazione
-│   ├── scout.py
-│   ├── requirements.txt
-│   ├── setup.bat             ← Windows
-│   └── setup.sh              ← macOS / Linux
-└── prospect/                 ← qui finiscono CSV e report
+├── .claude/agents/          ← definizioni degli agent per Claude Code
+│   ├── scout.md
+│   └── analista.md
+├── scout/scout.py           ← trova aziende e dà un punteggio ai siti
+├── analista/analista.py     ← estrae testi, contatti, logo, colori, immagini
+├── prospect/                ← CSV e report dello Scout
+├── clienti/                 ← una cartella per ogni azienda analizzata
+├── requirements.txt
+├── setup.bat                ← installazione Windows
+└── setup.sh                 ← installazione macOS / Linux
 ```
 
 ## Installazione (PC aziendale Windows, senza permessi di amministratore)
 
 1. **Python**: se non c'è, installalo dal Microsoft Store o da python.org scegliendo
    "Install for current user only" (non serve l'amministratore).
-2. Estrai la cartella `lavori-soldini` dove vuoi, per esempio in `Documenti`.
-3. Doppio clic su `scout\setup.bat`. Crea `scout\.venv` e installa le dipendenze.
-4. **Se sei dietro un proxy aziendale** e l'installazione fallisce, apri un prompt
-   dei comandi nella cartella `scout` e lancia:
+2. Doppio clic su **`setup.bat`** nella cartella principale. Crea `.venv`, l'ambiente
+   Python condiviso da tutti gli agent, e installa le dipendenze. Se trova il vecchio
+   `scout\.venv` lo cancella, perché non serve più.
+3. **Se sei dietro un proxy aziendale** e l'installazione fallisce, apri un prompt
+   dei comandi nella cartella principale e lancia:
    ```
    set HTTPS_PROXY=http://indirizzo-proxy:porta
    set HTTP_PROXY=http://indirizzo-proxy:porta
@@ -32,23 +36,29 @@ lavori-soldini/
    Gli errori di certificato dovuti all'ispezione SSL aziendale li risolve già il
    pacchetto `truststore`, installato in automatico.
 
+Quando arriva un agent nuovo che richiede altre librerie, basta rilanciare `setup.bat`.
+
+**Tutti i comandi si lanciano dalla cartella principale** `lavori-soldini`.
+
 ## Uso con Claude Code
 
 Apri Claude Code nella cartella `lavori-soldini` e scrivi per esempio:
 
 > usa lo scout su Vigevano e Mortara, settore manifattura e carpenteria, voglio 10 prospect
 
-Il risultato è il report `prospect/vigevano-AAAA-MM-GG.md`, con la tabella dei
-prospect e una frase d'aggancio per ogni telefonata.
+> usa l'analista su SUGAR s.a.s. dal CSV di Vigevano
+
+Lo Scout produce il report `prospect/vigevano-AAAA-MM-GG.md`, con la tabella dei
+prospect e una frase d'aggancio per ogni telefonata. L'Analista produce
+`clienti/<azienda>/brief.md`, da cui partirà il Builder.
 
 Se crei `prospect/contattati.csv` (stesse colonne: `nome;sito;categoria;comune;telefono`),
 lo Scout salta le aziende che hai già sentito.
 
-## Uso manuale (senza Claude)
+## Scout: uso manuale (senza Claude)
 
 ```
-cd scout
-.venv\Scripts\python.exe scout.py tutto --comune Vigevano --tipi craft,industrial,office -o ..\prospect\vigevano.csv
+.venv\Scripts\python.exe scout\scout.py tutto --comune Vigevano -o prospect\vigevano.csv
 ```
 Il CSV si apre direttamente in Excel o si importa in Google Sheets.
 
@@ -56,11 +66,34 @@ Il CSV si apre direttamente in Excel o si importa in Google Sheets.
 aziende nuove, senza doppioni (stesso dominio, o stesso nome se non hanno sito), e non
 rivaluta quelle già presenti. Le colonne che aggiungi tu in Excel (es. `note`,
 `chiamato`) restano. La colonna `trovato_il` dice quando è entrata ogni azienda.
-Per ripartire da zero usa `--sovrascrivi`. Prima di rilanciare chiudi il file in Excel.
+Per ripartire da zero, o rivalutare tutto con regole nuove, usa `--sovrascrivi`.
+Prima di rilanciare chiudi il file in Excel.
+
+**Aziende aggiunte a mano** (trovate su Google Maps): scrivile in un CSV con le colonne
+`nome;sito;categoria;comune;telefono` e lancia
+`.venv\Scripts\python.exe scout\scout.py valuta prospect\vigevano-manuali.csv -o prospect\vigevano.csv`
+(senza `--sovrascrivi`): vengono aggiunte al file principale.
 
 Opzioni utili: `--min 35` tiene solo i siti messi peggio; `--pagespeed` aggiunge
 il punteggio Google PageSpeed (più lento; con molti siti conviene una chiave API
 gratuita nella variabile `PAGESPEED_API_KEY`).
+
+## Analista: uso manuale (senza Claude)
+
+```
+.venv\Scripts\python.exe analista\analista.py da-csv prospect\vigevano.csv --nome "SUGAR"
+.venv\Scripts\python.exe analista\analista.py da-csv prospect\vigevano.csv --primi 3
+.venv\Scripts\python.exe analista\analista.py analizza www.sito-azienda.it --nome "Rossi Srl"
+```
+Visita la homepage e fino a 10 pagine, scegliendo prima le più utili (chi siamo,
+servizi, prodotti, contatti) e seguendo anche i siti a frame. In `clienti\<azienda>\`
+trovi:
+- `contenuti.md`: contatti, colori (dal sito e dal logo), logo, testi pagina per pagina
+  (senza menu e footer ripetuti), elenco immagini con risoluzione e note per il Builder;
+- `img\`: immagini e logo scaricati, già senza icone e doppioni;
+- `sorgente\`: l'HTML originale di ogni pagina (utile per recuperare dettagli).
+
+Il **brief** (`brief.md`) invece lo scrive l'agent in Claude Code, leggendo questi file.
 
 ## Come funziona il punteggio (0-100, più alto = sito messo peggio)
 
@@ -130,7 +163,7 @@ Prima di `git pull` o `git add`, **chiudi i CSV aperti in Excel**.
    git config user.name "Federico Manetta"
    git config user.email "federicomanetta1999@gmail.com"
    ```
-3. Doppio clic su `scout\setup.bat` per ricreare `.venv`, che non viaggia con Git.
+3. Doppio clic su `setup.bat` per ricreare `.venv`, che non viaggia con Git.
 4. Al primo `git push` si apre il login di GitHub: entra con **Capa99**. Con un
    Git recente basta il browser; se invece chiede una password, usa un token
    (vedi sotto).
@@ -165,10 +198,10 @@ voce `git:https://Capa99@github.com`, poi rifai il push con il token nuovo.
 ### Cosa NON finisce su GitHub
 
 `.venv` (si ricrea con il setup) e i file `__pycache__`, come da `.gitignore`.
+Le cartelle in `clienti\` invece vengono caricate, immagini comprese.
 I CSV in `prospect\` invece vengono caricati: così le note scritte in ufficio le
 ritrovi a casa.
 
 ## Prossimi agent
-2. Analista (estrae i contenuti dal sito vecchio) · 3. Builder (crea la demo da
-template di settore) · 4. Outreach (script per la chiamata) · 5. Assistenza
-(bozze di risposta e modifiche, con approvazione umana).
+3. Builder (crea la demo da template di settore) · 4. Outreach (script per la
+chiamata) · 5. Assistenza (bozze di risposta e modifiche, con approvazione umana).

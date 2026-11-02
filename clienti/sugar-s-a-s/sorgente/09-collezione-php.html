@@ -1,0 +1,383 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Domo adami shows something blue</title>
+<meta name="description" content="Modelli esclusivi realizzati a mano utilizzando solo i migliori materiali italiani per garantire una qualità impeccabile. Ogni creazione ha il tocco elegante e raffinato che contraddistingue il marchio nel panorama internazionale della Bridal Couture." />
+<meta name="keywords" content="sposa, spose, abito, vestito, abito da sposa, abiti da sposa, vestito da sposa, vestiti da sposa, vigevano, italia, mondo, organza, tulle, eleganza, moda, matrimonio, nozze, bomboniere, invitati, cerimonia" />
+<meta http-equiv="content-language" content="it">
+<link rel="stylesheet" href="css/domoadami.css" media="all" />
+<link rel="stylesheet" href="css/box.css" media="all" />
+<link rel="stylesheet" href="css/menu.css" media="all" />
+<link rel="stylesheet" href="css/mappa.css" media="all" />
+<link rel="stylesheet" href="css/jquery.lightbox-0.5.css" media="all" />
+
+<script type="text/javascript" src="scripts/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="scripts/animaLingua.js"></script>
+<script type="text/javascript" src="scripts/jquery.lightbox-0.5.min.js"></script>
+
+<script language="javascript">
+$(document).ready(function(){
+	$("#scegliLingua").abilitaLingua();
+	$("a[rel=lightbox]").lightBox();
+	var posizione=2;
+	var totale = 11;
+
+	var contatore;
+	var daCaricare="";
+	var inAzione=0;
+	
+	immagini = new Array();
+	
+			immagini[0] = "./media/collezioni/Carmen-nude-mesh-and-lace-8.jpg";
+			immagini[1] = "./media/collezioni/Veronica-Ivory-Lace-8.jpg";
+			immagini[2] = "./media/collezioni/daria-8.jpg";
+			immagini[3] = "./media/collezioni/giada-8.jpg";
+			immagini[4] = "./media/collezioni/ginevra-8.jpg";
+			immagini[5] = "./media/collezioni/giulia-8.jpg";
+			immagini[6] = "./media/collezioni/irina-8.jpg";
+			immagini[7] = "./media/collezioni/sofia-8.jpg";
+			immagini[8] = "./media/collezioni/laura-8.jpg";
+			immagini[9] = "./media/collezioni/Adele-Ivory-Lace-8.jpg";
+			immagini[10] = "./media/collezioni/Adele-Ivory-Satin-8.jpg";
+			immagini[11] = "./media/collezioni/Beatrice-Ivory-Lace-8.jpg";
+		
+	$("#portaAnteprime ul li").each(function(){
+			$(this).fadeTo(0,0.5);								  
+	});
+	$("#portaAnteprime ul li").eq(2).fadeTo(0,1);
+	
+	
+	$("#scorriGiu").click(function(){
+		if(inAzione===0)
+		{
+		inAzione=1;
+		$("#portaAnteprime ul li").eq(2).fadeTo(0,0.5);
+		$("#portaAnteprime").animate({top: '-=133'},300,function(){
+			posizione++;
+			if(posizione>totale) posizione=0;
+			
+			//sposto il primo li all'ultimo posto.	
+			var tmp = $("#portaAnteprime ul li").eq(0).html();
+			$("#portaAnteprime ul li").eq(0).remove();
+			$("#portaAnteprime").css("top","-133px");
+			$("#portaAnteprime ul").append("<li>"+tmp+"</li>");
+			$("#portaAnteprime ul li").eq(totale).fadeTo(0,0.5);
+			
+			//$("#fotoCollezione img").attr("src",immagini[posizione]);
+			
+			$("#fotoCollezione img").load(function(){
+				newH=(555-parseInt($(this).attr('height')))/2;
+				$(this).css('top',newH+'px');
+			})
+			.attr("src",immagini[posizione]);
+			
+			$("#fotoCollezione a").attr("href","sistema/phpThumb.php?src=."+encodeURIComponent(immagini[posizione])+"&w=1000&h=800");
+			$("#portaAnteprime ul li").eq(2).fadeTo(0,1);
+			inAzione=0;
+		});
+		}
+		return false;
+	});
+	
+	$("#scorriSu").click(function(){
+		if(inAzione===0)
+		{
+		inAzione=1;
+		$("#portaAnteprime ul li").eq(2).fadeTo(0,0.5);
+		$("#portaAnteprime").animate({top: '+=133'},300,function(){
+			posizione--;
+			if(posizione<0) posizione=totale;
+			
+			var tmp = $("#portaAnteprime ul li").eq(totale).html();
+			$("#portaAnteprime ul li").eq(totale).remove();
+			$("#portaAnteprime").css("top","-133px");
+			$("#portaAnteprime ul").prepend("<li>"+tmp+"</li>");
+			$("#portaAnteprime ul li").eq(0).fadeTo(0,0.5);
+			
+			$("#fotoCollezione img").load(function(){
+				newH=(555-parseInt($(this).attr('height')))/2;
+				$(this).css('top',newH+'px');
+			})
+			.attr("src",immagini[posizione]);
+			
+			$("#fotoCollezione a").attr("href","sistema/phpThumb.php?src=."+encodeURIComponent(immagini[posizione])+"&w=1000&h=800");
+			$("#portaAnteprime ul li").eq(2).fadeTo(0,1);
+			inAzione=0;
+		});
+		}
+	});
+	
+});
+</script>
+
+</head>
+
+<body>
+
+<!-- inizio banner -->
+<div id="banner">
+    <div id="contenitore">
+    	<div id="downloadbutton">
+	<a href="download.php">Download</a>
+</div>
+
+<div id="scegliLingua">
+			<ul>
+				<li><a href="index.php" title="naviga il sito domoadami in lingua italiana">italiano &gt;</a></li>
+				<li><a href="en/index.php" title="navigate domoadami website in english">english &gt;</a></li>
+			</ul>
+			change language <span class="freccia"></span>
+        </div>    	<div id="logo"><a href="index.php"><img src="8ynnhasS_steurba/domoadami-events-design.png"  alt="domo adami events and design made in italy - sartoria di abiti da sposa made in italy" /></a></div>		<div id="spaziomenu">
+        	<ul id="menu">
+            	<li><a href="eventi-e-design.php" class="eventidesign">events &amp; design</a></li>
+                <li><a href="chi-siamo.php" class="chisiamo">chi siamo</a></li>
+                <li><a href="news-eventi.php" class="news">news</a></li>
+                <li><a href="photo-video.php" class="photovideo">photo and video</a></li>
+                <br />
+                <li><a href="collezioni.php" class="collezioni">collezioni</a></li>
+                <li><a href="rassegna-stampa.php" class="rassegnastampa">rassegna stampa</a></li>
+                <li><a href="boutiques.php" class="puntivendita">boutiques</a></li>
+                <li><a href="registrazione.php" class="registrati">registrati</a></li>
+                
+                <li><a href="contatti.php" class="contatti">contatti</a></li>
+                
+            </ul>
+        </div>    </div>
+</div>
+<!-- fine banner -->
+<div id="spaziatoreBanner">
+</div>
+
+<!-- inizio interna -->
+<div id="biancoInterne"><div id="corpoInterne">
+
+        <h1><a href="collezioni.php">Collezioni</a> - Shoes Collection "something Blue"</h1>
+        
+        <div id="sottomenu">
+        	<ul>
+            	<li><a href="collezione.php?id=1&nome=domo adami">DOMO ADAMI</a></li>
+                <li><a href="collezione.php?id=2&nome=d.a. domo adami studio">D.A. STUDIO</a></li>
+                <li><a href="collezione.php?id=7&nome=mens attitude">DOMO ADAMI MEN'S</a></li>
+                <li><a href="collezione.php?id=3&nome=d.a.&gt;simply chic">D.A.&GT;SIMPLY CHIC</a></li>
+                <li><a href="collezione.php?id=4&nome=i ninnoli">I NINNOLI</a></li>
+                <li><a href="collezione.php?id=8&nome=something blue">DOMO ADAMI SHOES</a></li>
+                <li><a href="index.php" id="homepage">home page</a></li>
+            </ul>
+        </div>
+        
+        <div id="corpoInterneContenitore" style="font-size:13px!important">  
+            <div id="immagineCollezione">
+                        </div>
+       	<p style="font-size:12px!important; line-height:16px!important"><div class="font-size:12px">
+Modelli esclusivi realizzati a mano utilizzando solo i migliori materiali italiani per garantire una qualità impeccabile. Ogni creazione ha il tocco elegante e raffinato che contraddistingue il marchio nel panorama internazionale della Bridal Couture.Le suole in cuoio blu rappresentano una nota molto particolare di colore per rendere ogni scarpa ancora più preziosa.<br>
+Le calzature DOMO ADAMI sono disponibili nei migliori negozi in Italia e all'estero <a href="https://www.giordanodieci.com/domo-adami-in-stores">CLICCA QUI</a>;
+Per acquisti on line&nbsp; <a href="http://www.giordanodieci.com/designers/domo-adami.html">CLICCA QUI</a>
+</div></p>
+        <div id="aiuto">Utilizza le frecce a sinistra per scorrere gli abiti</div>
+        <div id="fotoCollezione">
+       		<a href="sistema/phpThumb.php?src=..%2Fmedia%2Fcollezioni%2Fdaria-8.jpg&amp;w=1000&amp;h=800" rel="lightBox"><div id="portaImmagine" style="width:371px; height:555px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/daria-8.jpg" title="" alt="DariaWhite glitter" width="371px" height="auto" style="height:auto; position:absolute; top:125px; left:0px " /></div></a>
+        </div>
+        <div id="frecciaSu"><a href="#" id="scorriSu"><img src="8ynnhasS_steurba/frecciaSu.png" alt="scorri verso l'altro" /></a></div>
+        <div id="frecciaGiu"><a href="#" id="scorriGiu"><img src="8ynnhasS_steurba/frecciaGiu.png" alt="scorri verso il basso" /></a></div>
+		<div id="anteprimeCollezione">
+        	<div id="portaAnteprime">
+            <ul>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/Carmen-nude-mesh-and-lace-8.jpg" title="" alt="CarmenNude Mesh and lace" width="74px" height="auto" style="height:auto; position:absolute; top:23px; left:0px " /></div></div>
+                    <h3>Carmen<br>Nude Mesh and lace</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/Veronica-Ivory-Lace-8.jpg" title="" alt="VeronicaIvory Lace" width="74px" height="auto" style="height:auto; position:absolute; top:26px; left:0px " /></div></div>
+                    <h3>Veronica<br>Ivory Lace</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/daria-8.jpg" title="" alt="DariaWhite glitter" width="74px" height="auto" style="height:auto; position:absolute; top:23px; left:0px " /></div></div>
+                    <h3>Daria<br>White glitter</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/giada-8.jpg" title="" alt="GiadaWhite glitter and grosgrain" width="74px" height="auto" style="height:auto; position:absolute; top:23px; left:0px " /></div></div>
+                    <h3>Giada<br>White glitter and grosgrain</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/ginevra-8.jpg" title="" alt="GinevraPlatinum glitter" width="74px" height="auto" style="height:auto; position:absolute; top:23px; left:0px " /></div></div>
+                    <h3>Ginevra<br>Platinum glitter</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/giulia-8.jpg" title="" alt="GiuliaMirror and swarovski" width="74px" height="auto" style="height:auto; position:absolute; top:23px; left:0px " /></div></div>
+                    <h3>Giulia<br>Mirror and swarovski</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/irina-8.jpg" title="" alt="IrinaPlatinum glitter and white grosgrain" width="74px" height="auto" style="height:auto; position:absolute; top:23px; left:0px " /></div></div>
+                    <h3>Irina<br>Platinum glitter and white grosgrain</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/sofia-8.jpg" title="" alt="SofiaWhite glitter" width="74px" height="auto" style="height:auto; position:absolute; top:23px; left:0px " /></div></div>
+                    <h3>Sofia<br>White glitter</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/laura-8.jpg" title="" alt="LauraWhite glitter" width="74px" height="auto" style="height:auto; position:absolute; top:23px; left:0px " /></div></div>
+                    <h3>Laura<br>White glitter</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/Adele-Ivory-Lace-8.jpg" title="" alt="AdeleIvory Lace" width="74px" height="auto" style="height:auto; position:absolute; top:23px; left:0px " /></div></div>
+                    <h3>Adele<br>Ivory Lace</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/Adele-Ivory-Satin-8.jpg" title="" alt="AmeliaIvory Satin" width="74px" height="auto" style="height:auto; position:absolute; top:26px; left:0px " /></div></div>
+                    <h3>Amelia<br>Ivory Satin</h3>                    </h4>
+                </li>
+                                <li>
+                    <div id="anteprimaFoto"><div id="portaImmagine" style="width:74px; height:106px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/collezioni/Beatrice-Ivory-Lace-8.jpg" title="" alt="BeatriceIvory Lace" width="74px" height="auto" style="height:auto; position:absolute; top:26px; left:0px " /></div></div>
+                    <h3>Beatrice<br>Ivory Lace</h3>                    </h4>
+                </li>
+                            </ul>
+            </div>
+        </div>
+        </div>
+    	
+	</div></div>
+<!-- fine interna -->
+
+<!-- inizio sotto -->
+<div id="sotto">
+
+		
+
+        
+        <div id="box3">
+           <h2><a href="news-eventi.php" id="newseventi">NEWS</a></h2>
+           
+            <div id="corpoH1">
+            	
+                <div id="testoNews">
+                    <a href="leggiNotizia.php?id=626&titolo=caf%c3%a8+atelier+con+domo+adami+2017">
+                    <div id="immagineNews"><div id="portaImmagine" style="width:152px; height:186px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/news/invito personalizzato-626.jpg" title="" alt="" width="152px" height="auto" style="height:auto; position:absolute; top:-13px; left:0px " /></div></div>                	<h3>CAFè ATELIER con DOMO ADAMI 2017</h3>
+                    <p>i nuovi trend proposti da MAURO ADAMI -&nbsp;<a href="http://goo.gl/8LFybR">http://goo.gl/8LFybR&nbsp;</a></p>
+                    </a>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        
+        
+        <div id="box3">
+        	<!--
+            <div id="corpoH1">
+            	<a href="blog.php"><img src="8ynnhasS_steurba/dal-blog1.jpg" width="152" height="186" alt="domo adami tv e gallery" /></a>
+        	</div>
+            -->
+            <h2><a href="news-eventi.php" id="newseventi">NEWS</a></h2>
+            <div id="corpoH1">
+                <div id="testoNews">
+                    <a href="leggiNotizia.php?id=628&titolo=%3cspan+style%3d%22text-align%3a+justify%3b%22%3e%3cb%3e%3cfont%3e%3cfont%3ela+festa+della+regina+a+varenna+presso+il+prestigioso+hotel+royal+victoria%3c%2ffont%3e%3c%2ffont%3e%3c%2fb%3e%3c%2fspan%3e">
+                    <div id="immagineNews"><div id="portaImmagine" style="width:152px; height:186px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/news/FLYER-628.jpg" title="" alt="" width="152px" height="auto" style="height:auto; position:absolute; top:-20px; left:0px " /></div></div>                	<h3><span style="text-align: justify;"><b><font><font>La Festa della Regina a Varenna Presso il Prestigioso Hotel Royal Victoria</font></font></b></span></h3>
+                    <p><span style="font-weight: normal;"><i><font><font>In collaborazione con DOMOADAMIEVENTS.- Un'occasione unica per immergersi nell'incantevole atmosfera degli eventi italiani.</font></font></i></span></p>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        
+        <div id="box3">
+        	<h2><a href="news-eventi.php" id="newseventi">NEWS</a></h2>
+            <div id="corpoH1">
+                <div id="testoNews">
+                	<a href="leggiNotizia.php?id=627&titolo=%3ch2+class%3d%22titolo%22+style%3d%22width%3a+396px%3b%22%3e%3cdiv+class%3d%22text_exposed_root+text_exposed%22+id%3d%22id_579071749a0fa3803552413%22%3e%3cp%3emakeup+sposa+sotto+la+torre.-%26nbsp%3b%3cbr%3eper+tutte+le+spose+2016+con+anticipazioni+sposa+2017.-%3cbr%3e%3c%2fp%3e%3c%2fdiv%3e%3ca+class%3d%22_58cn%22+href%3d%22https">
+					<div id="immagineNews"><div id="portaImmagine" style="width:152px; height:186px; display:inline-block;float:left; overflow:hidden; position:relative; margin:0px 0px 0px 0px"><img src="./media/news/flyer-627.jpg" title="" alt="" width="152px" height="auto" style="height:auto; position:absolute; top:-8px; left:0px " /></div></div>                	<h3><h2 class="titolo" style="width: 396px;"><div class="text_exposed_root text_exposed" id="id_579071749a0fa3803552413"><p>MAKEUP SPOSA SOTTO LA TORRE.-&nbsp;<br>Per TUTTE le Spose 2016 con anticipazioni Sposa 2017.-<br></p></div><a class="_58cn" href="https</h3>
+                    <p>MARRIONNAUD in collaborazione con&nbsp;DOMO ADAMI&nbsp;&nbsp;propone il make-up per il tuo matrimonio.&nbsp;</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="clear:both"></div>
+        
+        <div id="mappa">
+        	<div id="colonna">
+            	<a href="chi-siamo.php" id="titolo">Chi siamo</a>
+                <br />
+                <a href="collezioni.php" id="titolo">Collezioni</a>
+                <ul>
+                						<li><a href="collezione.php?id=1&nome=domo adami">DOMO ADAMI</a></li>
+										<li><a href="collezione.php?id=2&nome=domo adami academy">DOMO ADAMI ACADEMY</a></li>
+										<li><a href="collezione.php?id=3&nome="></a></li>
+										<li><a href="collezione.php?id=4&nome=i ninnoli">I NINNOLI</a></li>
+										<li><a href="collezione.php?id=7&nome=domo adami&nbsp;men's attitude">DOMO ADAMI&NBSP;MEN'S ATTITUDE</a></li>
+										<li><a href="collezione.php?id=8&nome=shoes collection "something blue"">SHOES COLLECTION "SOMETHING BLUE"</a></li>
+					                </ul>
+                <br />
+                <a href="eventi-e-design.php" id="titolo">Events&amp;Design</a>
+                <ul>
+                	<li><a href="eventi-e-design.php">events &amp; design</a></li>
+                    <li><a href="partner.php">partner</a></li>
+                </ul><br />
+                
+            </div>
+            
+            <div id="colonna">
+                <a href="news-eventi.php" id="titolo">News</a>
+                <ul>
+                	<li><a href="news-eventi.php">spose</a></li>
+                    <li><a href="news-eventi-press.php">press &amp; buyer</a></li>
+                </ul>
+                <br />
+                <a href="rassegna-stampa.php" id="titolo">Rassegna stampa</a><br /><br />
+                <a href="boutiques.php" id="titolo">Boutiques</a><br /><br />
+                <a href="registrazione.php" id="titolo">Registrati</a><br /><br />
+                <a href="photo-video.php" id="titolo">Photo e Video</a><br /><br />
+                <a href="contatti.php" id="titolo">Contatti</a>           
+            </div>
+            
+            <div id="colonna">
+                
+                
+                                <form id="logUser" name="logUser" method="post" action="login.php">
+                login<br />
+				<input type="text" id="nomeUtente" name="nomeUtente" /><br /><br />
+                password<br />
+				<input type="password" id="passwordUtente" name="passwordUtente" /><br /><br />
+                <input type="hidden" id="pagina" name="pagina" value="http://www.domoadami.com/collezione.php?id=8&nome=shoes%20collection" />
+                <input type="submit" value="ENTRA" id="bottoneInvia"/>
+                </form><br />
+                <a href="registrazione.php">Registrati ora</a><br />
+                            </div>
+            
+            <div id="colonna">
+                <a href="http://www.facebook.com/domoadami.weddingstyle" id="facebook">Facebook</a><br />
+                <a href="https://twitter.com/#!/domoadami" id="twitter">Twitter</a><br />
+                <a href="http://www.youtube.com/domoadami" id="youtube">YouTube</a><br />
+                <a href="http://www.vimeo.com/user7775019" id="vimeo">Vimeo</a><br />
+                <a href="https://picasaweb.google.com/115813016889048346215/" id="picasa">Picasa Web</a><br />
+                <a href="http://www.flickr.com/photos/67023989@N08/" id="flickr">Flickr</a>
+            </div>
+        
+        </div>
+                
+	
+</div><!-- fine sotto -->
+
+<!-- inizio footer -->
+<div id="footer">
+	<div id="copyright">SUGAR S.A.S. © 2013-2014 - Tutti i diritti riservati - P.IVA 02140790185 - <a href="contatti.php">company info e contatti</a></div>
+    <div id="email"><a href="mailto:info@domoadami.com">info@domoadami.com</a></div>
+</div>
+<!-- fine footer --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2547076-11', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+<link rel="stylesheet" type="text/css" href="cookieApproval/cookieApproval.css">
+<script type="text/javascript" src="cookieApproval/cookieapproval.js"></script></body>
+</html>
