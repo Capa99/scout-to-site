@@ -62,8 +62,39 @@ Lo Scout produce il report `prospect/vigevano-AAAA-MM-GG.md`, con la tabella dei
 prospect e una frase d'aggancio per ogni telefonata. L'Analista produce
 `clienti/<azienda>/brief.md`, da cui partirà il Builder.
 
-Se crei `prospect/contattati.csv` (stesse colonne: `nome;sito;categoria;comune;telefono`),
-lo Scout salta le aziende che hai già sentito.
+Il registro `prospect/contattati.csv` lo tiene l'Outreach: lo Scout salta le aziende già contattate.
+
+### Test completo della catena (PC di casa)
+
+**Preparazione, solo la prima volta:**
+```
+git clone https://github.com/Capa99/scout-to-site.git lavori-soldini
+cd lavori-soldini
+git config user.name "Federico Manetta"
+git config user.email "federicomanetta1999@gmail.com"
+setup.bat
+```
+Facoltativo, per gli screenshot del Builder:
+`.venv\Scripts\pip install playwright` e poi `.venv\Scripts\playwright install chromium`.
+
+**In Claude Code** (aperto nella cartella `lavori-soldini`), controlla con `/agents` che ci siano
+scout, analista, builder e outreach, poi prova in ordine su un comune nuovo:
+
+1. `usa lo scout su Mortara, voglio 5 prospect`
+   → deve creare `prospect/mortara.csv` e il report `prospect/mortara-AAAA-MM-GG.md`,
+   cercando aziende anche sul web oltre a OpenStreetMap.
+2. `usa l'analista sul prospect migliore di Mortara`
+   → deve creare `clienti/<azienda>/` con `contenuti.md`, `img/` e scrivere da solo `brief.md`.
+3. `usa il builder su <azienda>`
+   → deve scegliere lo stile, costruire `demo/`, passare il controllo senza errori, guardare gli
+   screenshot e creare lo zip per Netlify.
+4. `outreach: agenda` e poi `outreach: prepara il primo contatto per <azienda>`
+   → deve mostrarti la bozza intera e **aspettare il tuo ok** prima di aprire Gmail.
+
+Annota cosa non va (errore, schermata o comportamento strano) e correggiamo.
+
+**A fine sessione:** `git add .` → `git commit -m "..."` → `git push`.
+**All'inizio della sessione successiva** (casa o ufficio): `git pull`.
 
 ## Scout: uso manuale (senza Claude)
 
