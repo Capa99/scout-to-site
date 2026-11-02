@@ -74,11 +74,24 @@ gratuita nella variabile `PAGESPEED_API_KEY`).
 | jQuery < 1.9; strumento datato (FrontPage, Dreamweaver, Joomla 1-2, WordPress < 5) | +10 ciascuno |
 | PageSpeed mobile < 50 (solo con `--pagespeed`) | +10 |
 | Risposta lenta (> 4 s); http che non reindirizza su https | +5 ciascuno |
+| Segnaposto del template mai sostituiti (lorem ipsum, @example.com, 0000000) | +20 |
 | P.IVA non visibile in homepage | +3 |
 
 Priorità: **ALTA** da 60 in su, **MEDIA** 35-59, **BASSA** sotto 35.
-Casi speciali: **MORTO** (sito irraggiungibile, 90), **SITO VUOTO** (dominio
-parcheggiato o in costruzione, 85), **SOLO SOCIAL** (solo pagina Facebook/Instagram, 80).
+Casi speciali:
+- **SITO VUOTO** (85): dominio parcheggiato o pagina "in costruzione".
+- **SOLO SOCIAL** (80): ha solo una pagina Facebook/Instagram.
+- **SOLO SCHEDA** (75): ha solo una scheda su Booking, Google, TripAdvisor,
+  PagineGialle e simili. Per hotel e agriturismi l'aggancio è forte: con un sito
+  proprio pagherebbero meno commissioni.
+- **MORTO** (70): sito irraggiungibile. Spesso è un dominio scaduto, ma l'azienda
+  potrebbe aver chiuso o cambiato sito: va verificato.
+- **VERIFICA** (50): il server risponde con un errore (es. 403). Il sito esiste ma
+  blocca i bot, oppure lo blocca il filtro web aziendale: aprilo nel browser.
+- **SCARTA**: pagine che non sono dell'attività (Wikipedia, portali) e pagine-filiale di catene.
+
+Di default la scoperta esclude musei, teatri, enti pubblici, associazioni, centri
+commerciali e catene. Per includerli usa `--tutti` (e `--catene`).
 
 ## Git: lavorare da ufficio e da casa
 

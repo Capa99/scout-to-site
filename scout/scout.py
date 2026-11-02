@@ -63,10 +63,21 @@ SOCIAL = (
     "facebook.com", "fb.com", "instagram.com", "linkedin.com", "tiktok.com",
     "twitter.com", "x.com", "youtube.com",
 )
+# Piattaforme dove l'attività ha solo una scheda: niente sito proprio = prospect.
+SCHEDE = (
+    "paginegialle.it", "paginebianche.it", "google.com", "google.it", "goo.gl",
+    "g.co", "g.page", "tripadvisor.", "booking.com", "thefork.", "just-eat.",
+    "deliveroo.", "glovoapp.", "airbnb.", "ulm.it", "virgilio.it",
+)
+# Pagine che non c'entrano con l'attività: da scartare.
 DIRECTORY = (
-    "paginegialle.it", "paginebianche.it", "google.com", "goo.gl",
-    "tripadvisor.", "booking.com", "thefork.", "just-eat.", "deliveroo.",
-    "glovoapp.", "subito.it", "virgilio.it", "wikipedia.org",
+    "wikipedia.org", "indettaglio.it", "comuni-italiani.it", "tuttitalia.it",
+    "beniculturali.it",
+)
+SEGNAPOSTO = re.compile(
+    r"(lorem ipsum|dolor sit amet|@example\.(?:com|org|net)|yourdomain|your ?company|"
+    r"your email|nome azienda|il tuo nome|\+39 ?0{6,}|\b0{8,}\b|123[- ]?456[- ]?7890)",
+    re.I,
 )
 
 PARCHEGGIATO = re.compile(
@@ -99,7 +110,16 @@ ESCLUDI_AMENITY = {
     "university", "kindergarten", "post_office", "bank", "fuel", "atm",
     "fire_station", "courthouse", "prison", "social_facility", "college",
     "community_centre", "parking", "toilets", "grave_yard", "public_building",
+    "theatre", "arts_centre", "marketplace", "clinic", "doctors",
 }
+# Enti pubblici, cultura, associazioni: raramente comprano un sito da un freelance.
+ESCLUDI_TAG = {
+    "tourism": {"museum", "attraction", "viewpoint", "artwork", "information", "gallery"},
+    "office": {"government", "association", "ngo", "religion", "political_party",
+               "union", "diplomatic", "educational_institution"},
+    "shop": {"mall"},
+}
+ESCLUDI_CHIAVI = {"place", "historic", "boundary", "government", "landuse"}
 CHIAVI_CATEGORIA = [
     "craft", "office", "industrial", "shop", "amenity", "tourism",
     "healthcare", "leisure", "man_made", "company",
@@ -133,6 +153,8 @@ def pulisci_tel(t):
     """Tiene solo numeri italiani plausibili (fisso 0..., cellulare 3...), altrimenti ''."""
     t = (t or "").split(";")[0].strip()
     cifre = re.sub(r"\D", "", t)
+    if len(set(cifre.lstrip("39").lstrip("0"))) <= 1:  # 0000000, 1111111: segnaposto
+        return ""
     if cifre.startswith("0039"):
         cifre = cifre[4:]
     elif cifre.startswith("39") and len(cifre) >= 11:
@@ -218,7 +240,7 @@ def scrivi_csv(percorso, righe, campi, vecchie=None):
 
 # ---------------------------------------------------------------- scoperta
 
-def scopri(comune, tipi=None, includi_catene=False):
+def scopri(comune, tipi=None, includi_catene=False, includi_tutti=False):
     """Cerca su OpenStreetMap le attività di un comune che hanno un sito web."""
     comune_q = comune.replace('"', '\\"')
     query = f"""
@@ -266,8 +288,13 @@ out tags center;
         t = el.get("tags", {})
         if not includi_catene and (t.get("brand") or t.get("brand:wikidata")):
             continue
-        if t.get("amenity") in ESCLUDI_AMENITY:
-            continue
+        if not includi_tutti:
+            if t.get("amenity") in ESCLUDI_AMENITY:
+                continue
+            if any(k in t for k in ESCLUDI_CHIAVI):
+                continue
+            if any(t.get(k) in v for k, v in ESCLUDI_TAG.items()):
+                continue
         chiave = next((k for k in CHIAVI_CATEGORIA if k in t), None)
         if tipi and chiave not in tipi:
             continue
@@ -288,6 +315,21 @@ out tags center;
 
 
 # ---------------------------------------------------------------- valutazione
+
+def _slug(testo):
+    return re.sub(r"[^a-z0-9]+", "", (testo or "").lower())
+
+
+def _pagina_di_terzi(url, comune):
+    """Riconosce pagine-filiale di catene e schede di elenchi, che non sono il sito dell'attività."""
+    u = urlparse(url)
+    percorso = u.path.strip("/")
+    if u.query and percorso:
+        return "Il link punta a una scheda in un elenco, non al sito dell'attività"
+    if comune and percorso and _slug(comune) in _slug(percorso):
+        return f"Pagina della sede di {comune} sul sito di una catena: decide la sede centrale"
+    return ""
+
 
 def _scarica(url):
     t0 = time.time()
@@ -321,18 +363,34 @@ def valuta_sito(riga, pagespeed=False, chiave_ps=None):
         ris.update(punteggio=80, priorita="SOLO SOCIAL",
                    motivi="Usa un profilo social al posto di un sito")
         return ris
+    scheda = next((s for s in SCHEDE if d == s or d.endswith("." + s) or s.endswith(".") and s in d), None)
+    if scheda:
+        piattaforma = scheda.strip(".").split(".")[0]
+        piattaforma = {"g": "Google", "goo": "Google", "google": "Google", "thefork": "TheFork",
+                       "just-eat": "Just Eat", "paginegialle": "PagineGialle",
+                       "paginebianche": "PagineBianche", "ulm": "un elenco di settore"
+                       }.get(piattaforma, piattaforma.capitalize())
+        ris.update(punteggio=75, priorita="SOLO SCHEDA",
+                   motivi=f"Nessun sito proprio: solo una scheda su {piattaforma}")
+        return ris
     if any(s in d for s in DIRECTORY):
         ris.update(punteggio=0, priorita="SCARTA",
-                   motivi="Il link punta a una directory, non al sito dell'azienda")
+                   motivi="Il link punta a una pagina che non è dell'attività")
+        return ris
+
+    pagina_terzi = _pagina_di_terzi(url, riga.get("comune", ""))
+    if pagina_terzi:
+        ris.update(punteggio=5, priorita="SCARTA", motivi=pagina_terzi)
         return ris
 
     host = urlparse(url).netloc
     alt = host[4:] if host.startswith("www.") else "www." + host
-    resp, tempo, errore_ssl = None, None, False
+    resp, tempo, errore_ssl, codici = None, None, False, []
 
     for h in (host, alt):
         try:
             r, t = _scarica(f"https://{h}/")
+            codici.append(r.status_code)
             if r.status_code < 400:
                 resp, tempo = r, t
                 break
@@ -344,15 +402,25 @@ def valuta_sito(riga, pagespeed=False, chiave_ps=None):
         for h in (host, alt):
             try:
                 r, t = _scarica(f"http://{h}/")
+                codici.append(r.status_code)
                 if r.status_code < 400:
                     resp, tempo = r, t
                     break
             except requests.RequestException:
                 pass
 
+    if resp is None and codici:
+        # Il server risponde ma con un errore: il sito esiste (blocca i bot, filtro web
+        # aziendale, pagina rotta). Va guardato a mano nel browser.
+        cod = sorted(set(codici))
+        ris.update(punteggio=50, priorita="VERIFICA",
+                   motivi=f"Il server risponde con errore HTTP {', '.join(map(str, cod))}: "
+                          "aprilo nel browser (può bloccare i bot o essere il filtro web aziendale)")
+        return ris
     if resp is None:
-        ris.update(punteggio=90, priorita="MORTO",
-                   motivi="Sito irraggiungibile: verificare se l'azienda è ancora attiva")
+        ris.update(punteggio=70, priorita="MORTO",
+                   motivi="Sito irraggiungibile (dominio scaduto o server spento): "
+                          "verificare se l'azienda è ancora attiva o ha cambiato sito")
         return ris
 
     https_ok = resp.url.lower().startswith("https://")
@@ -448,6 +516,11 @@ def valuta_sito(riga, pagespeed=False, chiave_ps=None):
             punti += 10
             motivi.append(f"Creato con uno strumento datato ({gen})")
 
+    segnaposto = sorted({m.group(0).strip().lower() for m in SEGNAPOSTO.finditer(html)})
+    if segnaposto:
+        punti += 20
+        motivi.append("Contenuti segnaposto del template mai sostituiti: " + ", ".join(segnaposto[:3]))
+
     if not PIVA.search(testo):
         punti += 3
         motivi.append("P.IVA non visibile in homepage (è obbligatoria)")
@@ -468,7 +541,7 @@ def valuta_sito(riga, pagespeed=False, chiave_ps=None):
     # Contatti (solo dati aziendali pubblici in homepage)
     mail = [unquote(a["href"][7:]).split("?")[0].strip() for a in zuppa.select('a[href^="mailto:"]')]
     mail += EMAIL.findall(testo)
-    mail = [e for e in mail if EMAIL.fullmatch(e) and not e.lower().endswith((".png", ".jpg", ".gif", ".webp"))]
+    mail = [e for e in mail if EMAIL.fullmatch(e) and not SEGNAPOSTO.search(e) and not e.lower().endswith((".png", ".jpg", ".gif", ".webp"))]
     ris["email"] = mail[0] if mail else ""
     tel_osm = pulisci_tel(ris["telefono"])
     if tel_osm:
@@ -532,6 +605,8 @@ def main():
         sp.add_argument("--tipi", default="",
                         help="Filtra per tipo OSM, separati da virgola: craft,office,industrial,shop,amenity,...")
         sp.add_argument("--catene", action="store_true", help="Includi catene e franchising")
+        sp.add_argument("--tutti", action="store_true",
+                        help="Includi anche musei, teatri, enti pubblici e associazioni")
         sp.add_argument("--sovrascrivi", action="store_true",
                         help="Riscrive il file da zero invece di aggiungere le aziende nuove")
 
@@ -563,12 +638,12 @@ def main():
     gia = {chiave(r) for r in vecchie}
 
     if a.cmd == "scopri":
-        righe = scopri(a.comune, tipi, a.catene)
+        righe = scopri(a.comune, tipi, a.catene, a.tutti)
         scrivi_csv(a.output, righe, CAMPI_INPUT, vecchie)
         print(f"Salvato: {a.output}")
         return
 
-    righe = leggi_csv(a.input) if a.cmd == "valuta" else scopri(a.comune, tipi, a.catene)
+    righe = leggi_csv(a.input) if a.cmd == "valuta" else scopri(a.comune, tipi, a.catene, a.tutti)
     da_valutare = [r for r in righe if chiave(r) not in gia]
     if vecchie:
         print(f"{len(righe) - len(da_valutare)} aziende già nel file: le salto.", file=sys.stderr)

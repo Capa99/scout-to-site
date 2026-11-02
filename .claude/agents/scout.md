@@ -44,10 +44,14 @@ negozi → `shop`; ristorazione e turismo → `amenity,tourism`; studi professio
    (confronta dominio e nome). Quel file lo gestisce l'utente: leggilo, non modificarlo mai.
 3. **Valutazione.** Lancia `valuta` sul CSV grezzo con output `prospect/<comune>.csv`. Nel report considera solo le aziende nuove di questo giro (colonna `trovato_il` = oggi), salvo diversa richiesta.
 4. **Verifica a mano dei migliori.** Prendi i primi 15-20 con priorità ALTA, MEDIA, MORTO,
-   SITO VUOTO o SOLO SOCIAL. Per ciascuno apri con WebFetch la homepage ed eventualmente
+   SITO VUOTO, SOLO SOCIAL, SOLO SCHEDA o VERIFICA. Ignora gli SCARTA. Per ciascuno apri con WebFetch la homepage ed eventualmente
    "chi siamo" (al massimo 2 pagine per azienda) e stabilisci:
    - **Attiva?** Per un sito MORTO cerca l'azienda con WebSearch: se risulta chiusa,
-     cessata o in liquidazione, scartala.
+     cessata o in liquidazione, scartala; se ha un sito nuovo, sostituisci il link e
+     rivalutalo.
+   - **VERIFICA:** il server ha risposto con un errore HTTP. Prova ad aprirlo con
+     WebFetch: se si vede, valutalo a occhio; se no, segnalalo all'utente da aprire
+     nel browser.
    - **Solidità (1-3):** 3 = azienda B2B strutturata (anni di attività, capannone,
      dipendenti, clienti industriali, catalogo); 2 = attività locale stabile;
      1 = microattività o hobby. Un sito brutto conta solo se l'azienda può pagare.
