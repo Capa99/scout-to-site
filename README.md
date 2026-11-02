@@ -80,12 +80,80 @@ Priorità: **ALTA** da 60 in su, **MEDIA** 35-59, **BASSA** sotto 35.
 Casi speciali: **MORTO** (sito irraggiungibile, 90), **SITO VUOTO** (dominio
 parcheggiato o in costruzione, 85), **SOLO SOCIAL** (solo pagina Facebook/Instagram, 80).
 
-## Usarlo anche sul PC di casa
+## Git: lavorare da ufficio e da casa
 
-La cartella è portabile: copiala e rilancia il setup (`setup.bat` su Windows,
-`setup.sh` su Mac/Linux). L'ambiente `.venv` non va copiato, si ricrea.
-Per tenere sincronizzati i due PC conviene un **repository GitHub privato**:
-il file `.gitignore` esclude già `.venv`.
+Repository privato: **https://github.com/Capa99/scout-to-site**
+
+La regola d'oro: **`git pull` quando inizi, `git push` quando finisci**, su
+qualsiasi PC. Così trovi sempre l'ultima versione e non crei conflitti.
+
+### Ogni volta che inizi (ufficio o casa)
+
+Apri il cmd nella cartella del progetto (barra dell'indirizzo → `cmd` → Invio):
+```
+git pull
+```
+
+### Ogni volta che finisci (ufficio o casa)
+
+```
+git add .
+git commit -m "breve descrizione di cosa hai fatto"
+git push
+```
+Se `git push` viene rifiutato con `rejected` / `fetch first`, vuol dire che
+sull'altro PC hai caricato qualcosa che qui non hai: lancia `git pull` e poi di
+nuovo `git push`.
+
+Prima di `git pull` o `git add`, **chiudi i CSV aperti in Excel**.
+
+### PC di casa: la prima volta
+
+1. Installa Git (https://git-scm.com) e Python, se non ci sono.
+2. Apri il cmd nella cartella dove vuoi il progetto e lancia:
+   ```
+   git clone https://github.com/Capa99/scout-to-site.git
+   cd scout-to-site
+   git config user.name "Federico Manetta"
+   git config user.email "federicomanetta1999@gmail.com"
+   ```
+3. Doppio clic su `scout\setup.bat` per ricreare `.venv`, che non viaggia con Git.
+4. Al primo `git push` si apre il login di GitHub: entra con **Capa99**. Con un
+   Git recente basta il browser; se invece chiede una password, usa un token
+   (vedi sotto).
+
+### PC aziendale: cose da sapere
+
+- La cartella è `C:\Users\manetta\Desktop\progettini\lavori-soldini`, già
+  collegata a GitHub. Nome ed email personali sono impostati **solo per questa
+  cartella**: i progetti Sydema continuano a usare `f.manetta@sydema.it`.
+- **Non usare mai `--global`** con `git config` per questo progetto, perché
+  cambierebbe le impostazioni anche dei repository di lavoro.
+- Il Git dell'ufficio è vecchio (2.22): `git init -b` non esiste, e al push non
+  si apre il browser. Come password si usa il **token** (vedi sotto), che Windows
+  ricorda fino alla scadenza.
+- Per controllare con che email stai facendo commit:
+  `git log -1 --format="%an <%ae>"`.
+
+### Token GitHub (quando scade o su un PC nuovo)
+
+GitHub non accetta la password dell'account per Git: serve un token.
+1. github.com → foto profilo → **Settings** → **Developer settings** →
+   **Personal access tokens** → **Tokens (classic)** → **Generate new token (classic)**.
+2. Note: nome del PC (es. `pc-ufficio`), scadenza 90 giorni, spunta solo **`repo`**.
+3. **Generate token** e copialo subito (inizia con `ghp_`): non lo rivedrai.
+4. Al prossimo `git push`, quando chiede la password, incollalo con il tasto
+   destro del mouse (non compare nulla mentre incolli: è normale) e premi Invio.
+
+Se il token è scaduto e Windows continua a usare quello vecchio: **Pannello di
+controllo** → **Gestione credenziali** → **Credenziali di Windows** → elimina la
+voce `git:https://Capa99@github.com`, poi rifai il push con il token nuovo.
+
+### Cosa NON finisce su GitHub
+
+`.venv` (si ricrea con il setup) e i file `__pycache__`, come da `.gitignore`.
+I CSV in `prospect\` invece vengono caricati: così le note scritte in ufficio le
+ritrovi a casa.
 
 ## Prossimi agent
 2. Analista (estrae i contenuti dal sito vecchio) · 3. Builder (crea la demo da
