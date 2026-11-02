@@ -1,0 +1,42 @@
+/* STUDIO: commercialisti, avvocati, assicurazioni, dentisti, medici, immobiliari. Chiaro, affidabile. */
+:root {
+  --c-bg: #ffffff;
+  --c-surface: #f3f6f9;
+  --c-text: #14212e;
+  --c-muted: #5a6978;
+  --c-line: rgba(20, 33, 46, .12);
+  --c-primary: #17375e;
+  --c-on-primary: #ffffff;
+  --c-accent: #2f7d6d;
+  --c-dark: #0f2338;
+  --c-on-dark: #e8eef5;
+
+  --f-display: "Source Serif 4", Georgia, serif;
+  --f-body: "Manrope", system-ui, sans-serif;
+  --w-display: 600;
+  --w-body: 400;
+  --w-strong: 700;
+  --tracking-display: -.01em;
+  --tracking-label: .1em;
+  --case-label: uppercase;
+  --lh-display: 1.12;
+  --radius: 14px;
+  --radius-btn: 10px;
+  --shadow: 0 1px 2px rgba(20,33,46,.06), 0 8px 24px rgba(20,33,46,.06);
+  --card-ratio: 16 / 10;
+  --card-pad: 1.4rem 1.5rem 1.6rem;
+  --c-card: #ffffff;
+  --section: clamp(4rem, 8vw, 6.5rem);
+}
+.btn { text-transform: none; letter-spacing: 0; font-size: 1rem; }
+.nav a:not(.btn) { text-transform: none; letter-spacing: 0; font-size: .95rem; }
+.faq details { border-bottom: 1px solid var(--c-line); padding-block: 1.2rem; }
+.faq summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.faq summary::after { content: "+"; font-size: 1.3rem; line-height: 1; color: var(--c-accent); }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { margin-top: .8rem; color: var(--c-muted); }
+.person { text-align: left; }
+.person .media { aspect-ratio: 1; border-radius: var(--radius); }
+.person h3 { margin-top: 1rem; font-size: 1.2rem; }
+.person p { color: var(--c-muted); font-size: var(--fs-small); }
+.trust { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; align-items: center; color: var(--c-muted); font-size: var(--fs-small); }

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Demo privata: non deve finire su Google -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{NOME}} — {{FRASE BREVE}}</title>
+  <meta name="description" content="{{DESCRIZIONE 140-160 CARATTERI}}">
+  <meta name="theme-color" content="#000000">
+  <link rel="preload" href="assets/css/font.css" as="style">
+  <link rel="stylesheet" href="assets/css/font.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/stile.css">
+  <link rel="stylesheet" href="assets/css/tema.css">
+</head>
+<body>
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html" aria-label="{{NOME}}, homepage">{{LOGO o .wordmark}}</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><span></span></button>
+      <nav class="nav" id="menu" aria-label="Menu principale">
+        <a href="#">{{VOCE}}</a>
+        <a href="#">{{VOCE}}</a>
+        <a href="#contatti">Contatti</a>
+        <a class="btn" href="#contatti">{{AZIONE PRINCIPALE}}</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto">
+    <!-- Sezioni: vedi "Homepage tipo" in stili/<stile>/stile.md -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>{{LOGO / NOME}}</div>
+        <div><h3>Contatti</h3><ul>{{...}}</ul></div>
+        <div><h3>Seguici</h3><ul>{{SOCIAL ATTIVI}}</ul></div>
+      </div>
+      <div class="footer-legal">
+        <span>{{RAGIONE SOCIALE}} · P.IVA {{PIVA}}</span>
+        <span>© {{ANNO}}</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Obbligatorio: la demo non deve sembrare il sito ufficiale -->
+  <div class="demo-tag" aria-hidden="true">Anteprima di proposta · non è il sito ufficiale</div>
+
+  <script src="assets/js/componenti.js" defer></script>
+</body>
+</html>

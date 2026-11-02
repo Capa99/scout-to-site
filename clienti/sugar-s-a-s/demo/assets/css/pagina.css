@@ -1,0 +1,49 @@
+/* Ritocchi specifici della demo Domo Adami (sopra allo stile atelier). */
+
+/* Copertina: il banner originale ha il ritratto a sinistra e il bianco a destra:
+   il titolo si appoggia nel bianco. Su telefono immagine sopra, testo sotto. */
+.cover { background: #fff; display: grid; }
+.cover__media { overflow: hidden; }
+.cover__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; }
+.cover__text { padding: 2.5rem var(--gutter) 3.5rem; }
+.cover__text h1 { font-size: clamp(2.6rem, 1.4rem + 4.4vw, 5.6rem); }
+.cover__text .lead { margin-top: 1.4rem; max-width: 30rem; }
+@media (min-width: 900px) {
+  .cover { grid-template-columns: 44fr 56fr; min-height: min(82vh, 720px); }
+  .cover__media { order: 2; }
+  .cover__media img { height: 100%; aspect-ratio: auto; object-position: 54% center; }
+  .cover__text { align-self: center; padding: 3rem clamp(2rem, 4vw, 4rem) 3rem max(var(--gutter), calc((100vw - var(--wrap)) / 2)); }
+}
+
+.wordmark { color: var(--c-accent); }
+.site-footer .wordmark { color: var(--c-on-dark); }
+
+/* Collezioni in homepage: le scarpe e i ninnoli hanno fondo bianco */
+.card__media--white { background: #fff; }
+.card__media--white img { object-fit: contain; padding: 10%; }
+.card__num { font-family: var(--f-display); font-style: italic; color: var(--c-accent); font-size: 1.1rem; }
+
+.quote-band { text-align: center; }
+.quote-band .quote { max-width: 52rem; margin-inline: auto; }
+.quote-band cite { display: block; margin-top: 1.6rem; font-style: normal; font-size: var(--fs-label); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--c-muted); }
+
+.events-strip { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: auto auto; gap: 6px; }
+.events-strip img { width: 100%; height: 100%; object-fit: cover; }
+.events-strip .tall { grid-row: span 2; }
+@media (max-width: 700px) { .events-strip { grid-template-columns: 1fr 1fr; } .events-strip .tall { grid-column: span 2; grid-row: auto; } }
+
+.cities { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.4rem; margin-top: 2rem; font-family: var(--f-display); font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem); font-style: italic; }
+.cities li + li::before { content: "·"; margin-right: 1.4rem; color: var(--c-accent); font-style: normal; }
+
+.footer-sugar { width: 54px; height: auto; margin-top: 1.4rem; opacity: .9; }
+
+/* Lookbook */
+.page-head { padding-block: clamp(3.5rem, 8vw, 6rem) clamp(2rem, 4vw, 3rem); }
+.page-head h1 { font-size: clamp(2.6rem, 1.6rem + 4vw, 5rem); }
+.gallery { --gallery-min: 15rem; --gallery-ratio: 3 / 4; row-gap: 2.6rem; }
+.gallery__btn--contain { background: #fff; }
+.lines { border-top: 1px solid var(--c-line); }
+.line { display: grid; gap: .6rem 3rem; padding-block: 2rem; border-bottom: 1px solid var(--c-line); }
+@media (min-width: 800px) { .line { grid-template-columns: 16rem 1fr; } }
+.line h3 { font-size: 1.7rem; }
+.line p { color: var(--c-muted); }

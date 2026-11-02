@@ -1,17 +1,20 @@
 # Lavori x soldini: pipeline siti "demo prima"
 
-Agent pronti: **1. Scout** (trova i prospect) e **2. Analista** (estrae il materiale dal
-loro sito e prepara il brief per la demo).
+Agent pronti: **1. Scout** (trova i prospect), **2. Analista** (estrae il materiale dal loro
+sito e scrive il brief) e **3. Builder** (costruisce la demo e la impacchetta per Netlify).
 
 ```
 lavori-soldini/
 ├── .claude/agents/          ← definizioni degli agent per Claude Code
 │   ├── scout.md
-│   └── analista.md
+│   ├── analista.md
+│   └── builder.md
 ├── scout/scout.py           ← trova aziende e dà un punteggio ai siti
 ├── analista/analista.py     ← estrae testi, contatti, logo, colori, immagini
+├── builder/builder.py       ← prepara, controlla, fotografa e impacchetta le demo
+├── stili/                   ← i 5 stili grafici di base (atelier, industria, trattoria, studio, bottega)
 ├── prospect/                ← CSV e report dello Scout
-├── clienti/                 ← una cartella per ogni azienda analizzata
+├── clienti/<azienda>/       ← contenuti.md, brief.md, img/, demo/, screenshot/, zip per Netlify
 ├── requirements.txt
 ├── setup.bat                ← installazione Windows
 └── setup.sh                 ← installazione macOS / Linux
@@ -47,6 +50,8 @@ Apri Claude Code nella cartella `lavori-soldini` e scrivi per esempio:
 > usa lo scout su Vigevano e Mortara, settore manifattura e carpenteria, voglio 10 prospect
 
 > usa l'analista su SUGAR s.a.s. dal CSV di Vigevano
+
+> usa il builder sulla demo di SUGAR
 
 Lo Scout produce il report `prospect/vigevano-AAAA-MM-GG.md`, con la tabella dei
 prospect e una frase d'aggancio per ogni telefonata. L'Analista produce
@@ -202,6 +207,57 @@ Le cartelle in `clienti\` invece vengono caricate, immagini comprese.
 I CSV in `prospect\` invece vengono caricati: così le note scritte in ufficio le
 ritrovi a casa.
 
+## Builder: uso manuale (senza Claude)
+
+Il Builder ha due parti: le **pagine** le scrive l'agent in Claude Code seguendo il brief e lo
+stile; lo **script** fa tutto il resto.
+
+```
+.venv\Scripts\python.exe builder\builder.py stili
+.venv\Scripts\python.exe builder\builder.py prepara clienti\sugar-s-a-s --stile atelier --colori accento=#56684f
+.venv\Scripts\python.exe builder\builder.py immagini clienti\sugar-s-a-s 07-201621-1.jpg 36-logoimg-8276-low-7.jpg
+.venv\Scripts\python.exe builder\builder.py controlla clienti\sugar-s-a-s
+.venv\Scripts\python.exe builder\builder.py anteprima clienti\sugar-s-a-s
+.venv\Scripts\python.exe builder\builder.py screenshot clienti\sugar-s-a-s
+.venv\Scripts\python.exe builder\builder.py pacchetto clienti\sugar-s-a-s
+```
+- **prepara**: crea `demo\` con lo stile, i colori del cliente (`tema.css`) e i caratteri
+  scaricati in locale (niente Google Fonts: più veloce e senza cookie). Serve internet la prima
+  volta per ogni carattere, poi restano in `.cache\`.
+- **immagini**: converte le foto scelte in WebP da 800 e 1600 px (di solito 3-10 volte più leggere).
+- **controlla**: viewport per il telefono, noindex, avviso "anteprima", alt delle immagini,
+  file mancanti, segnaposto dimenticati, peso della pagina.
+- **anteprima**: apre la demo nel browser (Ctrl+C per chiudere).
+- **screenshot**: foto della demo da desktop e da telefono in `screenshot\`, utili anche da
+  mandare al cliente su WhatsApp. È facoltativo e richiede Playwright, da installare una volta sola
+  (circa 150 MB):
+  ```
+  .venv\Scripts\pip install playwright
+  .venv\Scripts\playwright install chromium
+  ```
+- **pacchetto**: ricontrolla tutto e crea `clienti\<azienda>\demo-<azienda>-AAAAMMGG.zip`.
+
+**Pubblicare la demo:** vai su https://app.netlify.com/drop e trascina la cartella
+`clienti\<azienda>\demo`. Netlify ti dà un link: manda al cliente **solo il link**, mai i file.
+Con un account Netlify gratuito puoi rinominare il link (es. `domo-adami-demo.netlify.app`) e
+cancellare la demo quando non serve più.
+
+Ogni demo contiene sempre `noindex` (Google non la mostra) e l'etichetta "Anteprima di proposta ·
+non è il sito ufficiale": usi testi, foto e marchio del cliente, quindi non deve mai poter essere
+scambiata per il sito vero.
+
+## Stili disponibili
+| Stile | Per chi |
+|---|---|
+| **atelier** | moda, sposa, gioielli, bellezza, design, fotografi, wedding |
+| **industria** | manifattura, automazione, carpenteria, officine, impianti |
+| **trattoria** | ristoranti, agriturismi, bar, pasticcerie, B&B, cantine |
+| **studio** | commercialisti, avvocati, assicurazioni, dentisti, immobiliari |
+| **bottega** | artigiani, negozi di quartiere, parrucchieri, palestre, officine auto/moto |
+
+Le regole di ognuno sono in `stili\<stile>\stile.md`. Per cambiare il "gusto della casa" su
+tutte le demo future modifica `stili\base.css` o lo `stile.css` dello stile.
+
 ## Prossimi agent
-3. Builder (crea la demo da template di settore) · 4. Outreach (script per la
-chiamata) · 5. Assistenza (bozze di risposta e modifiche, con approvazione umana).
+4. Outreach (script per la chiamata e messaggio con il link) · 5. Assistenza (bozze di
+risposta e modifiche, con approvazione umana).

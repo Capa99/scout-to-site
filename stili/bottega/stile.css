@@ -1,0 +1,35 @@
+/* BOTTEGA: artigiani, negozi locali, palestre, parrucchieri, auto/moto, servizi alla persona. Vivace, diretto. */
+:root {
+  --c-bg: #fbfaf7;
+  --c-surface: #f0eee8;
+  --c-text: #161616;
+  --c-muted: #5f5d58;
+  --c-line: rgba(22, 22, 22, .14);
+  --c-primary: #161616;
+  --c-on-primary: #ffffff;
+  --c-accent: #2f5bff;
+  --c-dark: #161616;
+  --c-on-dark: #f6f4ef;
+
+  --f-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "DM Sans", system-ui, sans-serif;
+  --w-display: 700;
+  --w-body: 400;
+  --w-strong: 700;
+  --tracking-display: -.03em;
+  --tracking-label: .08em;
+  --lh-display: 1;
+  --radius: 18px;
+  --radius-btn: 999px;
+  --card-ratio: 4 / 3;
+  --card-pad: 1.2rem 1.3rem 1.5rem;
+  --c-card: var(--c-surface);
+}
+.btn { text-transform: none; letter-spacing: 0; font-size: 1rem; }
+.btn--accent { background: var(--c-accent); border-color: var(--c-accent); color: #fff; }
+.btn--accent:hover { background: transparent; color: var(--c-accent); }
+.highlight { background: linear-gradient(transparent 62%, color-mix(in srgb, var(--c-accent) 35%, transparent) 62%); padding-inline: .1em; }
+.pill { display: inline-block; padding: .35rem .8rem; border-radius: 999px; background: var(--c-surface); font-size: var(--fs-small); font-weight: 500; }
+.before-after { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.before-after figure { position: relative; }
+.before-after figcaption { position: absolute; left: .6rem; top: .6rem; background: var(--c-bg); border-radius: 999px; padding: .2rem .7rem; font-size: var(--fs-label); font-weight: 700; }

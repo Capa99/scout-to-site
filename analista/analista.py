@@ -170,9 +170,9 @@ def rgb(hexcol):
     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
 
-def e_neutro(hexcol):
+def e_neutro(hexcol, soglia=24):
     r, g, b = rgb(hexcol)
-    return max(r, g, b) - min(r, g, b) < 24  # bianco, nero, grigi
+    return max(r, g, b) - min(r, g, b) < soglia  # bianco, nero, grigi
 
 
 # ---------------------------------------------------------------- pagine
@@ -315,7 +315,7 @@ def palette_immagine(percorso, n=5):
         with Image.open(percorso) as im:
             im = im.convert("RGBA")
             im.thumbnail((200, 200))
-            dati = im.get_flattened_data() if hasattr(im, "get_flattened_data") else im.getdata()
+            dati = im.get_flattened_data() if hasattr(im, "get_flattened_data") else list(im.getdata())
             pixel = [p[:3] for p in dati if p[3] > 128]
             if not pixel:
                 return []
@@ -327,7 +327,8 @@ def palette_immagine(percorso, n=5):
             colori = []
             for cnt, idx in conteggi:
                 c = "#%02x%02x%02x" % tuple(pal[idx * 3: idx * 3 + 3])
-                if not e_neutro(c) and c not in colori:
+                vicino = any(sum(abs(x - y) for x, y in zip(rgb(c), rgb(k))) < 30 for k in colori)
+                if not e_neutro(c, soglia=12) and not vicino:  # nei loghi anche i toni spenti contano
                     colori.append(c)
             return colori[:n]
     except Exception:

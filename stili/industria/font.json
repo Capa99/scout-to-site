@@ -1,0 +1,20 @@
+[
+  {
+    "famiglia": "IBM Plex Sans",
+    "pacchetto": "ibm-plex-sans",
+    "pesi": [
+      400,
+      500,
+      600,
+      700
+    ]
+  },
+  {
+    "famiglia": "IBM Plex Mono",
+    "pacchetto": "ibm-plex-mono",
+    "pesi": [
+      400,
+      500
+    ]
+  }
+]

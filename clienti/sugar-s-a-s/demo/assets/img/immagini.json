@@ -1,0 +1,218 @@
+{
+  "classy": {
+    "larghezza": 1680,
+    "altezza": 700,
+    "file": {
+      "800": "classy-800.webp",
+      "1600": "classy-1600.webp"
+    },
+    "origine": "03-classy.jpg"
+  },
+  "minimal": {
+    "larghezza": 1680,
+    "altezza": 700,
+    "file": {
+      "800": "minimal-800.webp",
+      "1600": "minimal-1600.webp"
+    },
+    "origine": "13-minimal.jpg"
+  },
+  "harmony": {
+    "larghezza": 1680,
+    "altezza": 700,
+    "file": {
+      "800": "harmony-800.webp",
+      "1600": "harmony-1600.webp"
+    },
+    "origine": "21-harmony.jpg"
+  },
+  "creative": {
+    "larghezza": 1680,
+    "altezza": 700,
+    "file": {
+      "800": "creative-800.webp",
+      "1600": "creative-1600.webp"
+    },
+    "origine": "29-creative.jpg"
+  },
+  "201621-1": {
+    "larghezza": 533,
+    "altezza": 800,
+    "file": {
+      "533": "201621-1-533.webp"
+    },
+    "origine": "07-201621-1.jpg"
+  },
+  "201623-f-1": {
+    "larghezza": 800,
+    "altezza": 533,
+    "file": {
+      "800": "201623-f-1-800.webp"
+    },
+    "origine": "32-201623-f-1.jpg"
+  },
+  "gerli-0094-copia-3": {
+    "larghezza": 512,
+    "altezza": 768,
+    "file": {
+      "512": "gerli-0094-copia-3-512.webp"
+    },
+    "origine": "34-gerli-0094-copia-3.jpg"
+  },
+  "logoimg-8276-low-7": {
+    "larghezza": 3744,
+    "altezza": 5616,
+    "file": {
+      "800": "logoimg-8276-low-7-800.webp",
+      "1600": "logoimg-8276-low-7-1600.webp"
+    },
+    "origine": "36-logoimg-8276-low-7.jpg"
+  },
+  "1-img-2537-rit-7": {
+    "larghezza": 324,
+    "altezza": 533,
+    "file": {
+      "324": "1-img-2537-rit-7-324.webp"
+    },
+    "origine": "11-1-img-2537-rit-7.jpg"
+  },
+  "img-3484-rit-7": {
+    "larghezza": 363,
+    "altezza": 534,
+    "file": {
+      "363": "img-3484-rit-7-363.webp"
+    },
+    "origine": "19-img-3484-rit-7.jpg"
+  },
+  "10-img-3495-rit-7": {
+    "larghezza": 391,
+    "altezza": 534,
+    "file": {
+      "391": "10-img-3495-rit-7-391.webp"
+    },
+    "origine": "27-10-img-3495-rit-7.jpg"
+  },
+  "daria-8": {
+    "larghezza": 400,
+    "altezza": 330,
+    "file": {
+      "400": "daria-8-400.webp"
+    },
+    "origine": "12-daria-8.jpg"
+  },
+  "carmen-nude-mesh-and-lace-8": {
+    "larghezza": 400,
+    "altezza": 330,
+    "file": {
+      "400": "carmen-nude-mesh-and-lace-8-400.webp"
+    },
+    "origine": "20-carmen-nude-mesh-and-lace-8.jpg"
+  },
+  "veronica-ivory-lace-8": {
+    "larghezza": 400,
+    "altezza": 300,
+    "file": {
+      "400": "veronica-ivory-lace-8-400.webp"
+    },
+    "origine": "28-veronica-ivory-lace-8.jpg"
+  },
+  "giada-8": {
+    "larghezza": 400,
+    "altezza": 330,
+    "file": {
+      "400": "giada-8-400.webp"
+    },
+    "origine": "37-giada-8.jpg"
+  },
+  "fiorfiore-4": {
+    "larghezza": 371,
+    "altezza": 555,
+    "file": {
+      "371": "fiorfiore-4-371.webp"
+    },
+    "origine": "10-fiorfiore-4.jpg"
+  },
+  "pochette-shima-4": {
+    "larghezza": 371,
+    "altezza": 555,
+    "file": {
+      "371": "pochette-shima-4-371.webp"
+    },
+    "origine": "18-pochette-shima-4.jpg"
+  },
+  "chiffon-4": {
+    "larghezza": 371,
+    "altezza": 555,
+    "file": {
+      "371": "chiffon-4-371.webp"
+    },
+    "origine": "26-chiffon-4.jpg"
+  },
+  "ninnolisacchettino-4-4": {
+    "larghezza": 800,
+    "altezza": 676,
+    "file": {
+      "800": "ninnolisacchettino-4-4-800.webp"
+    },
+    "origine": "35-ninnolisacchettino-4-4.jpg"
+  },
+  "gerli-0136-copia-copia-3": {
+    "larghezza": 1024,
+    "altezza": 683,
+    "file": {
+      "800": "gerli-0136-copia-copia-3-800.webp",
+      "1024": "gerli-0136-copia-copia-3-1024.webp"
+    },
+    "origine": "09-gerli-0136-copia-copia-3.jpg"
+  },
+  "gerli-2284-3": {
+    "larghezza": 1024,
+    "altezza": 683,
+    "file": {
+      "800": "gerli-2284-3-800.webp",
+      "1024": "gerli-2284-3-1024.webp"
+    },
+    "origine": "17-gerli-2284-3.jpg"
+  },
+  "gerli-2415-3": {
+    "larghezza": 1024,
+    "altezza": 683,
+    "file": {
+      "800": "gerli-2415-3-800.webp",
+      "1024": "gerli-2415-3-1024.webp"
+    },
+    "origine": "25-gerli-2415-3.jpg"
+  },
+  "1303domo0017-2": {
+    "larghezza": 800,
+    "altezza": 533,
+    "file": {
+      "800": "1303domo0017-2-800.webp"
+    },
+    "origine": "33-1303domo0017-2.jpg"
+  },
+  "sugar": {
+    "larghezza": 260,
+    "altezza": 328,
+    "file": {
+      "260": "sugar-260.webp"
+    },
+    "origine": "39-sugar.jpg"
+  },
+  "chisiamo": {
+    "larghezza": 260,
+    "altezza": 328,
+    "file": {
+      "260": "chisiamo-260.webp"
+    },
+    "origine": "05-chisiamo.jpg"
+  },
+  "logo-sugar-logo": {
+    "larghezza": 150,
+    "altezza": 179,
+    "file": {
+      "150": "logo-sugar-logo-150.webp"
+    },
+    "origine": "logo-02-sugar-logo.jpg"
+  }
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "famiglia": "Source Serif 4",
+    "pacchetto": "source-serif-4",
+    "pesi": [
+      500,
+      600
+    ]
+  },
+  {
+    "famiglia": "Manrope",
+    "pacchetto": "manrope",
+    "pesi": [
+      400,
+      500,
+      700
+    ]
+  }
+]

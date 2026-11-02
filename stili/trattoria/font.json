@@ -1,0 +1,22 @@
+[
+  {
+    "famiglia": "Fraunces",
+    "pacchetto": "fraunces",
+    "pesi": [
+      400,
+      600
+    ],
+    "corsivo": [
+      400
+    ]
+  },
+  {
+    "famiglia": "Work Sans",
+    "pacchetto": "work-sans",
+    "pesi": [
+      400,
+      500,
+      600
+    ]
+  }
+]

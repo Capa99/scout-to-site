@@ -1,0 +1,42 @@
+/* ATELIER: moda, sposa, gioielli, bellezza, design d'interni. Editoriale, lusso discreto. */
+:root {
+  --c-bg: #faf7f2;
+  --c-surface: #f1ebe2;
+  --c-text: #1d1d1b;
+  --c-muted: #7a736a;
+  --c-line: rgba(29, 29, 27, .14);
+  --c-primary: #1d1d1b;
+  --c-on-primary: #faf7f2;
+  --c-accent: #9c7c56;
+  --c-dark: #1d1d1b;
+  --c-on-dark: #f3eee6;
+
+  --f-display: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+  --f-body: "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  --w-display: 500;
+  --w-body: 300;
+  --w-strong: 500;
+  --tracking-display: -.005em;
+  --tracking-label: .24em;
+  --fs-base: 1.0625rem;
+  --fs-h1: clamp(2.8rem, 1.6rem + 5vw, 6.2rem);
+  --fs-h2: clamp(2.1rem, 1.5rem + 2.4vw, 3.6rem);
+  --lh-display: 1.02;
+  --radius: 0px;
+  --radius-btn: 0px;
+  --section: clamp(5rem, 11vw, 10rem);
+  --header-h: 84px;
+  --card-ratio: 3 / 4;
+  --card-pad: 1.4rem 0 0;
+}
+h1 em, h2 em, .h1 em, .h2 em { font-style: italic; font-weight: 400; }
+.eyebrow { font-weight: 400; }
+.lead { font-weight: 300; color: var(--c-muted); }
+.btn { font-weight: 400; }
+.card__body h3 { font-size: 1.6rem; }
+.card__body p { color: var(--c-muted); font-size: var(--fs-small); }
+.rule { width: 3.5rem; height: 1px; background: var(--c-accent); border: 0; margin: 2rem 0; }
+.section__head--center .rule { margin-inline: auto; }
+.wordmark { font-family: var(--f-body); font-weight: 300; letter-spacing: .32em; text-transform: uppercase; font-size: 1.3rem; }
+.wordmark small { display: block; margin-top: .45rem; font-size: .52rem; letter-spacing: .34em; opacity: .75; }
+.quote { font-family: var(--f-display); font-style: italic; font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.6rem); line-height: 1.25; }

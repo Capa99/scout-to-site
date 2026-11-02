@@ -1,0 +1,24 @@
+[
+  {
+    "famiglia": "Cormorant Garamond",
+    "pacchetto": "cormorant-garamond",
+    "pesi": [
+      400,
+      500,
+      600
+    ],
+    "corsivo": [
+      400,
+      500
+    ]
+  },
+  {
+    "famiglia": "Jost",
+    "pacchetto": "jost",
+    "pesi": [
+      300,
+      400,
+      500
+    ]
+  }
+]

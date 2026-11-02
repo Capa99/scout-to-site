@@ -1,0 +1,19 @@
+[
+  {
+    "famiglia": "Space Grotesk",
+    "pacchetto": "space-grotesk",
+    "pesi": [
+      500,
+      700
+    ]
+  },
+  {
+    "famiglia": "DM Sans",
+    "pacchetto": "dm-sans",
+    "pesi": [
+      400,
+      500,
+      700
+    ]
+  }
+]
