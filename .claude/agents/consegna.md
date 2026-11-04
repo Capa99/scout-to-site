@@ -76,7 +76,10 @@ o contatto di chi lo gestisce, se usano email @dominio. Salva quello che arriva 
 1. Le modifiche concordate si fanno **sulla demo** (`clienti/<x>/demo/`) con le regole dell'agent Builder
    e i suoi controlli (`builder.py controlla`, `screenshot`). Massimo 2 giri come da accordo; oltre,
    avvisa l'utente che si esce dal pacchetto.
-2. `produzione --dominio ...`: toglie avviso e noindex, aggiunge canonical, privacy, 404, robots, sitemap.
+2. `produzione --dominio ...`: toglie avviso e noindex, aggiunge canonical, privacy, 404, robots, sitemap
+   e, se la demo non ce l'ha, la favicon (monogramma con le iniziali di `nome_commerciale`). Se il
+   cliente ha un simbolo nel logo adatto a un quadratino, meglio rifarla dalla demo con
+   `builder.py favicon clienti/<x> --da <immagine>` e rilanciare `produzione --forza` (solo prima della messa online).
    Deve finire con 0 errori. Se il sito ha un modulo di contatto, la privacy contiene un
    `[DA COMPLETARE]`: chiedi all'utente dove arrivano i messaggi e completalo.
 3. Anteprima locale: `python -m http.server 8000 -d ../siti-clienti/sito-<x>` e fai controllare
@@ -92,6 +95,9 @@ o contatto di chi lo gestisce, se usano email @dominio. Salva quello che arriva 
 2. Su Netlify: Domain management → Add a domain. Guida l'utente nel pannello del registrar del cliente
    (Aruba, Register.it, ecc.): cambiare solo il record A del dominio e il CNAME del www con i valori che
    mostra Netlify. Se il pannello è del cliente, prepara per lui istruzioni chiare in un'email da approvare.
+   Leggi con attenzione gli avvisi `!` dello script: record A sul www da cancellare prima del CNAME,
+   SPF con `a` (chiedere al vecchio fornitore prima del cambio), posta e DNS dallo stesso fornitore
+   (il cliente non deve disdire dominio e posta). Riportali all'utente con parole semplici.
 3. Dopo il cambio: `dns ... --salva` di nuovo. MX/TXT/NS devono essere identici alla prima foto: se lo
    script segnala ✗, fermati e fai ripristinare i valori.
 4. Aspetta che Netlify attivi l'HTTPS. Controllo: `https://dominio` e `https://www.dominio` aprono il

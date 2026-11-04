@@ -274,6 +274,8 @@ stile; lo **script** fa tutto il resto.
   .venv\Scripts\pip install playwright
   .venv\Scripts\playwright install chromium
   ```
+- **favicon**: crea l'icona della scheda del browser (monogramma con le iniziali del cliente nel
+  colore d'accento, oppure `--da logo.png`) e la collega a tutte le pagine.
 - **pacchetto**: ricontrolla tutto e crea `clienti\<azienda>\demo-<azienda>-AAAAMMGG.zip`.
 
 **Pubblicare la demo:** vai su https://app.netlify.com/drop e trascina la cartella

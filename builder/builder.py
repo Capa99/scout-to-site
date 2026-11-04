@@ -9,6 +9,7 @@ Comandi (dalla cartella principale del progetto):
   python builder/builder.py prepara clienti/sugar-s-a-s --stile atelier --colori accento=#485745
   python builder/builder.py immagini clienti/sugar-s-a-s 07-201621-1.jpg 36-logoimg-8276-low-7.jpg
   python builder/builder.py controlla clienti/sugar-s-a-s
+  python builder/builder.py favicon clienti/sugar-s-a-s [--lettere DA] [--da logo.png]
   python builder/builder.py anteprima clienti/sugar-s-a-s
   python builder/builder.py screenshot clienti/sugar-s-a-s      (facoltativo, serve Playwright)
   python builder/builder.py pacchetto clienti/sugar-s-a-s
@@ -31,6 +32,7 @@ import tarfile
 import threading
 import webbrowser
 import zipfile
+from html import escape as html_escape
 from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
 
@@ -224,6 +226,114 @@ def tag_img(nome, info, alt="DESCRIZIONE", sizes="100vw"):
             f'width="{grande}" height="{h}" alt="{alt}" loading="lazy" decoding="async">')
 
 
+# ---------------------------------------------------------------- favicon
+
+FONT_CANDIDATI = ["georgia.ttf", "Georgia.ttf", "DejaVuSerif.ttf", "times.ttf", "arial.ttf", "DejaVuSans.ttf",
+                  "C:/Windows/Fonts/georgia.ttf", "C:/Windows/Fonts/arial.ttf",
+                  "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf", "/Library/Fonts/Georgia.ttf"]
+LINK_FAVICON = ('  <link rel="icon" href="favicon.ico" sizes="any">\n'
+                '  <link rel="icon" href="favicon.svg" type="image/svg+xml">\n'
+                '  <link rel="apple-touch-icon" href="apple-touch-icon.png">\n')
+
+
+def colore_tema(cartella, nome, predefinito):
+    for f in ("tema.css", "stile.css"):
+        p = os.path.join(cartella, "assets", "css", f)
+        if os.path.exists(p):
+            m = re.search(rf"--{nome}:\s*(#[0-9a-fA-F]{{3,8}})", open(p, encoding="utf-8").read())
+            if m:
+                return m.group(1)
+    return predefinito
+
+
+def iniziali_da_sito(cartella):
+    p = os.path.join(cartella, "index.html")
+    if os.path.exists(p):
+        m = re.search(r'<a class="brand[^"]*"[^>]*>([^<]+)', open(p, encoding="utf-8").read())
+        if m:
+            parole = [w for w in re.findall(r"[A-Za-zÀ-ÿ0-9]+", m.group(1)) if len(w) > 1 or w.isdigit()]
+            return "".join(w[0] for w in parole[:2]).upper() or "?"
+    return "?"
+
+
+def _font(dim):
+    from PIL import ImageFont
+    for f in FONT_CANDIDATI:
+        try:
+            return ImageFont.truetype(f, dim)
+        except OSError:
+            continue
+    try:
+        return ImageFont.load_default(size=dim)
+    except TypeError:
+        return ImageFont.load_default()
+
+
+def _monogramma(lettere, sfondo, testo, lato, arrotonda=True):
+    from PIL import ImageDraw
+    im = Image.new("RGBA", (lato, lato), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle((0, 0, lato - 1, lato - 1), radius=int(lato * 0.18) if arrotonda else 0, fill=sfondo)
+    font = _font(int(lato * (0.56 if len(lettere) == 1 else 0.44)))
+    x0, y0, x1, y1 = d.textbbox((0, 0), lettere, font=font)
+    d.text(((lato - (x1 - x0)) / 2 - x0, (lato - (y1 - y0)) / 2 - y0), lettere, font=font, fill=testo)
+    return im
+
+
+def collega_favicon(cartella):
+    """Aggiunge i link della favicon nell'<head> di tutte le pagine che non li hanno."""
+    n = 0
+    for pg in sorted(f for f in os.listdir(cartella) if f.endswith(".html")):
+        p = os.path.join(cartella, pg)
+        html_ = open(p, encoding="utf-8").read()
+        if 'rel="icon"' in html_:
+            continue
+        nuovo = re.sub(r"(<title>.*?</title>\s*\n)", lambda m: m.group(1) + LINK_FAVICON, html_, count=1, flags=re.S)
+        if nuovo == html_:
+            nuovo = html_.replace("</head>", LINK_FAVICON + "</head>", 1)
+        with open(p, "w", encoding="utf-8", newline="\n") as f:
+            f.write(nuovo)
+        n += 1
+    return n
+
+
+def crea_favicon(cartella, lettere=None, sorgente=None, sfondo=None, testo=None):
+    """Crea favicon.ico, favicon.svg e apple-touch-icon.png in `cartella` (demo o sito definitivo)."""
+    sfondo = sfondo or colore_tema(cartella, "c-accent", colore_tema(cartella, "c-primary", "#1d1d1b"))
+    testo = testo or "#ffffff"
+    lettere = (lettere or iniziali_da_sito(cartella))[:2]
+    if sorgente:
+        im = ImageOps.fit(ImageOps.exif_transpose(Image.open(sorgente)).convert("RGBA"), (512, 512))
+        grande = im
+    else:
+        grande = _monogramma(lettere, sfondo, testo, 512)
+    apple = grande.resize((180, 180), Image.LANCZOS) if sorgente else _monogramma(lettere, sfondo, testo, 180, False)
+    apple.save(os.path.join(cartella, "apple-touch-icon.png"))  # iOS arrotonda da solo gli angoli
+    grande.save(os.path.join(cartella, "favicon.ico"), sizes=[(16, 16), (32, 32), (48, 48)])
+    svg = os.path.join(cartella, "favicon.svg")
+    if sorgente:
+        if os.path.exists(svg):
+            os.remove(svg)
+    else:
+        dim = 36 if len(lettere) == 1 else 28
+        with open(svg, "w", encoding="utf-8") as f:
+            f.write(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
+                    f'<rect width="64" height="64" rx="12" fill="{sfondo}"/>'
+                    f'<text x="32" y="33" text-anchor="middle" dominant-baseline="central" '
+                    f'font-family="Georgia, \'Times New Roman\', serif" font-size="{dim}" fill="{testo}">'
+                    f'{html_escape(lettere)}</text></svg>\n')
+    collegate = collega_favicon(cartella)
+    if sorgente:  # niente svg: togli il link che punterebbe a un file mancante
+        for pg in (f for f in os.listdir(cartella) if f.endswith(".html")):
+            p = os.path.join(cartella, pg)
+            t = open(p, encoding="utf-8").read().replace('  <link rel="icon" href="favicon.svg" type="image/svg+xml">\n', "")
+            with open(p, "w", encoding="utf-8", newline="\n") as f:
+                f.write(t)
+    print(f"Favicon creata ({'da ' + os.path.basename(sorgente) if sorgente else 'monogramma ' + lettere + ' ' + sfondo})"
+          f": favicon.ico, apple-touch-icon.png{'' if sorgente else ', favicon.svg'}"
+          f" · link aggiunti in {collegate} pagine")
+
+
 # ---------------------------------------------------------------- controlla
 
 class Analizzatore(HTMLParser):
@@ -315,6 +425,8 @@ def controlla(cliente):
         for css in ("assets/css/base.css", "assets/css/stile.css", "assets/css/tema.css", "assets/css/font.css"):
             if css not in html:
                 w(f"non collega {css}")
+        if 'rel="icon"' not in html:
+            w("manca la favicon (icona della scheda): builder.py favicon <cliente>")
         if not re.search(r'href="tel:', html) and pg == "index.html":
             w("nessun numero di telefono cliccabile (tel:)")
         if peso > 2.5 * 1024 * 1024:
@@ -445,6 +557,11 @@ def main():
     for nome, aiuto in (("controlla", "Controlla la demo"), ("screenshot", "Foto della demo, desktop e mobile"),
                         ("pacchetto", "Controlla e crea lo zip per Netlify")):
         sub.add_parser(nome, help=aiuto).add_argument("cliente")
+    s = sub.add_parser("favicon", help="Crea l'icona della scheda (monogramma o da un'immagine)")
+    s.add_argument("cliente")
+    s.add_argument("--lettere", help="1-2 lettere del monogramma (default: iniziali del nome nel menu)")
+    s.add_argument("--da", help="Immagine quadrata da usare al posto del monogramma (es. il simbolo del logo)")
+    s.add_argument("--colore", help="Colore di sfondo (default: accento del tema)")
     s = sub.add_parser("anteprima", help="Apre la demo nel browser")
     s.add_argument("cliente")
     s.add_argument("--porta", type=int, default=8000)
@@ -469,6 +586,8 @@ def main():
         immagini(cliente, a.file, a.tutte)
     elif a.cmd == "controlla":
         sys.exit(0 if controlla(cliente) else 1)
+    elif a.cmd == "favicon":
+        crea_favicon(cartella_demo(cliente), a.lettere, a.da, a.colore)
     elif a.cmd == "anteprima":
         anteprima(cliente, a.porta)
     elif a.cmd == "screenshot":

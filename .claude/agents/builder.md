@@ -31,7 +31,9 @@ in una demo di **homepage + una pagina interna** che il titolare guardi e pensi:
    indicata nel brief. Usa le classi di `stili/base.css` e dello stile scelto; per i ritocchi
    specifici di quel cliente crea `demo/assets/css/pagina.css`. Non modificare i file in `stili/`
    per un singolo cliente.
-6. **Controlla**: `builder.py controlla clienti/<azienda>` e correggi **tutti gli errori**.
+6. **Favicon**: `builder.py favicon clienti/<azienda>` (monogramma con le iniziali nel colore d'accento).
+   Se il logo ha un simbolo leggibile anche piccolissimo, usa `--da <immagine quadrata>`.
+6b. **Controlla**: `builder.py controlla clienti/<azienda>` e correggi **tutti gli errori**.
    Gli avvisi vanno corretti se possibile.
 7. **Guarda il risultato**: `builder.py screenshot clienti/<azienda>` (serve Playwright, vedi README)
    e apri con Read gli screenshot desktop e mobile. Controlla in particolare che su mobile nulla sbordi

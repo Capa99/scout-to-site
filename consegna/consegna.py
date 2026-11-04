@@ -72,6 +72,11 @@ def numero(testo):
     return float(s or 0)
 
 
+def dominio_nudo(dominio):
+    d = re.sub(r"^https?://", "", dominio or "").strip("/")
+    return d[4:] if d.startswith("www.") else d
+
+
 def cartella_cliente(percorso):
     p = os.path.abspath(percorso)
     if not os.path.isdir(p):
@@ -239,12 +244,11 @@ def accordo(cliente):
     acconto = round(prezzo * perc / 100, 2)
     ha_piva = bool(io.get("partita_iva"))
     if ha_piva:
-        hosting = ("Canone: 15 € al mese per hosting, rinnovo del dominio, certificato HTTPS "
-                   "e backup. Le modifiche non sono incluse nel canone.")
+        hosting = ("Canone: 15 € al mese per hosting, certificato HTTPS e backup. "
+                   "Le modifiche non sono incluse nel canone.")
         fiscale = "Importi soggetti al regime fiscale indicato in fattura."
     else:
-        hosting = ("Nessun canone. Il dominio è registrato e pagato direttamente da voi presso il vostro "
-                   "fornitore. Il sito è ospitato su Netlify, piano gratuito, senza costi per voi. "
+        hosting = ("Il sito sarà ospitato su Netlify con il piano gratuito: nessun canone e nessun costo per voi. "
                    "Se in futuro servirà un servizio di gestione continuativa, ve lo proporrò a parte.")
         fiscale = ("Prestazione di lavoro autonomo occasionale, fuori campo IVA (art. 5 DPR 633/1972)."
                    + (" Essendo sostituto d'imposta, trattenete la ritenuta d'acconto del 20% e la versate "
@@ -261,6 +265,9 @@ def accordo(cliente):
         "hosting": hosting, "fiscale": fiscale,
         "nome_commerciale": c.get("nome_commerciale") or c.get("ragione_sociale", ""),
         "saluto": f"Buongiorno {c['referente']}" if c.get("referente") else "Buongiorno",
+        "dominio_nudo": dominio_nudo(c.get("dominio", "")),
+        "posta": (" La vostra posta elettronica resta dov'è: non va toccata né disdetta."
+                  if c.get("email_sul_dominio", "").lower().startswith("s") else ""),
     }
     dest = os.path.join(cartella_consegna(cliente), f"accordo-{oggi().isoformat()}.md")
     if os.path.exists(dest):
@@ -404,6 +411,12 @@ def riepilogo():
 
 # ---------------------------------------------------------------- produzione
 
+def carica_builder():
+    sys.path.insert(0, os.path.join(RADICE, "builder"))
+    import builder  # type: ignore
+    return builder
+
+
 def dest_sito(cliente, dest=None):
     return os.path.abspath(dest) if dest else os.path.join(SITI_CLIENTI, f"sito-{slug(cliente)}")
 
@@ -478,6 +491,13 @@ def produzione(cliente, dominio, dest=None, forza=False):
 
     pagine = sorted(f for f in os.listdir(out) if f.endswith(".html"))
     usa_mappa = usa_form = False
+    builder = carica_builder()
+    if not os.path.exists(os.path.join(out, "favicon.ico")):
+        nome_brand = c.get("nome_commerciale") or ""
+        iniziali = "".join(w[0] for w in re.findall(r"[A-Za-zÀ-ÿ0-9]{2,}", nome_brand)[:2]).upper() or None
+        builder.crea_favicon(out, iniziali)
+    else:
+        builder.collega_favicon(out)
     for pg in pagine:
         p = os.path.join(out, pg)
         t = open(p, encoding="utf-8").read()
@@ -545,6 +565,8 @@ def verifica(cliente, dest=None):
             e("c'è ancora il noindex: Google non lo indicizzerebbe")
         if "demo-tag" in t or "Anteprima di proposta" in t:
             e("c'è ancora l'avviso di anteprima")
+        if 'rel="icon"' not in t:
+            w("manca la favicon")
         if pg != "404.html" and 'rel="canonical"' not in t:
             w("manca il link canonical")
         if pg not in ("privacy.html",) and "privacy.html" not in t:
@@ -685,6 +707,22 @@ def dns(dominio, cliente=None):
         print(f"      record A   di {nudo}  →  {NETLIFY_IP}")
         print(f"      record CNAME di {www} →  <nome-progetto>.netlify.app")
         print("    (oppure segui esattamente quello che ti indica Netlify in Domain management).")
+    if risultati[f"A {www}"] and not risultati[f"CNAME {www}"] and "netlify" not in cname:
+        print(f"  ! {www} oggi ha un record A (non un CNAME): nel pannello va prima CANCELLATO il record A del www,")
+        print("    poi creato il CNAME verso Netlify. Molti pannelli non accettano A e CNAME sullo stesso nome.")
+    spf = [v for v in risultati[f"TXT {nudo}"] if v.lower().startswith("v=spf1")]
+    if spf and re.search(r"(^|\s)[+]?a(\s|$|:|/)", spf[0]):
+        print("  ! L'SPF contiene 'a': oggi l'IP del sito può spedire email per il dominio. Dopo il cambio non")
+        print("    potrà più. Se il vecchio sito o il server mandavano email (moduli, notifiche, gestionale),")
+        print("    chiedi al fornitore attuale se va aggiunto il suo IP all'SPF PRIMA di cambiare il record A.")
+    def radice(h):
+        return ".".join(h.rstrip(".").split(".")[-2:]).lower()
+    mx_host = [m.split()[-1] for m in risultati[f"MX {nudo}"]]
+    ns_host = risultati[f"NS {nudo}"]
+    fornitori = {radice(h) for h in mx_host} & {radice(h) for h in ns_host}
+    if fornitori:
+        print(f"  ! Posta e DNS sono dallo stesso fornitore ({', '.join(sorted(fornitori))}): quando il cliente")
+        print("    disdice il vecchio hosting deve tenere attivi dominio e posta. Fallo verificare col fornitore.")
     mx = risultati[f"MX {nudo}"]
     if mx:
         print(f"  ! Il dominio riceve posta ({', '.join(mx)}): NON toccare i record MX né i TXT (SPF, DKIM).")
@@ -720,6 +758,7 @@ def documento(cliente, dest=None):
         "data": oggi().strftime("%d/%m/%Y"),
         "nome_commerciale": c.get("nome_commerciale") or c["ragione_sociale"],
         "saluto": f"Buongiorno {c['referente']}" if c.get("referente") else "Buongiorno",
+        "dominio_nudo": dominio_nudo(c.get("dominio", "")),
         "prestatore_nome": io.get("nome", "Federico Manetta"), "prestatore_email": io.get("email", ""),
         "prestatore_telefono": io.get("telefono", ""),
         "elenco_pagine": "\n".join(f"- https://{c.get('dominio', '')}/{'' if p == 'index.html' else p}"
