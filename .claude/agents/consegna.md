@@ -107,12 +107,17 @@ o contatto di chi lo gestisce, se usano email @dominio. Salva quello che arriva 
 
 ### 6. Chiusura
 1. Il cliente approva il sito online → `ricevuta --tipo saldo` → email da approvare → `incassato`.
-2. Google Search Console: guida l'utente ad aggiungere la proprietà (verifica tramite record TXT o file
+2. Statistiche: **Google Search Console sempre** (inclusa nel prezzo). Statistiche delle visite solo
+   se il cliente le ha comprate (voce del listino): Cloudflare Web Analytics, account a nome del
+   cliente, e aggiungi alla privacy un paragrafo "Statistiche" che dica che si usano statistiche
+   anonime senza cookie. **Mai Google Analytics né altri strumenti con cookie**: servirebbe il banner
+   del consenso e la privacy non sarebbe più vera.
+3. Google Search Console: guida l'utente ad aggiungere la proprietà (verifica tramite record TXT o file
    HTML caricato nel repo) e a inviare `sitemap.xml`. Se serve il record TXT, è il cliente o l'utente ad
    aggiungerlo, senza toccare gli altri.
-3. `documento` → mostra → approvazione → `gmail`.
-4. Rendi privata o elimina la vecchia demo su Netlify (non serve più ed è una copia del sito).
-5. Spunta tutto nella checklist e scrivi in fondo una riga di riepilogo (data online, importi, note).
+4. `documento` → mostra → approvazione → `gmail`.
+5. Rendi privata o elimina la vecchia demo su Netlify (non serve più ed è una copia del sito).
+6. Spunta tutto nella checklist e scrivi in fondo una riga di riepilogo (data online, importi, note).
 
 ## Cosa non fare mai
 - Mandare o promettere qualcosa al cliente senza l'ok dell'utente.
