@@ -1,0 +1,36 @@
+/* Pagina personale di Federico Manetta */
+.wordmark { font-family: var(--f-display); font-weight: 600; font-size: 1.3rem; color: var(--c-primary); }
+.wordmark small { display: block; font-family: var(--f-body); font-size: .7rem; font-weight: 500; color: var(--c-muted); margin-top: .2rem; letter-spacing: .02em; }
+.hero--me .hero__content { padding-block: clamp(3.5rem, 9vw, 7rem); }
+.hero--me h1 { max-width: 17ch; }
+.hero--me .lead { max-width: 38rem; }
+.hero__grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 900px) { .hero__grid { grid-template-columns: 1.4fr 1fr; } }
+.badge-me { display: grid; place-items: center; aspect-ratio: 1; max-width: 300px; width: 100%; margin-inline: auto;
+  border-radius: 50%; background: var(--c-primary); color: #fff; font-family: var(--f-display); font-size: clamp(4rem, 10vw, 6.5rem); letter-spacing: -.02em; position: relative; }
+.badge-me span { position: absolute; bottom: 14%; font-family: var(--f-body); font-size: .85rem; letter-spacing: .08em; opacity: .85; }
+.steps { counter-reset: s; display: grid; gap: 1.25rem; }
+@media (min-width: 800px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step { background: var(--c-bg); border: 1px solid var(--c-line); border-radius: 14px; padding: 1.5rem; }
+.step::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--c-accent); color: #fff; font-weight: 700; margin-bottom: 1rem; }
+.step h3 { font-size: 1.15rem; margin-bottom: .4rem; }
+.step p { color: var(--c-muted); font-size: var(--fs-small); }
+.check { list-style: none; padding: 0; display: grid; gap: .9rem; }
+@media (min-width: 800px) { .check { grid-template-columns: 1fr 1fr; gap: 1rem 2.5rem; } }
+.check li { padding-left: 2rem; position: relative; }
+.check li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: color-mix(in srgb, var(--c-accent) 15%, white); color: var(--c-accent); font-weight: 700; display: grid; place-items: center; font-size: .8rem; }
+.check strong { display: block; }
+.check span { color: var(--c-muted); font-size: var(--fs-small); }
+.faq-list { display: grid; gap: .75rem; max-width: 46rem; }
+.faq-list details { background: var(--c-bg); border: 1px solid var(--c-line); border-radius: 12px; padding: 1rem 1.25rem; }
+.faq-list summary { cursor: pointer; font-weight: 700; }
+.faq-list details p { margin-top: .75rem; color: var(--c-muted); }
+.contact-cards { display: grid; gap: 1rem; }
+@media (min-width: 800px) { .contact-cards { grid-template-columns: repeat(3, 1fr); } }
+.contact-card { display: block; text-decoration: none; background: var(--c-bg); border: 1px solid var(--c-line); border-radius: 14px; padding: 1.5rem; transition: border-color .2s; }
+.contact-card:hover { border-color: var(--c-accent); }
+.contact-card small { display: block; color: var(--c-muted); font-size: var(--fs-small); margin-bottom: .3rem; }
+.contact-card strong { font-size: 1.1rem; word-break: break-word; }
+@media (max-width: 899px) { .badge-me { display: none; } }
+.site-footer { padding-block: 2rem; }
+.site-footer .footer-legal { margin-top: 0; }

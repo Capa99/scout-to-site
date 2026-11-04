@@ -40,7 +40,11 @@ Leggi sempre `outreach/listino.md`, `outreach/regole-contatto.md`, `outreach/ris
 3. Scrivi `bozze/AAAA-MM-GG-primo-contatto.md` rispettando `regole-contatto.md`: una sola azienda,
    massimo 120 parole, chi sei e dove hai trovato l'indirizzo, **due problemi reali del loro sito**
    (dal brief/Scout, detti con garbo), il link alla demo, la proposta di "dieci minuti" e la frase
-   per non essere ricontattati. Firma: Federico Manetta e il suo telefono personale.
+   per non essere ricontattati. Firma (sempre uguale, in fondo a ogni email):
+   ```
+   Federico Manetta
+   333 274 8938 · federico-manetta.netlify.app
+   ```
 4. Approvazione → `gmail` → l'utente invia → `registra ... --stato email_inviata --canale email`.
 
 ## Sollecito

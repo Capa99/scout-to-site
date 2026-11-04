@@ -15,4 +15,4 @@ Se vi interessa basta una risposta e vi chiamo io. Se non vi interessa scrivetem
 
 Cordiali saluti,
 Federico Manetta
-333 274 8938
+333 274 8938 · federico-manetta.netlify.app
