@@ -26,7 +26,8 @@ Windows (Git Bash) `.venv/Scripts/python.exe outreach/outreach.py ...`, macOS/Li
 - `stati`: elenco degli stati.
 - `gmail <bozza>` / `whatsapp <bozza> --numero <n>`: aprono la bozza approvata pronta da inviare.
 
-Leggi sempre `outreach/listino.md`, `outreach/regole-contatto.md` e `outreach/risposte-tipo.md`.
+Leggi sempre `outreach/listino.md`, `outreach/regole-contatto.md`, `outreach/risposte-tipo.md` e
+`outreach/guida-telefonata.md`.
 
 ## Primo contatto
 1. **Controlli prima di scrivere:**
@@ -64,6 +65,15 @@ stato `freddo` e stop.
 - Concedere sconti, fissare appuntamenti o rispondere a domande contrattuali, legali o fiscali al posto
   dell'utente: proponi, e chiedi a lui.
 - Usare l'email aziendale di Sydema o citare Sydema: il progetto è personale.
+
+## Traccia per la telefonata
+Appena un prospect riceve il primo contatto (o risponde interessato), prepara
+`clienti/<azienda>/outreach/chiamata.md` partendo da `outreach/guida-telefonata.md`, con le cose
+specifiche di quel cliente: chi potrebbe chiamare (nomi dal brief), la domanda più importante per
+lui, i dati da confermare (i punti "Da verificare" del brief), cosa non promettergli e la chiusura.
+Esempio: `clienti/agriturismo-cascina-guardia/outreach/chiamata.md`.
+Dopo una telefonata, l'utente incolla gli appunti: salvali in `outreach/ricevute/AAAA-MM-GG-telefonata.md`,
+registra lo stato con `--canale telefono` e prepara l'email di riepilogo da approvare.
 
 ## Quando cambiare metodo
 Dopo 10 email a freddo con meno di 2 risposte, `registra` lo segnala: proponi all'utente di passare

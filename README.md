@@ -299,6 +299,9 @@ tuo ok; poi apre Gmail con l'email già compilata e **sei tu a premere Invia**.
   **Attenzione:** per il Garante privacy l'email commerciale non richiesta è illecita anche verso
   le aziende; le regole servono a tenere il rischio basso, non lo azzerano.
 - `outreach\risposte-tipo.md`: basi per le risposte più comuni (prezzo, "abbiamo già qualcuno"…).
+- `outreach\guida-telefonata.md`: come comportarsi quando un prospect chiama: cosa chiedere,
+  cosa dire sul prezzo, cosa non promettere, come chiudere. Per ogni cliente l'agent prepara anche
+  `clienti\<azienda>\outreach\chiamata.md` con le domande specifiche.
 - `prospect\contattati.csv`: il registro di tutti i contatti, con stato e data del prossimo
   richiamo. Lo Scout lo usa per non riproporti aziende già sentite.
 - `clienti\<azienda>\outreach\`: bozze, risposte ricevute e storico (`registro.md`).
