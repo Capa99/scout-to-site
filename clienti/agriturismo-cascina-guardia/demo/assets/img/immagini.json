@@ -1,0 +1,163 @@
+{
+  "slide1": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide1-800.webp",
+      "1024": "slide1-1024.webp"
+    },
+    "origine": "05-slide1.jpg"
+  },
+  "slide7": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide7-800.webp",
+      "1024": "slide7-1024.webp"
+    },
+    "origine": "06-slide7.jpg"
+  },
+  "slide-cucina": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide-cucina-800.webp",
+      "1024": "slide-cucina-1024.webp"
+    },
+    "origine": "04-slide-cucina.jpg"
+  },
+  "slide6": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide6-800.webp",
+      "1024": "slide6-1024.webp"
+    },
+    "origine": "18-slide6.jpg"
+  },
+  "slide-prodotti": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide-prodotti-800.webp",
+      "1024": "slide-prodotti-1024.webp"
+    },
+    "origine": "02-slide-prodotti.jpg"
+  },
+  "slide4": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide4-800.webp",
+      "1024": "slide4-1024.webp"
+    },
+    "origine": "14-slide4.jpg"
+  },
+  "ristorante-cascina-guardia": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "ristorante-cascina-guardia-800.webp",
+      "1024": "ristorante-cascina-guardia-1024.webp"
+    },
+    "origine": "03-ristorante-cascina-guardia.jpg"
+  },
+  "slide-matrimoni": {
+    "larghezza": 1240,
+    "altezza": 400,
+    "file": {
+      "800": "slide-matrimoni-800.webp",
+      "1240": "slide-matrimoni-1240.webp"
+    },
+    "origine": "07-slide-matrimoni.jpg"
+  },
+  "slide8": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide8-800.webp",
+      "1024": "slide8-1024.webp"
+    },
+    "origine": "10-slide8.jpg"
+  },
+  "slide9": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide9-800.webp",
+      "1024": "slide9-1024.webp"
+    },
+    "origine": "13-slide9.jpg"
+  },
+  "slide11": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide11-800.webp",
+      "1024": "slide11-1024.webp"
+    },
+    "origine": "15-slide11.jpg"
+  },
+  "slide12": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide12-800.webp",
+      "1024": "slide12-1024.webp"
+    },
+    "origine": "17-slide12.jpg"
+  },
+  "slide15": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide15-800.webp",
+      "1024": "slide15-1024.webp"
+    },
+    "origine": "22-slide15.jpg"
+  },
+  "slide17": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide17-800.webp",
+      "1024": "slide17-1024.webp"
+    },
+    "origine": "24-slide17.jpg"
+  },
+  "slide10": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide10-800.webp",
+      "1024": "slide10-1024.webp"
+    },
+    "origine": "25-slide10.jpg"
+  },
+  "slide16": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide16-800.webp",
+      "1024": "slide16-1024.webp"
+    },
+    "origine": "23-slide16.jpg"
+  },
+  "slide3": {
+    "larghezza": 1024,
+    "altezza": 400,
+    "file": {
+      "800": "slide3-800.webp",
+      "1024": "slide3-1024.webp"
+    },
+    "origine": "12-slide3.jpg"
+  },
+  "stephane5": {
+    "larghezza": 720,
+    "altezza": 960,
+    "file": {
+      "720": "stephane5-720.webp"
+    },
+    "origine": "20-stephane5.jpg"
+  }
+}

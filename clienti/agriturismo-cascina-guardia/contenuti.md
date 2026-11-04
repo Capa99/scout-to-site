@@ -1,0 +1,655 @@
+# Agriturismo Cascina Guardia
+
+Sito analizzato: http://www.agriturismocascinaguardia.it/  
+Data: 2026-11-04
+
+**Dallo Scout:** punteggio 75, priorità ALTA  
+Problemi del sito: Certificato HTTPS non valido | Non pensato per cellulare (manca il viewport) | Copyright fermo al 2017 | Tag HTML obsoleti: font
+
+## Contatti
+
+- **Email:** info@agriturismocascinaguardia.it, emmagold@me.com
+- **Telefoni:** +39 3482921234, +39 3397834937
+- **P.IVA:** 02133910188
+- **Indirizzo:** Strada Cascina Guardia 78 – 27029 Vigevano (PV)
+- **Social:** http://www.facebook.com/cascinaguardia
+
+## Colori
+
+- **Dal sito:** #0695a6 #a8cfa5 #ff7302 #ffa902 #800080 #edb211
+- **Dal logo:** — non ricavati
+- **Neutri usati:** #ffffff #333333 #000000
+
+## Logo
+
+- `img/logo-01-logo-cascina-guardia-2015.png` (8 KB, 250×70px)
+
+## Menu e testi ripetuti (intestazione/footer)
+
+- - Partita IVA 02133910188 // design by
+- 1 ottobre 2026
+- 12 ottobre 2026
+- 14 ottobre 2026
+- 15 ottobre 2026
+- 200
+- 22 ottobre 2026
+- 29 ottobre 2026
+- Agriturismo Cascina Guardia • 25 Dicembre •
+- Antipasti:
+- Az. Agroturistica Cascina Guardia di Goldin Roberto
+- Azienda agricola
+- Benvenuti a Cascina Guardia
+- CERIMONIE 2027
+- Cena di San Silvestro – Capodanno 2026
+- Cerchi un piano originale e magico per la festa
+- Chiusura settimanale
+- Contatti
+- Cucina
+- Eventi
+- E’ gradita la prenotazione
+- Feste Pomeridiane Gruppi & Compleanni Bambini 2026 / 2027
+- Festeggia l'arrivo del nuovo anno immerso nell'atmosfer
+- Festeggia l'arrivo del nuovo anno immerso nell'atmosfera calda e accogliente dell'Agriturismo Cascina Guardia.
+- Formula “Ape-Nature”: Visita & Aperitivo Rinforzato
+- Gli Antipasti
+- I nostri eventi
+- Il Cr
+- Il viaggio completo nella no
+- Il viaggio completo nella nostra tradizione culinaria
+- LUNEDI':
+- Le attività con i nostri animali Domenica 1 Novembre
+- MENU' CERIMONIE 2027
+- MENU' FISSO DEGUSTAZIONE
+- Matrimoni 2024
+- Menù Degustazione
+- Menù Fisso Degustazione Novembre
+- Menù • Gourmet • Adulti
+- Orari di apertura
+- Parco
+
+## Pagine
+
+### Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/  
+Sorgente: `sorgente/00-home.html`
+
+29
+Oct
+share
+MENU’ FISSO DEGUSTAZIONE
+Il Crostone di pane rustico con paté morbido di fegatini e funghi trifolati
+La tradizione incontra l’Orto: Tagliere di salumi nostrani d’eccellenza accompagnati da sfiziosità di verdure in agrodolce e crostini della casa.
+I Primi
+Risotto al radicchio rosso e taleggio, con riduzione di vino
+Mezze maniche d’autunno con zucca, crema di broccoli e luganega
+Il Secondo
+Bocconcini di manzo fondenti su vellutata di polenta al cucchiaio
+Il Dolce :
+Dolci artigianali della casa a scelta
+€ 40,00 a persona
+( bevande, caffè e amari esclusi )
+Vuoi un percorso più leggero? Scegli tu come comporlo!
+Al costo di
+€ 30,00
+a persona il menù comprende:
+L’Antipasto (Salumi nostrani con verdure; opzione Veg il nostro Flan di verdure di stagione )
+IL PRIMO
+• A scelta tra
+due opzioni
+del giorno (Mezze maniche o Risotto )
+IL SECONDO
+• A scelta tra
+due opzioni
+del giorno ( Bocconcini o Arrosto di coppa di maiale )
+Acqua e Calice di vino inclusi ( dolce escluso )
+Menù alla Carta
+Per chi preferisce comporre il proprio percorso culinario,
+venerdì e sabato pranzo e cena ( no domenica e festivi )
+I piatti alla carta variano settimanalmente pr garantirvi sempre la massima freschezza.
+Aperto a cena il venerdì, il sabato e la domenica. Per gruppi sopra le 12 persone è richiesta la scelta di un menù concordato.
+Menù Piccoli Ospiti
+Dedicato ai bambini fino a 10 anni
+Il Piatto Unico
+• Pasta corta al pomodoro (o in bianco ) + Polpettine artigianali con crema di patate + Dolce della casa
+€ 25 a bambino
+Cosa include la quota
+: La tariffa dei bambini è un pacchetto completo che non copre soltanto il menù alimentare. La quota include interamente
+l’ingresso all’Oasi
+, la
+fruibilità di tutte le nostre aree attrezzate
+, e il servizio di
+animazione dedicato all’interno del nosto Mini Club
+Note importanti per gli ospiti
+No conti separati
+: Per garantire più fluidità del servizio e non creare code alla cassa, comunichiamo che non è possibile effettuare conti separati. Invitiamo cortesemente i signori ospiti a organizzarsi preventivamente per un unico pagamento del tavolo.
+Amici a quattro zampe
+: I cani di piccola e media taglia sono i benvenuti! Per rispetto e la sicurezza di tutti, è consentito un massimo di 1 cane per tavolo. L’animale deve essere tassativamente abituato a stare in mezzo nad altre persone / animali e a non disturbare i commensali.
+Esigenze alimentari
+: Menù dedicati a celiaci, vegetariani, vegani o per intolleranze alimentari specifiche, vengono affrontati con cura, esclusivamente se comunicati tempestivamente al momento della prenotazione.
+Torte esterne e bevande:
+E’ possibile introdurre torte di pasticceria esterne ( provviste di certificazione d’acquisto) con un supplemento di € 1,50 a porzione, per il servizio e lo sprorzionamento. Non è consentito introdurre altre bevande dall’esterno.
+Posted:
+Emma
+Categories:
+Ristorazione
+22
+Oct
+Cena di San Silvestro - Capodanno 2026
+share
+Festeggia l’arrivo del nuovo anno immerso nell’atmosfera calda e accogliente dell’
+Agriturismo Cascina Guardia.
+Per la serata del
+31 dicembre
+, vi proponiamo un evento all’insegna della tradizione, del relax e della buona cucina, dedicato a chi desidera trascorrere gli ultimi momenti dell’anno chiacchierando a tavola in totale tranquillità,
+senza musica e frastuono
+Il Programma della Serata
+Ore 20:30
+: Accoglienza degli ospiti e inizio della Cena
+Ore 24:00
+: Brindisi di Capodanno per dare il benvenuto al nuovo anno.
+Il Nostro Menù Speciale di Terra, nel dettaglio
+L’Antipasto del Fattore
+• Selezione di salumi artigianali della Cascina accompagnati da gnocco fritto
+• Flan di zucca con fonduta di Parmigiano Reggiano e amaretto sbricciolato
+• Crostone di pane rustico con funghi porcini trifolati
+I Primi Piatti
+• Risotto al Castelmagno DOP e nocciole tostate con riduzione al Nebbiolo
+• Agnolotti del Plin ripieni al cinghiale al sugo d’arrosto ristretto e timo
+I Secondi Piatti
+• Filetto di manzo in crosta di sfoglia con funghi e patate novelle al forno
+• La Tradizione: Cotechino artigianale della Cascina con lenticchie portafortuna della mezzanotte
+Il Dolce
+• Pandoro e panettone artigianali accompagnati da crema al mascarpone e gocce di cioccolato
+Quota di partecipazione:
+€ 75,00
+Bevande incluse
+: Acqua minerale, selezione di vini rossi e bianchi della casa (1 bottiglia per 3 pax), caffè e lo spumante per il brindisi di mezzanotte.
+Pacchetto Baby ( fino a 10 anni): € 35,00
+a bambino
+. Il pacchetto include un menù interamente dedicato a loro e l’
+animazione inclusa per tutta la serata presso il Mini Club della Cascina
+, dove i più piccoli potranno divertirsi in sicurezza mentre i genitori si godono la cena in relax.
+Nota importante
+: La serata è focalizzata sul cibo e sulla convivialità; non sarà presente musica dal vivo o animazione musicale.
+La prenotazione è obbligatoria
+Per riservare il tuo tavolo o richiedere informazioni, chiamaci al numero 348 29 21 234 o scrivici su whatsapp o passa a trovarci direttamente in struttura.
+Posted:
+Emma
+Categories:
+Capodanno
+15
+Oct
+Pranzo di Santo Natale - 25 dicembre 2026
+share
+Menù • Gourmet •
+Adulti
+Prezzo: € 75,00 a persona (Bevande Incluse)
+Tris di Antipasti
+Tortino caldo di sfoglia
+con cuore di funghi finferli trifolati e vellutata di Taleggio DOP.
+Mosaico di salumi della tradizione
+con il pregiato Salame di Varzi DOP, giardiniera di verdure
+dell’orto in agrodolce e gnocco fritto caldo.
+Millefoglie di polenta taragna
+con ragù bianco di salsiccia tipica e stracciatella fresca.
+Bis di Primi
+Ravioli di stufato alla pavese
+fatti in casa, saltati al burro chiarificato al timo e riduzione al vino rosso.
+Risotto Carnaroli Pavese
+alla crema di zucca, zola e granella di nocciole tostate.
+Secondo e Contorno
+Reale di vitello
+cotto a bassa temperatura, sfumato al Pinot Nero dell’Oltrepò Pavese con il suo fondo di cottura profumato al rosmarino.
+In abbinamento: Patate novelle al forno agli aromi e caponatina tiepida di verdure invernali.
+Dolce
+Morbida crema al mascarpone artigianale
+con scaglie di cioccolato fondente su letto di Panettone artigianale leggermente tostato.
+Bevande Incluse
+Selezione di Vini DOC dell’Oltrepò Pavese della Cantina Manuelina (Rosso e Bianco)
+Acqua minerale naturale e frizzante, Caffè e digestivo artigianale della casa.
+Menù Bambini & Animazione
+Prezzo: € 35,00 a bambino (Dai 3 ai 12 anni)
+Include l’accesso all’area giochi coperta con servizio di animazione, truccabimbi e
+babydance durante il pranzo.
+Antipasto:
+Prosciutto cotto di alta qualità e bastoncini di polenta dorati.
+Primo Piatto:
+Lasagnetta classica alla bolognese
+oppure
+Pennette al pomodoro fresco.
+Secondo Piatto:
+Cotoletta di pollo artigianale con patatine fritte dorate.
+Dolce:
+Gelato al fiordilatte con cascata di smarties e mini pandoro.
+Bevande:
+Acqua e bibite analcoliche incluse.
+Note e Condizioni di Prenotazione
+Caparra Confirmatoria:
+Richiesta caparra di € 25,00 a persona entro il 5 dicembre per confermare la prenotazione del tavolo.
+Cancellazioni:
+Rimborso totale della caparra o emissione di un voucher per disdette comunicate entro il 15 dicembre.
+Allergeni e Varianti:
+Vi preghiamo gentilmente di segnalare eventuali allergie, intolleranze o la necessità di varianti vegetariane al momento della prenotazione.
+Posted:
+Emma
+Categories:
+Natale ...
+15
+Oct
+share
+Cerchi un piano originale e magico per la festa più brividosa dell’anno???
+Domenica 1* Novembre
+i nostri animali si trasformano… e aspettano solo Voi!!!
+Vieni a conoscere i nostri speciali amici in costume:
+Max
+Il porcellino d’India Stregone.
+Daisy,
+capretta Diavoletto
+Mato
+, il cavallo Frankenstein
+Erba & Fiore
+, i Cincillà Fantasma… e non perdetevi l’affettuosissimo
+Pappagallino Lory
+Dettagli dell’evento
+: Domenica 1* Novembre
+Dress Code
+: Tutti i bambini
+DOVRANNO essere vestiti mostruosamente
+per poter incontrare i nostri animali!
+PRENOTAZIONE OBBLIGATORIA
+I posti sono limitati, assicuratevi il vostro turno di puro divertimento!
+Prenota ora chiamando o inviando un messaggio al : 328 910 36 17
+Posted:
+Emma
+Categories:
+HALLOWEEN
+14
+Oct
+share
+Regala ai tuoi bambini un pomeriggio indimenticabile all’aria aperta in totale spensieratezza. Organizziamo la tua festa nei giorni di
+giovedì, venerdì, sabato e domenica
+, all’interno delle nostre aree esterne (disponibili da aprile a ottobre)
+Giorni disponibili:
+da giovedì a domenica
+Orario
+: dalle 15:30 alle 18:30
+Partecipanti:
+Minimo 25 invitati (adulti e bambini)
+Il Pacchetto All-Inclusive
+€ 25 a persona ( i bambini fino a 3 anni sono nostri ospiti )
+Cosa include il servizio:
+Ingresso Oasi
+: Accesso alle aree dedicate
+Area Giochi Attrezzata
+: Divertimento assicurato con campo da calcetto e ping-pong
+Logistica e Relax
+: Punti di appoggio e organizzazione sedute per tutti gli ospiti.
+Il Buffet:
+Pizza Margheritta e focacce
+Taglieri di salumi e formaggi
+Panini al latte farciti
+Patatine e popcorn
+Gelato artigianale oppure dolce oppure la
+Torta di Compleanno
+inclusa.
+Area Gazebo & Beverage:
+Corner drink con acqua minerale e succhi di frutta
+Incluso nel prezzo:
+1 bibita, 1 bira da 33 cc oppure 1 calice di vino (tramite buono drink consegnato all’arrivo)
+Personalizza la tua Torta!
+Chantilly classica con gocce di cioccolato o farcitura e guarnizione con frutta
+Pan di Spagna con crema pasticcera e frutta
+Crostata di frutta o di confetture artigianali di nostra produzione
+Torta al cioccolato cremosa.
+Servizi Extra (Su richiesta)
+Rendi la tua festa ancora più speciale con i nostri servizi aggiuntivi:
+Torte Personalizzate
+: Realizzazione di torte a tema per la tua ricorrenza (+ € 5,00 a persona)
+Allestimento Compleanno Base
+: Festoni e arco palloncini e addobbi a soli € 90,00. (Nota: per allestimenti complessi o a tema specifico, il costo verrà rielaborato in base alle richieste).
+Animazione
+: Intrattenimento e giochi con animatrici dedicate a € 20,00 all’ora per singola animatrice (minimo 2 ore )
+Laboratori Creativi
+: Allestimento laboratori ricreativi a € 10,00 a parteciante (minimo 10 bambini)
+Informazioni Utili & Condizioni
+Prenotazione e Caparra
+: Al momento della conferma è richiesto il versamento di una caparra di € 10,00 a partecipante.
+Meteo
+: In caso di maltempo, la festa non viene annullata ma posticipata a una nuova data.
+Conferma Ospiti
+: Il numero preciso dei partecipanti va comunicato tassativamente entro 7 giorni di anticipo rispetto alla data dell’evento.
+Regolamento Food & Drink:
+Per ragioni di sicurezza e igiene, non è consentito introdurre dall’esterno bevande o dolci prodotti in casa.
+Posted:
+Emma
+Categories:
+Eventi e feste con musica
+12
+Oct
+share
+MENU’ CERIMONIE 2027
+Gran tagliere di salumi nostrani DOP, flan di verdure di stagione con fonduta leggera e sfiziosità calde dello Chef
+Primi Piatti:
+Risotto alla crema di zucca, salsa al Padano e riduzione di vino rosso
+Agnolotti al brasato, al burro chiarificato e salvia.
+Secondo piatto:
+Stracotto di manzo, crema di con cipolle dolci e vellutata di patate
+Bevande incluse
+: Acque minerali naturali e gassate, selezione di Vino Bianco e Rosso della nostra cantina ( 1 bottiglia ogni 3 ospiti ), calice di Prosecco o Moscato per il brindisi, caffè.
+La Pasticceria
+Torte classiche incluse, scelta tra:
+Chantilly
+: Pan di Spagna, crema chantilly, frutta e frutti di bosco, decorazioni con frutta o cioccolato
+Crostata
+: Frolla, crema pasticcera, frutta fresca.
+Speciali
+: realizzata dalla nostra Pastry Chef, su vostra richiesta e gusto del cliente ( disponibili con supplemento, a partire da € 5, a persona )
+Quota di adesione 2027
+- Adulti € 60,00 –
+Prezzo tutto incluso (menù, bevande e servizi )
+- Bambini ( 3-10 anni): € 38,00
+- Menù dedicato ( Risotto giallo o pennette al pomodoro, cotoletta di pollo panata con patatine, bibita e servizi inclusi
+- Bambini (0 / 2 anni) alla carta:
+Alla Carta.
+Servizi esclusivi Inclusi nel Prezzo
+Per offrire un’esperinza completa e senza pensieri, la quota di adesione comprende l’accesso a tutta l’infrastruttura della strutura:
+- Ingresso all’Oasi naturalistica
+per tutti gli ospiti della cerimonia.
+- Accesso alle Aree Giochi
+esterne attrezzate e recintate per i più piccoli.
+- Servizio di Intrattenimento
+con Animatori
+presso il nostro
+Miniclub
+( attivo dalle 13:30 alle 16:30 )
+Note e Condizioni di Prenotazione
+- Caparra Confirmatoria:
+Per la conferma definitiva della prenotazione della data, è richiesto il versamento di una
+caparra confirmatoria pari al 30%
+dell’importo totale stimato dell’evento.
+- Numero Ospiti:
+La comunicazione dl numero definitivo degli ospiti deve pervenire tassativamente
+nei 7 giorni antecedenti
+l’evento. Tale numero definirà l’importo finale a saldo.
+- Esigenze Alimentari:
+Variazioni per persone con intolleranze, o regimi alimentari vegetariani / vegani sono disponibili previa comunicazione e incluse nella quota:
+- Gruppi infrasettimanali:
+Per gruppi con almeno 12 ospiti adulti, il menù Cerimonia può essere servito, su richiesta, anche nei giorni feriali della settimana.
+Posted:
+Emma
+Categories:
+Cerimonie
+Ristorazione
+01
+Oct
+Formula "Ape-Nature": Visita & Aperitivo Rinforzato
+share
+Una giornata speciale all’Agriturimo Cascina Guardia
+Nuovi Orari e una formula tutta da gustare.
+L’ingresso per la visita in agriturismo cambia veste: al posto della classica merenda, ti aspettiamo per un
+Aperitivo in mezzo alla natura
+Quando?
+Tutti i sabati e le domeniche, dalle 10:00 alle 14:00.
+Dalle ore 10.00
+– Visita agli animali: Un’esperienza unica per i più piccoli ( e non solo!) per conoscere da vicino i nostri animali.
+Natura & Relax
+: Accesso libero all’oasi, alle aree gioco esterne attrezzate e alla nostra area ristoro presso il Gazebo.
+Il nostro Aperitivo Rinforzato:
+Per gli adulti: Un calice di Prosecco, un cocktail o una fresca birra artigianale, accompagnati da un ricco tagliere di salumi, olive, taralli, bruschetta, pizza
+Per i bambini: Focaccina farcita, bibita e un dolce o gelato!
+Tariffe d’ingresso
+Adulti
+: € 16,00
+Bambini
+( fino a 11 anni ): € 12,00
+Prenota la tua visita, contattaci subito:
+Telefono / WhatsApp:
+348 29 21 234
+Seguici sui nostri canali social per rimanere semre aggiornato!
+Facebook : Agriturismo Cascina Guardia Instagram : cascina_guardia
+Posted:
+Emma
+Categories:
+Eventi e feste con musica
+
+### L’Azienda agricola | Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/azienda/  
+Sorgente: `sorgente/01-azienda.html`
+
+L'Azienda agricola
+Nel cuore della Lomellina, a pochi passi dal Parco Ticino , l’
+Agriturismo Cascina Guardia
+è un’oasi naturale inaspettata.
+Nasce nel
+1988
+come allevamento di fagiani e successivamente viene convertito all’allevamento di struzzi africani Black Neck.
+Il 15 novembre
+1999
+viene inaugurato l’agriturismo, locale dall’atmosfera curata e confortevole, che impronta la sua linea su una cucina creativa ma legata alla tradizione del territorio, proponendo sapori della cucina lombarda e oltre in un ambiente piacevole.
+Dal 2006, l’attività dell’azienda agricola è stata integrata con l’allevamento di bovini, suini, avicoli e selvaggina.
+Dal
+2009
+è stato destinato un ettaro di terreno per la coltivazione di piccoli frutti, ortaggi, erbe officinali e fiori.
+L’utilizzo dei più moderni strumenti di coltivazione ed irrigazione permette di limitare al minimo l’impatto ambientale.
+Fedeli al concetto di “
+cibi a chilometro zero
+“, coltiviamo esclusivamente prodotti (verdure e frutta) stagionali propri del nostro territorio.
+Info e contatti 3482921234
+
+### I nostri prodotti | Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/prodotti/  
+Sorgente: `sorgente/02-prodotti.html`
+
+I nostri prodotti
+I menù che proponiamo si basano essenzialmente su prodotti provenienti dalla nostra azienda agricola e da altre aziende agricole con le quali collaboriamo, questo per garantire materie prime di alta qualità e per proporre una cucina a km zero, seguendo il criterio della stagionalità.
+Produzione propria di:
+– Carni avicole
+– Selvaggina
+– Verdure e ortaggi trasformati
+– Piccoli frutti freschi e confetture
+– Insaccati
+
+### Contatti | Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/contatti/  
+Sorgente: `sorgente/03-contatti.html`
+
+Agriturismo Cascina Guardia
+Strada Cascine Barbavara
+27029 Vigevano (PV)
+Mobile 3482921234 – 3397834937
+INDICAZIONI STRADALI
+DA MILANO:
+Arrivati a Vigevano superare il ponte sul Fiume Ticino.
+Svoltare a destra alla rotatoria in direzione “Novara” e proseguire in direzione “Mortara”.
+Proseguire fino al rondò in prossimità del Supermercato “
+Carrefour
+“.
+DA PAVIA:
+Al rondò all’ingresso di Vigevano (PORTMOKA) svoltare a destra per Milano
+Alla rotatoria prima del ponte sul Fiume Ticino, svoltare a destra alla rotatoria in direzione “Novara” e proseguire in direzione “Mortara”.
+DA VIGEVANO CENTRO:
+Dal parcheggio di Piazza Ducale (Piazza Sant’Ambrogio), imboccare via Decembrio e svoltare a sinistra in Via De Amicis (Posta Centrale).
+Proseguire fino al semaforo e procedere in Corso Cavour.
+Al secondo semaforo, svoltare a destra in Corso Novara e procedere fino al successivo semaforo.
+Procedere in direzione Novara; alla rotatoria del supermercato CARREFOUR
+Per qualsiasi
+informazione
+, contattaci ai seguenti recapiti, oppure inviateci una
+e-mail
+compilando l’apposito
+form
+ATTENZIONE:
+Le
+prenotazioni
+possono essere effettuate esclusivamente
+contattandoci TELEFONICAMENTE AL NUMERO 3482921234
+
+### Il ristorante | Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/ristorante/  
+Sorgente: `sorgente/04-ristorante.html`
+
+Il ristorante
+In un’atmosfera accogliente si gustano i piatti della tradizione culinaria italiana proposti con prodotti prevalentemente di provenienza aziendale o di altre aziende agricole del territorio.
+Gli antipasti composti da salumi di nostra produzione e verdure di stagione, dove la qualità degli ingredienti è garantita.
+Tra i primi piatti primeggia il riso, preparato in maniera davvero speciale come per il risotto con toma d’alpeggio, porri e salsa di vino rosso o il risotto con mirtilli e funghi porcini.
+Le paste e i dolci sono realizzati in casa, e i prodotti dell’azienda agricola arrivano direttamente in cucina.
+Il tutto accompagnato da vini dell’Oltrepò Pavese.
+
+### Le attività con i nostri animali Domenica 1 Novembre | Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/le-attivita-con-i-nostri-animali/  
+Sorgente: `sorgente/05-le-attivita-con-i-nostri-animali.html`
+
+15
+Oct
+2026
+Cerchi un piano originale e magico per la festa più brividosa dell’anno???
+Domenica 1* Novembre
+i nostri animali si trasformano… e aspettano solo Voi!!!
+Vieni a conoscere i nostri speciali amici in costume:
+Max
+Il porcellino d’India Stregone.
+Daisy,
+capretta Diavoletto
+Mato
+, il cavallo Frankenstein
+Erba & Fiore
+, i Cincillà Fantasma… e non perdetevi l’affettuosissimo
+Pappagallino Lory
+Dettagli dell’evento
+: Domenica 1* Novembre
+Dress Code
+: Tutti i bambini
+DOVRANNO essere vestiti mostruosamente
+per poter incontrare i nostri animali!
+PRENOTAZIONE OBBLIGATORIA
+I posti sono limitati, assicuratevi il vostro turno di puro divertimento!
+Prenota ora chiamando o inviando un messaggio al : 328 910 36 17
+Posted:
+Emma
+Categories:
+HALLOWEEN
+Previous
+Next
+Comments are closed.
+
+### La nostra cucina | Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/cucina/  
+Sorgente: `sorgente/06-cucina.html`
+
+La nostra cucina
+I piatti proposti nei nostri menù, sono elaborati con materie prime di provenienza aziendale e come tale seguono i criteri di disponibilità produttiva e stagionalità.
+L’azienda agricola produce carni bovine, suine e avicole provenienti da animali che alleviamo in modo naturale, nutrendoli con cereali e fieno.
+Produciamo salumi, ortaggi e verdure, che serviamo negli antipasti; frutta e frutti di bosco che utilizziamo nella preparazione di confetture e dei dolci, che prepariamo in casa.
+Assaporate il tutto con attenzione, cercando di riscoprire sapori genuini, che difficilmente si possono cogliere quotidianamente.
+
+### Benvenuti a Cascina Guardia | Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/home/  
+Sorgente: `sorgente/07-home.html`
+
+Un’oasi naturale nel cuore della Lomellina
+A pochi passi dal suggestivo Parco del Ticino, l’Agriturismo Cascina Guardia è il luogo ideale dove riscoprire il contatto con la natura, la tranquillità e i sapori autentici di una volta.
+continua
+15 novembre 1999
+Nata come un ambizioso progetto rurale, la nostra struttura si è evoluta nel tempo per diventare un punto di riferimento per chi ama la buona cucina e la sostenibilità ambientale. Dal 1999 accogliamo i nostri ospiti in un’atmosfera curata, accogliente e familiare, perfetta per staccare dalla routine quotidiana.
+continua
+FILOSOFIA A CHILOMETRO ZERO
+Crediamo fermamente nel rispetto della terra e dei suoi cicli naturali. Per questo motivo, dedichiamo un intero ettaro della nostra azienda alla coltivazione protetta di:
+- Frutta e ortaggi di stagionE
+- Erbe officinali
+- Piccoli frutti
+Portiamo in tavola solo ciò che la terra offre spontaneamente: una scelta trasparente che sposa la filosofia del chilometro zero.
+continua
+LA NOSTRA CUCINA
+La nostra proposta gastronomica unisce l’amore per la tradizione culinaria lombarda e un pizzico di creatività moderna. Ogni piatto è pensato per valorizzare le eccelenze del territorio, offrendo sapori genuini che raccontano la storia della nostra terra in un ambiente piacevole e rilassante.
+continua
+CONTATTI & PRENOTAZIONI
+Vieni a trovarci per vivere un’esperienza culinaria immersa nel verde
+Info e Prenotazioni: 348 29 21 234
+CHIUSO LUNEDI’ E MARTEDI’
+La stuttura è aperta per informazioi e appuntamenti contattando il numero 348 29 21 234.
+MERCOLEDI’, GIOVEDI’ E VENERDI’
+Aperto a pranzo solo su prenotazione per gruppi di minimo 12 persone
+SABATO, DOMENICA E FESTIVI
+Aperto a pranzo dalle 12:45
+Agriturismo Cascina Guardia
+| Strada Cascina Guardia 78 – 27029 Vigevano (PV) | Per info e prenotazioni:
+Mobile 3482921234 – 3397834937
+www.cascinaguardia.it
+
+### I nostri animali | Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/parco/  
+Sorgente: `sorgente/08-parco.html`
+
+I nostri animali
+All’interno di
+Cascina Guardia
+è presente un’area riservata ai nostri animali
+
+### Matrimoni 2024 | Agriturismo CASCINA GUARDIA
+
+URL: http://www.agriturismocascinaguardia.it/matrimoni/  
+Sorgente: `sorgente/09-matrimoni.html`
+
+Scegli l’oasi naturale di Cascina Guardia
+Stai cercando un’idea originale per il tuo matrimonio? Cascina Guardia ti offre un parco immerso nel verde che ospita decine di specie animali, nel cuore della Lombardia.
+Allestimenti a tema per matrimoni in agriturismo
+Agriturismo Cascina Guardia progetta cerimonie con menù e allestimenti a tema per soddisfare completamente i desideri degli sposi, in una location originale e non convenzionale, a contatto con la natura.
+Menù personalizzabili per banchetti nuziali
+Proponiamo menù per matrimoni personalizzabili in ogni dettaglio a partire da € 75,00; selezioniamo materie prime provenienti dalla nostra azienda agricola e altri ingredienti di alta qualità.
+Cake design per dar vita alla tua torta
+Il pezzo forte del banchetto nuziale è sicuramente la torta: grazie ai nostri cake designer offriamo torte nuziali personalizzate, dal design moderno e ricercato oppure più in linea con la tradizione.
+Intrattenimento matrimonio: divertimento per piccini
+L’Agriturismo Cascina Guardia dispone di una struttura limitrofa al ristorante dedicata all’intrattenimento per bambini: mini club e animazione per divertire i bambini durante il ricevimento.
+L’intero agriturismo per il tuo matrimonio
+Ti offriamo la possibilità di riservare l’intera Cascina per vivere il giorno più bello della tua vita con le persone amate, mettendo a disposizione tutti gli spazi dell’agriturismo.
+Scopri l’Agriturismo Cascina Guardia
+L’Agriturismo Cascina Guardia, a Vigevano, è un’oasi faunistica immersa nel verde della Lomellina, a pochi passi dal Parco del Ticino. Ospitiamo banchetti per matrimoni, rinfreschi per cerimonie, pranzi e cene a menù guidato per comitive e grandi gruppi.
+Scegli una location originale per il tuo matrimonio…
+Servizi a partire da € 75 / pax.
+CHIEDI UN PREVENTIVO GRATUITO
+info@agriturismocascinaguardia.it
+emmagold@me.com
+
+## Immagini
+
+| File | Dimensioni | Alt | Pagina |
+|---|---|---|---|
+| `img/logo-01-logo-cascina-guardia-2015.png` | 250×70 | logo | / |
+| `img/02-slide-prodotti.jpg` | 1024×400 |  | /prodotti/ |
+| `img/03-ristorante-cascina-guardia.jpg` | 1024×400 |  | /ristorante/ |
+| `img/04-slide-cucina.jpg` | 1024×400 |  | /cucina/ |
+| `img/05-slide1.jpg` | 1024×400 | slide1 | /home/ |
+| `img/06-slide7.jpg` | 1024×400 | slide7 | /parco/ |
+| `img/07-slide-matrimoni.jpg` | 1240×400 |  | /matrimoni/ |
+| `img/08-8cb558db-6328-4f83-8975-724c6d8057c51-300x300.jpg` | 300×300 ⚠ bassa | 8cb558db-6328-4f83-8975-724c6d8057c5 | / |
+| `img/09-197c4717-300x300.jpg` | 300×300 ⚠ bassa | 197C4717 | /azienda/ |
+| `img/10-slide8.jpg` | 1024×400 | slide8 | /parco/ |
+| `img/11-img-2462-300x300.jpg` | 300×300 ⚠ bassa | IMG_2462 | /matrimoni/ |
+| `img/12-slide3.jpg` | 1024×400 | slide3 | /home/ |
+| `img/13-slide9.jpg` | 1024×400 | slide9 | /parco/ |
+| `img/14-slide4.jpg` | 1024×400 | slide4 | /home/ |
+| `img/15-slide11.jpg` | 1024×400 | slide11 | /parco/ |
+| `img/16-slide5.jpg` | 1024×400 | slide5 | /home/ |
+| `img/17-slide12.jpg` | 1024×400 | slide12 | /parco/ |
+| `img/18-slide6.jpg` | 1024×400 | slide6 | /home/ |
+| `img/19-slide13.jpg` | 1024×400 | slide13 | /parco/ |
+| `img/20-stephane5.jpg` | 720×960 | og:image | /home/ |
+| `img/21-slide14.jpg` | 1024×400 | slide14 | /parco/ |
+| `img/22-slide15.jpg` | 1024×400 | slide15 | /parco/ |
+| `img/23-slide16.jpg` | 1024×400 | slide16 | /parco/ |
+| `img/24-slide17.jpg` | 1024×400 | slide17 | /parco/ |
+| `img/25-slide10.jpg` | 1024×400 | slide10 | /parco/ |
+| `img/26-sfondo.jpg` | 1500×1125 |  | / |
+
+## Note per il Builder
+
+- 3 immagini a bassa risoluzione (< 800px): nella demo vanno usate piccole o sostituite.

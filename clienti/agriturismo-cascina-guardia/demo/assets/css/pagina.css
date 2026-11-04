@@ -1,0 +1,95 @@
+/* Ritocchi solo per Cascina Guardia. */
+
+/* Nome come testo (il logo originale è piccolo e sgranato) */
+.wordmark { font-family: var(--f-display); font-weight: 600; font-size: 1.45rem; color: var(--c-primary); letter-spacing: -.01em; }
+.wordmark small { display: block; font-family: var(--f-body); font-weight: 500; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--c-accent); margin-bottom: .3rem; }
+.wordmark--footer { color: var(--c-on-dark); font-size: 1.6rem; line-height: 1; margin-bottom: 1rem; }
+.wordmark--footer small { color: color-mix(in srgb, var(--c-accent) 70%, white); }
+
+/* Hero: testo sopra, foto larga sotto (le foto originali sono strisce 1024×400) */
+.hero--cascina .hero__content, .hero--pagina .hero__content { padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem); }
+.hero--cascina h1 { max-width: 15ch; }
+.hero__note { margin-top: 1.5rem; color: var(--c-muted); max-width: 40rem; }
+
+.hero__wide img { width: 100%; height: auto; aspect-ratio: 1024 / 400; object-fit: cover; border-radius: var(--radius); }
+@media (max-width: 700px) {
+  .hero__wide { padding-inline: 0; }
+  .hero__wide img { aspect-ratio: 4 / 3; border-radius: 0; }
+}
+
+/* Numeri della storia */
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--c-line); }
+.facts strong { display: block; font-family: var(--f-display); font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.3rem); color: var(--c-accent); line-height: 1; }
+.facts span { display: block; margin-top: .4rem; font-size: var(--fs-small); color: var(--c-muted); }
+@media (max-width: 480px) { .facts { gap: .75rem; } .facts strong { font-size: 1.5rem; } }
+.split h2 + .lead, .split h2 + p, .contact h2 + dl { margin-top: 1.25rem; }
+
+/* Menu */
+.split--menu { align-items: start; }
+.menu-title { font-size: 1.35rem; margin-bottom: 1.6rem; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; }
+.price-tag { font-family: var(--f-body); font-size: .9rem; font-weight: 600; color: var(--c-on-primary); background: var(--c-primary); padding: .25rem .8rem; border-radius: 999px; white-space: nowrap; }
+.menu-list .menu-item h3 { font-size: 1.12rem; }
+.menu-extra { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--c-line); display: grid; gap: .8rem; }
+.menu-extra strong { color: var(--c-primary); }
+.menu-photos { display: grid; gap: 1rem; }
+
+/* Galleria dell'oasi */
+.gallery--oasi { --gallery-ratio: 3 / 2; --gallery-min: 15rem; }
+.gallery--oasi .gallery__btn img[src*="slide17"] { object-position: 20% 50%; }
+@media (max-width: 600px) { .gallery--oasi { grid-template-columns: 1fr 1fr; gap: .75rem; } .gallery--oasi figcaption strong { font-size: .95rem; } }
+.gallery--oasi figcaption strong { font-size: 1.05rem; }
+
+/* Formula Ape-Nature */
+.ape { margin-top: clamp(2.5rem, 6vw, 4rem); padding: clamp(1.5rem, 4vw, 2.5rem); background: var(--c-primary); color: var(--c-on-primary); border-radius: calc(var(--radius) * 2); display: grid; gap: 1.5rem; align-items: center; }
+.ape .eyebrow { color: color-mix(in srgb, var(--c-accent) 55%, white); }
+.ape h3 { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); margin-bottom: .6rem; }
+.ape p { opacity: .92; }
+.ape__prezzi { display: flex; gap: 2rem; margin: 0; }
+.ape__prezzi dt { font-size: var(--fs-small); opacity: .8; }
+.ape__prezzi dd { margin: .2rem 0 0; font-family: var(--f-display); font-size: 2rem; }
+.ape .btn { background: var(--c-on-primary); color: var(--c-primary); border-color: var(--c-on-primary); justify-self: start; }
+@media (min-width: 900px) { .ape { grid-template-columns: 1.6fr auto auto; } }
+
+/* Schede feste */
+.card__media img { aspect-ratio: auto; }
+.grid--3 .card { --card-ratio: 4 / 3; background: var(--c-bg); }
+.grid--3 .card__body { padding: 1.2rem 1.25rem 1.5rem; }
+.feste-cta { margin-top: 2.5rem; }
+
+/* Riquadri di prezzo nella pagina feste */
+.box { background: var(--c-bg); border: 1px solid var(--c-line); border-radius: calc(var(--radius) * 2); padding: clamp(1.4rem, 3vw, 2rem); }
+.section--surface .box { background: var(--c-bg); }
+.section:not(.section--surface) .box { background: var(--c-surface); border-color: transparent; }
+.box h3 { margin-bottom: 1rem; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .4rem 1rem; }
+.box p + p { margin-top: .8rem; }
+.prezzi { display: grid; gap: .6rem; margin: 0 0 1.2rem; }
+.prezzi div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px dashed var(--c-line); padding-bottom: .5rem; }
+.prezzi dd { margin: 0; font-family: var(--f-display); font-size: 1.25rem; color: var(--c-primary); white-space: nowrap; }
+.incluso { list-style: none; padding: 0; margin: 1.2rem 0; display: grid; gap: .55rem; }
+.incluso li { padding-left: 1.5rem; position: relative; }
+.incluso li::before { content: ""; position: absolute; left: 0; top: .55em; width: .55rem; height: .55rem; border-radius: 50%; background: var(--c-accent); }
+.prezzo-da { font-size: 1.15rem; margin-top: 1rem; }
+.prezzo-da strong { font-family: var(--f-display); font-size: 1.6rem; color: var(--c-accent); }
+.split .menu-list { margin-top: 1.5rem; }
+
+/* Collegamenti rapidi nella pagina feste */
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
+.chips a { text-decoration: none; font-size: var(--fs-small); font-weight: 500; padding: .5rem 1rem; border: 1px solid var(--c-line); border-radius: 999px; background: var(--c-bg); }
+.chips a:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+/* Dove siamo */
+.come-arrivare { margin-top: 1.5rem; max-width: 30rem; }
+
+/* Bottone "Chiama" fisso su telefono, sopra l'avviso della demo */
+.call-fab { display: none; }
+@media (max-width: 860px) {
+  .call-fab {
+    display: flex; align-items: center; justify-content: center; gap: .5rem;
+    position: fixed; left: 12px; right: 12px; bottom: 46px; z-index: 80;
+    min-height: 52px; border-radius: 999px; text-decoration: none; font-weight: 600;
+    background: var(--c-accent); color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  }
+  .call-fab::before { content: "☎"; font-size: 1.1rem; }
+  .menu-open .call-fab, .lightbox-aperta .call-fab { display: none; }
+  .site-footer { padding-bottom: 8rem; }
+}

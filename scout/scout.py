@@ -93,7 +93,7 @@ COPYRIGHT = re.compile(
     r"[^0-9]{0,60}((?:19|20)\d{2})(?:\s*[-–/]\s*((?:19|20)\d{2}))?",
     re.I,
 )
-PIVA = re.compile(r"(p\.?\s?i\.?v\.?a\.?|partita\s+iva|c\.?f\.?\s*/\s*p\.?\s?iva|vat)[^0-9]{0,25}(it)?\s?\d{11}", re.I)
+PIVA = re.compile(r"(p\.?\s?i\.?v\.?a\.?|partita\s+iva|c\.?f\.?\s*/\s*p\.?\s?iva|vat|p\.\s?i\.)[^0-9]{0,25}(it)?\s?\d{11}", re.I)
 EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 TELEFONO = re.compile(r"(?<![\d])(?:\+39[\s.]?)?(?:0\d{1,3}|3\d{2})[\s./-]?\d{3,4}[\s.-]?\d{2,4}(?![\d])")
 JQUERY_SRC = re.compile(r"jquery(?:[.-]min)?[.-]v?(\d)\.(\d+)", re.I)
@@ -455,7 +455,9 @@ def valuta_sito(riga, pagespeed=False, chiave_ps=None):
 
     # Leggibilità da cellulare
     vp = zuppa.find("meta", attrs={"name": re.compile(r"^viewport$", re.I)})
-    if not vp or "width" not in (vp.get("content") or "").lower():
+    contenuto_vp = (vp.get("content") or "").lower() if vp else ""
+    # "initial-scale=1" senza width è comunque adattato al telefono (es. siti Duda/Italiaonline)
+    if not vp or not ("width" in contenuto_vp or "initial-scale" in contenuto_vp):
         ris["mobile"] = "no"
         punti += 25
         motivi.append("Non pensato per cellulare (manca il viewport)")
