@@ -2,7 +2,8 @@
 
 Agent pronti: **1. Scout** (trova i prospect), **2. Analista** (estrae il materiale dal loro
 sito e scrive il brief), **3. Builder** (costruisce la demo e la impacchetta per Netlify) e
-**4. Outreach** (email approvate da te, registro contatti, agenda dei richiami).
+**4. Outreach** (email approvate da te, registro contatti, agenda dei richiami) e
+**5. Consegna** (accordo, ricevute, sito definitivo sul dominio del cliente).
 
 ```
 lavori-soldini/
@@ -10,11 +11,13 @@ lavori-soldini/
 │   ├── scout.md
 │   ├── analista.md
 │   ├── builder.md
-│   └── outreach.md
+│   ├── outreach.md
+│   └── consegna.md
 ├── scout/scout.py           ← trova aziende e dà un punteggio ai siti
 ├── analista/analista.py     ← estrae testi, contatti, logo, colori, immagini
 ├── builder/builder.py       ← prepara, controlla, fotografa e impacchetta le demo
 ├── outreach/                ← outreach.py, listino.md, regole-contatto.md, risposte-tipo.md
+├── consegna/                ← consegna.py, modelli/ (accordo, ricevuta, privacy), registro-ricevute.csv
 ├── stili/                   ← i 5 stili grafici di base (atelier, industria, trattoria, studio, bottega)
 ├── prospect/                ← CSV e report dello Scout
 ├── clienti/<azienda>/       ← contenuti.md, brief.md, img/, demo/, screenshot/, zip per Netlify
@@ -321,6 +324,52 @@ Se sul PC hai più account Google, scrivi il tuo Gmail personale in `outreach\co
 Le regole di ognuno sono in `stili\<stile>\stile.md`. Per cambiare il "gusto della casa" su
 tutte le demo future modifica `stili\base.css` o lo `stile.css` dello stile.
 
+## Consegna: dal "sì" del cliente al sito online
+
+Quando un cliente accetta, a Claude Code basta dire: *"Usa l'agent consegna per SUGAR: il cliente
+ha accettato"*. L'agent tiene una checklist in `clienti\<azienda>\consegna\checklist.md` e ti
+dice sempre qual è il prossimo passo. Come per l'Outreach, **ogni email al cliente la approvi e la
+invii tu**, e i DNS del cliente non li tocca mai da solo.
+
+**Prima volta su ogni PC:** copia `consegna\dati-personali.esempio.txt` in
+`consegna\dati-personali.txt` e compila codice fiscale, indirizzo, IBAN. Il file non va su GitHub,
+come le ricevute generate (contengono i tuoi dati): il PDF che mandi al cliente resta comunque nella
+posta inviata. Il registro con numeri e importi (`consegna\registro-ricevute.csv`) invece va su
+GitHub, così la numerazione è la stessa a casa e in ufficio.
+
+```
+.venv\Scripts\python.exe consegna\consegna.py avvia clienti\sugar-s-a-s
+.venv\Scripts\python.exe consegna\consegna.py accordo clienti\sugar-s-a-s
+.venv\Scripts\python.exe consegna\consegna.py ricevuta clienti\sugar-s-a-s --tipo acconto
+.venv\Scripts\python.exe consegna\consegna.py incassato 1/2026
+.venv\Scripts\python.exe consegna\consegna.py riepilogo
+.venv\Scripts\python.exe consegna\consegna.py produzione clienti\sugar-s-a-s --dominio www.domoadami.com
+.venv\Scripts\python.exe consegna\consegna.py verifica clienti\sugar-s-a-s
+.venv\Scripts\python.exe consegna\consegna.py repo clienti\sugar-s-a-s
+.venv\Scripts\python.exe consegna\consegna.py dns www.domoadami.com --salva clienti\sugar-s-a-s
+.venv\Scripts\python.exe consegna\consegna.py documento clienti\sugar-s-a-s
+```
+- **avvia**: crea `cliente.txt` precompilato. Controllalo con il cliente e poi metti `verificato=si`:
+  finché non lo fai, accordo e ricevute non partono.
+- **accordo**: bozza email con pagine, prezzo, acconto/saldo, dominio, materiali (dal listino).
+- **ricevuta**: ricevuta di prestazione occasionale numerata (HTML → "Salva come PDF"), con ritenuta
+  del 20% e bollo da 2 € sopra 77,47 €. Si blocca se superi 5.000 € nell'anno e avvisa dal terzo
+  cliente (attività abituale = partita IVA). Con `partita_iva=` compilata smette di farle.
+- **produzione**: copia la demo in `..\siti-clienti\sito-<azienda>\` (fuori da questo repo) e la
+  trasforma in sito vero: toglie l'avviso e il noindex, aggiunge canonical, pagina privacy e cookie,
+  pagina 404, robots.txt e sitemap. La demo resta com'era.
+- **verifica**: controlla che nel sito definitivo non sia rimasto niente della demo.
+- **repo**: crea il repo git del sito (con il tuo nome ed email personali) e ti dice come collegarlo
+  a GitHub e Netlify: da lì ogni `git push` pubblica.
+- **dns**: fotografa i record DNS del dominio prima e dopo il collegamento e ti avvisa se la posta
+  (MX) è cambiata. Regola: si cambiano solo record A e CNAME del sito.
+- **documento**: email finale con indirizzi, dominio, come chiedere modifiche.
+
+**Prova senza cliente:** puoi lanciare tutto su Domo Adami anche adesso (con `verificato=si` messo
+a mano). L'unico passo che richiede il cliente vero è il dominio. Dopo il test cancella
+`clienti\sugar-s-a-s\consegna\`, `..\siti-clienti\sito-sugar-s-a-s\` e svuota
+`consegna\registro-ricevute.csv`, così la numerazione delle ricevute riparte da 1.
+
 ## Prossimo agent
-5. Assistenza: dopo il sì del cliente, gestione delle modifiche alla demo, preventivo,
-passaggio al sito definitivo sul suo dominio.
+6. Assistenza: modifiche ai siti già online (preventivo a mezz'ora, modifica, push), quando ci sarà
+il primo sito pubblicato.

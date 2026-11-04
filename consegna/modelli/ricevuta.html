@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Ricevuta n. {{numero}} — {{c_nome}}</title>
+<style>
+  @page { size: A4; margin: 18mm; }
+  * { box-sizing: border-box; }
+  body { font: 11pt/1.5 "Segoe UI", Arial, sans-serif; color: #1d1d1b; max-width: 180mm; margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 15pt; margin: 0 0 .2rem; }
+  .sotto { color: #555; margin: 0 0 1.5rem; }
+  .parti { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .parti div { border: 1px solid #ccc; border-radius: 6px; padding: .8rem 1rem; }
+  .parti h2 { font-size: 9pt; letter-spacing: .08em; text-transform: uppercase; color: #666; margin: 0 0 .4rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  td { padding: .5rem .4rem; border-bottom: 1px solid #ddd; }
+  td.num { text-align: right; white-space: nowrap; }
+  tr.tot td { font-weight: 700; border-top: 2px solid #1d1d1b; border-bottom: none; }
+  .note { font-size: 9.5pt; color: #333; }
+  .note p { margin: .35rem 0; }
+  .firma { margin-top: 2.5rem; display: flex; justify-content: space-between; align-items: end; }
+  .firma span { display: inline-block; width: 65mm; border-top: 1px solid #1d1d1b; padding-top: .3rem; text-align: center; font-size: 9pt; }
+  .bollo { width: 28mm; height: 32mm; border: 1px dashed #999; display: grid; place-items: center; font-size: 8pt; color: #999; text-align: center; }
+  .aiuto { background: #fff6d6; border: 1px solid #e8d48a; padding: .6rem .9rem; border-radius: 6px; font-size: 9.5pt; margin-bottom: 1.5rem; }
+  @media print { .aiuto { display: none; } body { margin: 0; } }
+</style>
+</head>
+<body>
+  <div class="aiuto">Per salvarla: Ctrl+P → "Salva come PDF". Se c'è il bollo, stampa l'originale, incolla la marca da 2 €, scrivi il numero e firma. Questo riquadro non viene stampato.</div>
+
+  <h1>Ricevuta per prestazione di lavoro autonomo occasionale</h1>
+  <p class="sotto">N. {{numero}} del {{data}}</p>
+
+  <div class="parti">
+    <div>
+      <h2>Prestatore</h2>
+      <strong>{{p_nome}}</strong><br>
+      {{p_indirizzo}}<br>
+      C.F. {{p_cf}}<br>
+      {{p_email}} · {{p_telefono}}
+    </div>
+    <div>
+      <h2>Committente</h2>
+      <strong>{{c_nome}}</strong><br>
+      {{c_indirizzo}}<br>
+      P.IVA {{c_piva}} · C.F. {{c_cf}}
+    </div>
+  </div>
+
+  <table>
+    <tr><td>{{descrizione}}<br><small>Compenso lordo</small></td><td class="num">{{lordo}}</td></tr>
+    {{riga_ritenuta}}
+    <tr class="tot"><td>Netto da pagare</td><td class="num">{{netto}}</td></tr>
+  </table>
+
+  <div class="note">
+    <p>Prestazione di lavoro autonomo occasionale ai sensi dell'art. 2222 c.c. e dell'art. 67, comma 1, lett. l) del TUIR. Operazione fuori campo IVA per mancanza del requisito di abitualità (art. 5 DPR 633/1972).</p>
+    <p>{{nota_ritenuta}}</p>
+    <p>Il sottoscritto dichiara che nell'anno {{anno}}, alla data della presente, i compensi percepiti per prestazioni di lavoro autonomo occasionale non superano € 5.000,00 e che pertanto non è dovuta la contribuzione alla Gestione Separata INPS.</p>
+    <p>{{nota_bollo}}</p>
+    <p>Pagamento con bonifico bancario intestato a {{p_banca}} — IBAN <strong>{{p_iban}}</strong></p>
+  </div>
+
+  <div class="firma">
+    <div>{{luogo}}, {{data}}<br><br><span>Firma del prestatore</span></div>
+    <div class="bollo">marca da bollo<br>€ 2,00<br>(se dovuta)</div>
+  </div>
+</body>
+</html>

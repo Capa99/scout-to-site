@@ -1,0 +1,10 @@
+/* Pagine semplici del sito definitivo (privacy, 404): testo leggibile dentro la grafica del sito. */
+.legale {
+  max-width: 46rem;
+  padding-block: calc(var(--header-h, 5rem) + clamp(2rem, 6vw, 4rem)) clamp(3rem, 8vw, 6rem);
+}
+.legale h1 { margin-bottom: .5rem; }
+.legale h2 { font-size: 1.35rem; margin: 2.25rem 0 .6rem; }
+.legale p { margin: 0 0 1rem; max-width: 65ch; }
+.legale a:not(.btn) { color: var(--c-accent); text-decoration: underline; text-underline-offset: .15em; }
+.legale__agg { color: var(--c-muted); font-size: var(--fs-small, .9rem); }

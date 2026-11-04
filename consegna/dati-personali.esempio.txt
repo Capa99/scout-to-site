@@ -1,0 +1,19 @@
+# I tuoi dati per accordi e ricevute.
+# Copia questo file in  consegna/dati-personali.txt  e compilalo (su ogni PC).
+# dati-personali.txt NON va su GitHub: è nel .gitignore.
+
+nome=Federico Manetta
+codice_fiscale=
+# Residenza: via, numero, CAP, comune, provincia
+indirizzo=
+# Comune che compare in fondo alla ricevuta ("Vigevano, 05/11/2026")
+comune=
+email=federicomanetta1999@gmail.com
+telefono=
+iban=
+# Intestatario del conto, se diverso da te
+intestatario_iban=
+
+# Lascia vuoto finché non apri la partita IVA.
+# Quando la compili: niente più ricevute occasionali, l'accordo prevede il canone.
+partita_iva=

@@ -8,9 +8,14 @@ Per cambiare un prezzo modifica questo file (e fai il push).
 | Voce | Prezzo | Cosa include |
 |---|---|---|
 | **Sito completo** | **590 €** una tantum | Homepage + fino a 5 pagine interne, nello stile della demo; adattato a telefono e tablet; testi e foto del cliente (riordinati e corretti); modulo contatti o link a telefono/email/WhatsApp; mappa; HTTPS; ottimizzazione velocità; base SEO (titoli, descrizioni, Google Search Console); 2 giri di modifiche prima della pubblicazione; messa online sul loro dominio. |
-| **Canone** | **15 €/mese** | Hosting, rinnovo del dominio `.it`, certificato HTTPS, backup. **Le modifiche non sono incluse.** |
+| **Canone** (solo con partita IVA) | **15 €/mese** | Hosting, rinnovo del dominio `.it`, certificato HTTPS, backup. **Le modifiche non sono incluse.** |
 | **Modifiche dopo la pubblicazione** | 30 € per mezz'ora, a preventivo | Cambi di testi, foto, orari, nuove voci. Preventivo sempre prima di iniziare. |
 | **Pagina in più** | 60 € a pagina | Oltre le 5 incluse. |
+
+## Finché non c'è la partita IVA
+- **Niente canone.** Il dominio lo registra e lo paga il cliente; il sito sta su Netlify (piano gratuito).
+- Modifiche dopo la pubblicazione solo a preventivo, una tantum.
+- L'agent Consegna lo sa: con `partita_iva=` vuoto in `consegna/dati-personali.txt` l'accordo esce senza canone.
 
 ## Pagamento
 - **50% all'accettazione, 50% alla pubblicazione.**

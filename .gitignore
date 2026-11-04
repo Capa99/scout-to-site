@@ -3,3 +3,7 @@ scout/.venv/
 __pycache__/
 *.pyc
 .cache/
+clienti/**/*.zip
+# Consegna: dati personali e ricevute (contengono IBAN e codice fiscale)
+consegna/dati-personali.txt
+clienti/*/consegna/ricevute/
