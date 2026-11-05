@@ -1,0 +1,110 @@
+{
+  "laboratorio": {
+    "larghezza": 1200,
+    "altezza": 1800,
+    "file": {
+      "800": "laboratorio-800.webp",
+      "1200": "laboratorio-1200.webp"
+    },
+    "origine": "laboratorio.jpg"
+  },
+  "colazione": {
+    "larghezza": 1200,
+    "altezza": 500,
+    "file": {
+      "800": "colazione-800.webp",
+      "1200": "colazione-1200.webp"
+    },
+    "origine": "colazione.jpg"
+  },
+  "dolce": {
+    "larghezza": 1200,
+    "altezza": 500,
+    "file": {
+      "800": "dolce-800.webp",
+      "1200": "dolce-1200.webp"
+    },
+    "origine": "dolce.jpg"
+  },
+  "torte": {
+    "larghezza": 1200,
+    "altezza": 500,
+    "file": {
+      "800": "torte-800.webp",
+      "1200": "torte-1200.webp"
+    },
+    "origine": "torte.jpg"
+  },
+  "dolceriso": {
+    "larghezza": 800,
+    "altezza": 499,
+    "file": {
+      "800": "dolceriso-800.webp"
+    },
+    "origine": "dolceriso.jpg"
+  },
+  "torta-02": {
+    "larghezza": 640,
+    "altezza": 512,
+    "file": {
+      "640": "torta-02-640.webp"
+    },
+    "origine": "torta-02.jpg"
+  },
+  "torta-03": {
+    "larghezza": 640,
+    "altezza": 512,
+    "file": {
+      "640": "torta-03-640.webp"
+    },
+    "origine": "torta-03.jpg"
+  },
+  "torta-04": {
+    "larghezza": 640,
+    "altezza": 512,
+    "file": {
+      "640": "torta-04-640.webp"
+    },
+    "origine": "torta-04.jpg"
+  },
+  "torta-06": {
+    "larghezza": 640,
+    "altezza": 512,
+    "file": {
+      "640": "torta-06-640.webp"
+    },
+    "origine": "torta-06.jpg"
+  },
+  "torta-07": {
+    "larghezza": 640,
+    "altezza": 512,
+    "file": {
+      "640": "torta-07-640.webp"
+    },
+    "origine": "torta-07.jpg"
+  },
+  "torta-08": {
+    "larghezza": 640,
+    "altezza": 512,
+    "file": {
+      "640": "torta-08-640.webp"
+    },
+    "origine": "torta-08.jpg"
+  },
+  "torta-09": {
+    "larghezza": 640,
+    "altezza": 512,
+    "file": {
+      "640": "torta-09-640.webp"
+    },
+    "origine": "torta-09.jpg"
+  },
+  "torta-10": {
+    "larghezza": 640,
+    "altezza": 512,
+    "file": {
+      "640": "torta-10-640.webp"
+    },
+    "origine": "torta-10.jpg"
+  }
+}

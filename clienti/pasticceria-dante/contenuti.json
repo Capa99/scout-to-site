@@ -1,0 +1,70 @@
+{
+  "nome": "Pasticceria Dante",
+  "sito": "http://dantevigevano.it/",
+  "analizzato_il": "2026-11-05",
+  "prospect": {
+    "punteggio": "33",
+    "priorita": "BASSA",
+    "nome": "Pasticceria Dante",
+    "sito": "http://dantevigevano.it",
+    "categoria": "pasticceria/bar",
+    "comune": "Vigevano",
+    "telefono": "+39 038183776",
+    "email": "",
+    "motivi": "La versione http non reindirizza su https | Non pensato per cellulare (manca il viewport) | P.IVA non visibile in homepage (è obbligatoria)",
+    "anno_copyright": "",
+    "https": "sì",
+    "mobile": "no",
+    "generator": "",
+    "jquery": "",
+    "tempo_s": "0.3",
+    "pagespeed_mobile": "",
+    "trovato_il": "2026-11-05"
+  },
+  "contatti": {
+    "email": [],
+    "telefoni": [
+      "+39 038183776"
+    ],
+    "piva": [],
+    "indirizzi": [],
+    "social": []
+  },
+  "colori": {
+    "sito": [
+      "#dba998"
+    ],
+    "neutri": [],
+    "logo": []
+  },
+  "testi_comuni": [],
+  "pagine": [
+    {
+      "url": "http://dantevigevano.it/",
+      "titolo": "Pasticceria Dante - Vigevano",
+      "descrizione": "",
+      "titoli": [
+        "Sito in manutenzione"
+      ],
+      "sorgente": "sorgente/00-home.html",
+      "testo": [
+        "Sito in manutenzione",
+        "Per contattarci chiama il 0381 83776 o passa in negozio a trovarci"
+      ]
+    }
+  ],
+  "immagini": [
+    {
+      "file": "img/01-imgdante.png",
+      "url": "http://dantevigevano.it/imgdante.png",
+      "alt": "Dante Vigevano",
+      "origine": "img",
+      "pagina": "http://dantevigevano.it/",
+      "kb": 13,
+      "logo": false,
+      "larghezza": 200,
+      "altezza": 161,
+      "bassa_risoluzione": true
+    }
+  ]
+}

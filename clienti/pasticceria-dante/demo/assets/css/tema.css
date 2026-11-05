@@ -1,0 +1,13 @@
+/* Colori del cliente: sovrascrivono quelli dello stile. Modificabili a mano. */
+:root {
+  --c-bg: #fffaf7;
+  --c-surface: #f6e7e1;
+  --c-text: #292929;
+  --c-muted: #5f5156;
+  --c-primary: #660037;
+  --c-on-primary: #ffffff;
+  --c-accent: #a25338;
+  --c-dark: #4a0028;
+  --c-on-dark: #fbeee9;
+  --c-line: #ead5cd;
+}
