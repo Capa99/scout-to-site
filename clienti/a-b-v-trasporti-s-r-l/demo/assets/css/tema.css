@@ -1,0 +1,8 @@
+/* Colori del cliente: sovrascrivono quelli dello stile. Modificabili a mano. */
+:root {
+  --c-accent: #C8302A;
+  --c-primary: #1F2328;
+  --c-dark: #1F2328;
+  --c-text: #1F2328;
+  --c-surface: #F4F5F6;
+}

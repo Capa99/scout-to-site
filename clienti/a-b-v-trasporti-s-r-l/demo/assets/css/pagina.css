@@ -1,0 +1,131 @@
+/* Ritocchi solo per A.B.V. Trasporti S.r.l. */
+:root { --c-grigio: #818179; --barra-h: 64px; }
+
+/* ---------- Marchio ridisegnato (sagoma camion + scritta) ---------- */
+.brand { flex-direction: row; align-items: center; gap: .7rem; }
+.brand__segno { width: 52px; height: auto; flex: none; }
+.brand__testo { display: flex; flex-direction: column; gap: .3rem; }
+.brand__nome { font-weight: 700; font-size: 1.15rem; letter-spacing: -.01em; white-space: nowrap; }
+.brand__nome small { font-weight: 500; font-size: .8em; color: var(--c-muted); margin-left: .15em; }
+.brand__slogan { font-family: var(--f-mono); font-size: .68rem; color: var(--c-accent); white-space: nowrap; }
+.nav .btn { white-space: nowrap; }
+@media (max-width: 1060px) and (min-width: 861px) { .nav { gap: 1rem; } .nav .btn { padding-inline: .9rem; } }
+@media (max-width: 380px) { .brand__segno { width: 42px; } .brand__nome { font-size: 1rem; } .brand__slogan { font-size: .6rem; } }
+
+/* ---------- Hero a tinta piena ---------- */
+.hero--tinta { background: var(--c-dark); color: var(--c-on-dark); overflow: hidden; }
+.hero--tinta::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
+  background: linear-gradient(90deg, var(--c-accent) 0 62%, var(--c-grigio) 62% 100%); }
+.hero--tinta .eyebrow { color: color-mix(in srgb, var(--c-accent) 70%, white); }
+.hero--tinta .lead { color: color-mix(in srgb, var(--c-on-dark) 85%, transparent); }
+.hero__grid { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); align-items: center; padding-block: clamp(3.5rem, 9vw, 7rem); }
+@media (min-width: 960px) { .hero__grid { grid-template-columns: 1.35fr 1fr; } }
+.hero h1 { max-width: 15ch; }
+.hero h1 span { color: color-mix(in srgb, var(--c-accent) 85%, white); }
+.slogan { display: inline-flex; align-items: center; gap: .6rem; margin-top: 1.6rem; padding: .5rem .9rem;
+  border: 1px solid rgba(255,255,255,.22); font-family: var(--f-mono); font-size: var(--fs-small); }
+.slogan::before { content: ""; width: 10px; height: 10px; background: var(--c-accent); flex: none; }
+
+/* Scheda tecnica nella hero */
+.scheda { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.14); padding: clamp(1.25rem, 3vw, 2rem); }
+.scheda__titolo { font-family: var(--f-mono); font-size: var(--fs-label); letter-spacing: var(--tracking-label); text-transform: uppercase; opacity: .7; margin-bottom: .6rem; }
+.scheda .specs th, .scheda .specs td { border-color: rgba(255,255,255,.14); }
+.scheda .specs th { color: rgba(233,238,243,.65); width: 38%; }
+
+/* Bottoni */
+.btn--accent:hover { background: transparent; color: #fff; border-color: #fff; }
+.hero--tinta .btn--ghost, .section--dark .btn--ghost { color: var(--c-on-dark); border-color: rgba(255,255,255,.5); }
+.hero--tinta .btn--ghost:hover, .section--dark .btn--ghost:hover { background: var(--c-on-dark); color: var(--c-dark); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+/* ---------- Fatti in vista ---------- */
+.fatti { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 0; border-top: 1px solid var(--c-line); border-left: 1px solid var(--c-line); }
+.fatto { padding: 1.6rem 1.5rem 1.8rem; border-right: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line); }
+.fatto__val { font-weight: 600; font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.6rem); line-height: 1; letter-spacing: -.02em; }
+.fatto__val small { font-size: .5em; color: var(--c-accent); margin-left: .1em; }
+.fatto h3 { font-size: 1.05rem; margin-top: 1rem; }
+.fatto p { margin-top: .4rem; color: var(--c-muted); font-size: var(--fs-small); }
+
+/* ---------- Famiglie di servizi ---------- */
+.famiglie { display: grid; gap: 1px; background: var(--c-line); border: 1px solid var(--c-line); }
+@media (min-width: 760px) { .famiglie { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .famiglie { grid-template-columns: repeat(3, 1fr); } }
+.famiglia { background: var(--c-bg); padding: clamp(1.4rem, 3vw, 2rem); display: flex; flex-direction: column; }
+.famiglia--evidenza { background: var(--c-dark); color: var(--c-on-dark); }
+.famiglia__num { font-family: var(--f-mono); font-size: var(--fs-small); color: var(--c-accent); }
+.famiglia--evidenza .famiglia__num { color: color-mix(in srgb, var(--c-accent) 75%, white); }
+.famiglia h3 { margin-top: .5rem; }
+.famiglia > p { margin-top: .6rem; color: var(--c-muted); font-size: var(--fs-small); }
+.famiglia--evidenza > p { color: rgba(233,238,243,.7); }
+.voci { list-style: none; padding: 0; margin-top: 1.2rem; display: grid; gap: .45rem; font-size: var(--fs-small); }
+.voci li { position: relative; padding-left: 1.1rem; }
+.voci li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; background: var(--c-accent); }
+.famiglia .link-arrow { margin-top: auto; padding-top: 1.4rem; align-self: flex-start; border: 0; }
+.famiglia .link-arrow { text-decoration: underline; text-underline-offset: .3em; }
+.famiglia--larga { grid-column: 1 / -1; }
+@media (min-width: 760px) { .famiglia--larga .voci { grid-template-columns: repeat(2, 1fr); column-gap: 2rem; } }
+@media (min-width: 1100px) { .famiglia--larga { grid-column: span 2; } .famiglia--larga .voci { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- Galleria: foto piccole del sito attuale, mai ingrandite oltre misura ---------- */
+.gallery { --gallery-ratio: 16 / 9; --gallery-min: 17rem; }
+.gallery--mezzi { max-width: 1200px; }
+@media (min-width: 1100px) { .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.gallery__item figcaption { font-size: var(--fs-small); color: var(--c-muted); }
+.foto-riquadro { max-width: 460px; }
+.foto-riquadro img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+
+/* ---------- Contatti ---------- */
+.contatti-azioni { display: grid; gap: .8rem; margin-top: 2rem; }
+@media (min-width: 560px) { .contatti-azioni { grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); } }
+.contatti-azioni .btn { width: 100%; }
+.sedi { display: grid; gap: 1.4rem; }
+.contact dd small { display: block; color: var(--c-muted); font-size: var(--fs-small); margin-top: .2rem; }
+.map { min-height: 380px; }
+.map .btn { margin-top: 1.2rem; }
+
+/* ---------- Footer ---------- */
+.site-footer .brand__nome small { color: inherit; opacity: .7; }
+.footer-legal { opacity: .8; }
+
+/* ---------- Barra azioni sempre visibile sul telefono ---------- */
+.barra-azioni { display: none; }
+@media (max-width: 860px) {
+  body { padding-bottom: var(--barra-h); }
+  .barra-azioni {
+    display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 80;
+    height: var(--barra-h); background: var(--c-dark); border-top: 1px solid rgba(255,255,255,.12);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .barra-azioni a { display: flex; align-items: center; justify-content: center; gap: .45rem; color: #fff; text-decoration: none;
+    font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  .barra-azioni a + a { border-left: 1px solid rgba(255,255,255,.12); }
+  .barra-azioni a:first-child { background: var(--c-accent); }
+  .barra-azioni svg { width: 18px; height: 18px; }
+  .demo-tag { bottom: calc(var(--barra-h) + 10px); }
+  .menu-open .barra-azioni { display: none; }
+}
+
+/* Correzioni dopo gli screenshot */
+.fatto .fatto__val { margin-top: 0; color: var(--c-text); font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.6rem); }
+@media (min-width: 1100px) { .fatti { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 560px) { .contatti-azioni { grid-template-columns: 1fr 1fr; } .contatti-azioni .btn:first-child { grid-column: 1 / -1; } }
+.section--surface .map { background: var(--c-bg); border: 1px solid var(--c-line); }
+@media (max-width: 860px) {
+  body { padding-bottom: 0; }
+  .site-footer { padding-bottom: calc(2rem + var(--barra-h)); }
+}
+@media (min-width: 700px) { .gallery--quattro { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .gallery--quattro { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.section--dark .contatti-azioni { max-width: 760px; }
+
+/* Galleria "Mezzi e deposito": 5 foto, la riga incompleta resta centrata e le foto hanno tutte la stessa misura */
+@media (min-width: 700px) {
+  .gallery--cinque { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .gallery--cinque .gallery__item { grid-column: span 2; }
+  .gallery--cinque .gallery__item:last-child { grid-column: 2 / span 2; }
+}
+@media (min-width: 1100px) {
+  .gallery--cinque { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .gallery--cinque .gallery__item:last-child { grid-column: auto / span 2; }
+  .gallery--cinque .gallery__item:nth-child(4) { grid-column: 2 / span 2; }
+}

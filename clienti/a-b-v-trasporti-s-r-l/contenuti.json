@@ -1,0 +1,209 @@
+{
+  "nome": "A.B.V. Trasporti S.r.l.",
+  "sito": "https://www.abvtrasporti.it/",
+  "analizzato_il": "2026-11-05",
+  "prospect": {
+    "punteggio": "48",
+    "priorita": "MEDIA",
+    "nome": "A.B.V. Trasporti S.r.l.",
+    "sito": "https://www.abvtrasporti.it",
+    "categoria": "autotrasporti",
+    "comune": "Vigevano",
+    "telefono": "+39 0381348970",
+    "email": "operativo@abvtrasporti.it",
+    "motivi": "Non pensato per cellulare (manca il viewport) | Tag HTML obsoleti: marquee | Creato con uno strumento datato (Incomedia WebSite X5 Evolution 8.0.11 - www.websitex5.com) | P.IVA non visibile in homepage (è obbligatoria)",
+    "anno_copyright": "",
+    "https": "sì",
+    "mobile": "no",
+    "generator": "Incomedia WebSite X5 Evolution 8.0.11 - www.websitex5.com",
+    "jquery": "",
+    "tempo_s": "0.3",
+    "pagespeed_mobile": "",
+    "trovato_il": "05/11/2026"
+  },
+  "contatti": {
+    "email": [
+      "operativo@abvtrasporti.it"
+    ],
+    "telefoni": [
+      "+39 038139470"
+    ],
+    "piva": [],
+    "indirizzi": [
+      "VIA PERUGINO 48, 50 s.o. CORSO PAVIA ,28 s.l. 27029 VIGEVANO-PV-ITALY TELEFONO: +39 0381 39",
+      "VIA PERUGINO 48, 50 s.o. CORSO PAVIA ,28 s.l. 27029 VIGEVANO-PV-ITALY Visualizzazione ingra"
+    ],
+    "social": []
+  },
+  "colori": {
+    "sito": [
+      "#0000ff",
+      "#c000c0",
+      "#330099",
+      "#ffff00",
+      "#008080",
+      "#000066"
+    ],
+    "neutri": [
+      "#000000",
+      "#ffffff",
+      "#6b6b6b"
+    ],
+    "logo": []
+  },
+  "testi_comuni": [
+    "27029 VIGEVANO-PV-ITALY",
+    "A.B.V.TRASPORTI",
+    "CONTATTI",
+    "DOVE SIAMO",
+    "ENGLISH VERSION",
+    "HOME PAGE",
+    "Menu principale:",
+    "SERVIZI",
+    "Torna ai contenuti",
+    "Torna al menu",
+    "VIA PERUGINO 48, 50 s.o. CORSO PAVIA ,28 s.l.",
+    "Vai ai contenuti"
+  ],
+  "pagine": [
+    {
+      "url": "https://www.abvtrasporti.it/",
+      "titolo": "A.B.V.TRASPORTI",
+      "descrizione": "autotrasporti con gru per e da milano fiera expo 2015",
+      "titoli": [
+        "A.B.V.TRASPORTI"
+      ],
+      "sorgente": "sorgente/00-home.html",
+      "testo": [
+        "Attività",
+        "Autotrasporti nazionali",
+        "Spedizioni porto assegnato",
+        "Spedizioni stradali di merci",
+        "Consegna in 24 ore",
+        "Corrieri nazionali",
+        "Merci su bancali",
+        "Merci voluminose",
+        "Movimento terra",
+        "Piccoli traslochi",
+        "Piccoli trasporti",
+        "Servizio conto terzi",
+        "Spedizioni in contrassegno",
+        "Spedizioni nazionali",
+        "Trasloco di uffici",
+        "Trasloco industriale",
+        "Trasporti con sponda idraulica",
+        "Trasporti fino a 20 quintali",
+        "Trasporti stradali eccezionali e di macchinari",
+        "Trasporti telonati",
+        "Trasporto materiali infiammabili",
+        "Trasporto e spedizione terrestre di merci",
+        "Trasporto merci in adr",
+        "Trasporto stradale con autotreni",
+        "Servizi",
+        "Autotrasporto per conto terzi",
+        "Deposito merci",
+        "Ritiro a domicilio",
+        "Servizi fieristici",
+        "Deposito",
+        "TELEFONO: +39 0381 39470",
+        "EMAIL:",
+        "operativo@abvtrasporti.it"
+      ]
+    },
+    {
+      "url": "https://www.abvtrasporti.it/servizi.html",
+      "titolo": "SERVIZI",
+      "descrizione": "autotrasporti con gru per e da milano fiera expo 2015",
+      "titoli": [
+        "A.B.V.TRASPORTI",
+        "SERVIZI"
+      ],
+      "sorgente": "sorgente/01-servizi-html.html",
+      "testo": [
+        "Attività",
+        "Autotrasporti nazionali",
+        "Spedizioni porto assegnato",
+        "Spedizioni stradali di merci",
+        "Consegna in 24 ore",
+        "Corrieri nazionali",
+        "Merci su bancali",
+        "Merci voluminose",
+        "Movimento terra",
+        "Piccoli traslochi",
+        "Piccoli trasporti",
+        "Servizio conto terzi",
+        "Spedizioni in contrassegno",
+        "Spedizioni nazionali",
+        "Trasloco di uffici",
+        "Trasloco industriale",
+        "Trasporti con sponda idraulica",
+        "Trasporti fino a 20 quintali",
+        "Trasporti stradali eccezionali e di macchinari",
+        "Trasporti telonati",
+        "Trasporto materiali infiammabili",
+        "Trasporto e spedizione terrestre di merci",
+        "Trasporto merci in adr",
+        "Trasporto stradale con autotreni",
+        "Servizi",
+        "Autotrasporto per conto terzi",
+        "Deposito merci",
+        "Ritiro a domicilio",
+        "Servizi fieristici",
+        "Deposito"
+      ]
+    },
+    {
+      "url": "https://www.abvtrasporti.it/contatti.html",
+      "titolo": "CONTATTI",
+      "descrizione": "autotrasporti con gru per e da milano fiera expo 2015",
+      "titoli": [
+        "A.B.V.TRASPORTI",
+        "CONTATTI"
+      ],
+      "sorgente": "sorgente/02-contatti-html.html",
+      "testo": [
+        "TELEFONO: +39 0381 39470",
+        "EMAIL:",
+        "operativo@abvtrasporti.it"
+      ]
+    },
+    {
+      "url": "https://www.abvtrasporti.it/dove_siamo.html",
+      "titolo": "DOVE SIAMO",
+      "descrizione": "autotrasporti con gru per e da milano fiera expo 2015",
+      "titoli": [
+        "A.B.V.TRASPORTI",
+        "DOVE SIAMO"
+      ],
+      "sorgente": "sorgente/03-dove-siamo-html.html",
+      "testo": [
+        "Visualizzazione ingrandita della mappa"
+      ]
+    },
+    {
+      "url": "https://www.abvtrasporti.it/english_version.html",
+      "titolo": "ENGLISH VERSION",
+      "descrizione": "autotrasporti con gru per e da milano fiera expo 2015",
+      "titoli": [
+        "A.B.V.TRASPORTI",
+        "ENGLISH VERSION"
+      ],
+      "sorgente": "sorgente/04-english-version-html.html",
+      "testo": []
+    }
+  ],
+  "immagini": [
+    {
+      "file": "img/01-home-0-1.jpg",
+      "url": "https://www.abvtrasporti.it/slideshow/home_0_1.jpg",
+      "alt": "",
+      "origine": "img",
+      "pagina": "https://www.abvtrasporti.it/",
+      "kb": 93,
+      "logo": false,
+      "larghezza": 396,
+      "altezza": 305,
+      "bassa_risoluzione": true
+    }
+  ]
+}

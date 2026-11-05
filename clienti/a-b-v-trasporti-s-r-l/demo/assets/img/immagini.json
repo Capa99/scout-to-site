@@ -1,0 +1,50 @@
+{
+  "home-0-1": {
+    "larghezza": 396,
+    "altezza": 305,
+    "file": {
+      "396": "home-0-1-396.webp"
+    },
+    "origine": "01-home-0-1.jpg"
+  },
+  "home-0-2": {
+    "larghezza": 453,
+    "altezza": 254,
+    "file": {
+      "453": "home-0-2-453.webp"
+    },
+    "origine": "02-home-0-2.jpg"
+  },
+  "home-0-5": {
+    "larghezza": 453,
+    "altezza": 254,
+    "file": {
+      "453": "home-0-5-453.webp"
+    },
+    "origine": "05-home-0-5.jpg"
+  },
+  "home-0-6": {
+    "larghezza": 453,
+    "altezza": 254,
+    "file": {
+      "453": "home-0-6-453.webp"
+    },
+    "origine": "06-home-0-6.jpg"
+  },
+  "home-0-7": {
+    "larghezza": 453,
+    "altezza": 254,
+    "file": {
+      "453": "home-0-7-453.webp"
+    },
+    "origine": "07-home-0-7.jpg"
+  },
+  "home-0-4": {
+    "larghezza": 453,
+    "altezza": 254,
+    "file": {
+      "453": "home-0-4-453.webp"
+    },
+    "origine": "04-home-0-4.jpg"
+  }
+}
