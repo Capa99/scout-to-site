@@ -13,7 +13,11 @@ l'email non funziona.
 2. **Massimo 5 email nuove al giorno** (anche per non finire nello spam di Gmail).
 3. **Mittente chiaro:** nome e cognome dell'utente, cosa fa, dove ha trovato l'indirizzo
    ("dal vostro sito").
-4. **Uscita facile:** sempre la frase "Se non le interessa me lo scriva pure e non la ricontatterò."
+4. **Uscita facile:** sempre la frase di uscita, con la stessa forma del resto dell'email:
+   - con indirizzi generici (info@, operativo@, commerciale@...) si scrive al "voi":
+     "Se non vi interessa scrivetemelo pure e non vi ricontatterò."
+   - quando si scrive a una persona precisa si usa il "lei":
+     "Se non le interessa me lo scriva pure e non la ricontatterò."
 5. **Indirizzo giusto:** quello generico dell'azienda (info@, commerciale@...), mai indirizzi personali
    di dipendenti, mai PEC.
 6. **Al massimo 1 sollecito**, dopo almeno 6 giorni lavorativi. Poi stato "freddo": niente più email.
