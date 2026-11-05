@@ -216,7 +216,10 @@ strong, b { font-weight: var(--w-strong); }
   .nav a:not(.btn) { width: 100%; padding-block: 1.1rem; font-size: 1rem; border-bottom: 1px solid var(--c-line); }
   .nav .btn { margin-top: 1.8rem; width: 100%; min-height: 52px; }
   .menu-open .nav { opacity: 1; transform: none; visibility: visible; pointer-events: auto; }
-  .menu-open { overflow: hidden; }
+  /* Menu aperto: si blocca lo scorrimento della pagina su <html> (non su <body>, altrimenti la
+     testata "sticky" scorre via insieme alla pagina e la X del menu sparisce). */
+  html:has(body.menu-open) { overflow: hidden; }
+  .nav { overscroll-behavior: contain; }
 }
 
 /* ---------- Hero ---------- */
