@@ -1,0 +1,161 @@
+{
+  "nome": "Luper s.n.c.",
+  "sito": "http://www.luper.eu/",
+  "analizzato_il": "2026-11-05",
+  "prospect": {
+    "punteggio": "58",
+    "priorita": "MEDIA",
+    "nome": "Luper s.n.c.",
+    "sito": "http://www.luper.eu",
+    "categoria": "spazzolificio, forniture per calzaturifici",
+    "comune": "Vigevano",
+    "telefono": "+39 038120019",
+    "email": "info@luper.eu",
+    "motivi": "Certificato HTTPS non valido | Non pensato per cellulare (manca il viewport) | Impaginazione a tabelle (stile anni 2000) | P.IVA non visibile in homepage (è obbligatoria)",
+    "anno_copyright": "",
+    "https": "certificato non valido",
+    "mobile": "no",
+    "generator": "",
+    "jquery": "",
+    "tempo_s": "0.1",
+    "pagespeed_mobile": "",
+    "trovato_il": "2026-11-05"
+  },
+  "contatti": {
+    "email": [
+      "info@luper.eu"
+    ],
+    "telefoni": [
+      "+39 038120019",
+      "+39 0381325175"
+    ],
+    "piva": [],
+    "indirizzi": [
+      "C.so Novara 135 - Ang. C.so Ugo La Malfa  27029 VIGEVANO ( PV ) - Italy - P.I. : 011655"
+    ],
+    "social": []
+  },
+  "colori": {
+    "sito": [
+      "#dadef3",
+      "#5276fe",
+      "#274bd3",
+      "#ff0000"
+    ],
+    "neutri": [
+      "#ffffff",
+      "#333333",
+      "#edf6ff"
+    ],
+    "logo": [
+      "#b8bbc6",
+      "#788bd4",
+      "#233da1"
+    ]
+  },
+  "testi_comuni": [],
+  "pagine": [
+    {
+      "url": "http://www.luper.eu/",
+      "titolo": "SPAZZOLIFICIO LUPER --- WWW.LUPER.EU",
+      "descrizione": "",
+      "titoli": [],
+      "sorgente": "sorgente/00-home.html",
+      "testo": [
+        "Italiano",
+        "Produzione:",
+        "spazzole:",
+        "tela, panno militare,",
+        "lana, cotone, crine",
+        "tamponi:",
+        "panno militare, cuoio,",
+        "scotch-brite 3M",
+        "ruote:",
+        "acciaio e gomma,",
+        "acciaio, legno e feltro",
+        "Vendita:",
+        "accessori",
+        "attrezzi",
+        "componenti",
+        "prodotti chimici",
+        "Forniture",
+        "complete per calzaturifici",
+        "pelletterie",
+        "English",
+        "Manufacture:",
+        "brushes:",
+        "crine cotton, military",
+        "cloth, wool, horse hair",
+        "pads:",
+        "military cloth, leather,",
+        "scotch-brite 3M",
+        "wheels:",
+        "rubber-wire, wire,",
+        "felt-wood",
+        "Sale:",
+        "accessoriaccessories",
+        "attrezzitools",
+        "componenticomponents",
+        "prodotti chimici chemical products",
+        "Complete",
+        "supplies for shie and leather goods",
+        "industry",
+        "Scarica i nostri cataloghi",
+        "Download our",
+        "catalogue",
+        "CATALOGO",
+        "SPAZZOLE",
+        "BRUSHES CATALOGUE",
+        "CATALOGO",
+        "ACCESSORI",
+        "ACCESSORIES CATALOGUE",
+        "Contattaci /",
+        "Contact us",
+        "Tel.:",
+        "+0039",
+        "0381",
+        "20019",
+        "Fax :",
+        "+0039",
+        "0381 325175",
+        "E-mail",
+        ":info@luper.eu",
+        "Privacy",
+        "LUPER s.n.c. di Magnaga Giuseppina",
+        "& C.",
+        "C.so Novara 135 - Ang.",
+        "C.so Ugo La Malfa  27029 VIGEVANO ( PV ) - Italy - P.I.",
+        ": 01165560184",
+        "//",
+        "www.luper.eu",
+        "credits"
+      ]
+    }
+  ],
+  "immagini": [
+    {
+      "file": "img/logo-01-logojpg-rid.jpg",
+      "url": "http://www.luper.eu/logoJPG_rid.jpg",
+      "alt": "logo",
+      "origine": "logo",
+      "pagina": "http://www.luper.eu/",
+      "kb": 31,
+      "logo": true,
+      "larghezza": 481,
+      "altezza": 104,
+      "bassa_risoluzione": false
+    },
+    {
+      "file": "img/02-immagine-home.jpg",
+      "url": "http://www.luper.eu/immagine_home.jpg",
+      "alt": "",
+      "origine": "img",
+      "pagina": "http://www.luper.eu/",
+      "kb": 124,
+      "logo": false,
+      "larghezza": 270,
+      "altezza": 383,
+      "bassa_risoluzione": true
+    }
+  ]
+}

@@ -523,7 +523,9 @@ def valuta_sito(riga, pagespeed=False, chiave_ps=None):
         punti += 20
         motivi.append("Contenuti segnaposto del template mai sostituiti: " + ", ".join(segnaposto[:3]))
 
-    if not PIVA.search(testo):
+    # Spazi, a capo e &nbsp; ridotti a uno spazio: nel codice la P.IVA può essere spezzata su più
+    # righe con molti spazi di rientro (es. luper.eu: "P.I.\r\n<24 spazi>: 01165560184").
+    if not PIVA.search(re.sub(r"\s+", " ", testo)):
         punti += 3
         motivi.append("P.IVA non visibile in homepage (è obbligatoria)")
 

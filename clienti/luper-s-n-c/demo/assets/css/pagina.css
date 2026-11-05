@@ -1,0 +1,169 @@
+/* Ritocchi solo per Luper s.n.c. (Spazzolificio Luper, Vigevano) */
+:root {
+  --c-blu-sito: #274BD3;
+  --c-blu-chiaro: #DADEF3;
+  --c-argento: #B8BBC6;
+  --c-rosso: #D7261E;
+  --c-caldo: #F6F2EC;
+  --barra-h: 64px;
+  --header-h: 72px;
+}
+
+/* ---------- Logotipo ridisegnato ---------- */
+.brand { flex-direction: row; align-items: center; }
+.logo { width: 132px; height: auto; overflow: visible; }
+.logo__alto { fill: var(--c-blu-sito); }
+.logo__nome { fill: var(--c-primary); }
+.logo--chiaro .logo__alto, .logo--chiaro .logo__nome { fill: #fff; }
+.logo--chiaro .logo__alto { fill-opacity: .8; }
+.nav .btn { white-space: nowrap; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.nav .btn { background: var(--c-primary); }
+@media (max-width: 1080px) and (min-width: 861px) { .nav { gap: 1.1rem; } .nav .btn { padding-inline: .9rem; } }
+
+/* Etichette: il "//" del tema industria diventa il ">" rosso del sito attuale */
+.eyebrow::before { content: "> "; color: var(--c-rosso); opacity: 1; }
+.eyebrow { color: var(--c-blu-sito); }
+
+/* ---------- Hero a tinta piena ---------- */
+.hero--tinta { background: var(--c-primary); color: #fff; overflow: hidden; }
+.hero--tinta.grid-lines { background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px); background-size: 48px 48px; }
+.hero--tinta .eyebrow { color: #DADEF3; }
+.hero--tinta .eyebrow::before { color: #ff8a80; }
+.hero--tinta .lead { color: rgba(255,255,255,.88); }
+.hero__grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); align-items: center; padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+@media (min-width: 960px) { .hero__grid { grid-template-columns: 1.1fr 1fr; } }
+.hero h1 { font-size: clamp(2.1rem, 1.3rem + 3vw, 3.9rem); max-width: 18ch; }
+.hero__foto { margin: 0; max-width: 1066px; }
+.hero__foto img { width: 100%; height: auto; border: 6px solid #fff; background: #fff; }
+.hero__foto figcaption { margin-top: .7rem; font-family: var(--f-mono); font-size: var(--fs-label); color: rgba(255,255,255,.75); }
+.hero--tinta .btn--light { background: #fff; color: var(--c-primary); border-color: #fff; }
+.hero--tinta .btn--light:hover { background: transparent; color: #fff; }
+.hero--tinta .btn--ghost, .section--dark .btn--ghost { color: #fff; border-color: rgba(255,255,255,.55); }
+.hero--tinta .btn--ghost:hover, .section--dark .btn--ghost:hover { background: #fff; color: var(--c-primary); }
+
+/* ---------- Fascia "in sintesi" ---------- */
+.fascia { border-bottom: 1px solid var(--c-line); }
+.fatti { display: grid; gap: 0; }
+@media (min-width: 760px) { .fatti { grid-template-columns: repeat(3, 1fr); } }
+.fatto { padding: 1.6rem 0; border-bottom: 1px solid var(--c-line); }
+.fatto:last-child { border-bottom: 0; }
+@media (min-width: 760px) {
+  .fatto { padding: 2rem 1.75rem; border-bottom: 0; border-left: 1px solid var(--c-line); }
+  .fatto:first-child { border-left: 0; padding-left: 0; }
+}
+.fatto__val { font-weight: 600; font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); line-height: 1.1; color: var(--c-primary); letter-spacing: -.01em; }
+.fatto p + p { margin-top: .5rem; color: var(--c-muted); font-size: var(--fs-small); }
+
+/* ---------- Produzione: tre schede ---------- */
+.produzione { display: grid; gap: clamp(1rem, 2.5vw, 2rem); }
+@media (min-width: 900px) { .produzione { grid-template-columns: repeat(3, 1fr); } }
+.pcard { background: var(--c-surface); display: flex; flex-direction: column; }
+.pcard__media { aspect-ratio: 4 / 3; overflow: hidden; background: var(--c-surface); }
+.pcard__media img { width: 100%; height: 100%; object-fit: cover; }
+.pcard__body { padding: 1.4rem 1.4rem 1.6rem; display: flex; flex-direction: column; gap: .9rem; flex: 1; }
+.pcard__body p { color: var(--c-muted); font-size: var(--fs-small); }
+.pcard .link-arrow { margin-top: auto; align-self: flex-start; color: var(--c-primary); }
+/* Tra 560 e 899 px: scheda orizzontale, così le foto piccole non vengono ingrandite */
+@media (min-width: 560px) and (max-width: 899px) {
+  .pcard { display: grid; grid-template-columns: 2fr 3fr; }
+  .pcard__media { aspect-ratio: auto; min-height: 100%; }
+}
+.materiali { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.materiali li { font-family: var(--f-mono); font-size: .78rem; padding: .25rem .55rem; border: 1px solid var(--c-blu-chiaro); background: #fff; color: var(--c-primary); }
+
+/* ---------- Griglia a quattro (righe sempre complete: 4 / 2 / 1) ---------- */
+.griglia4 { display: grid; gap: clamp(1rem, 2.2vw, 1.75rem); grid-template-columns: 1fr; }
+@media (min-width: 560px) { .griglia4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .griglia4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.vcard, .scheda { background: var(--c-bg); border: 1px solid var(--c-line); display: flex; flex-direction: column; }
+.section--surface .vcard, .section--surface .scheda { background: #fff; }
+.vcard__media, .scheda__media { aspect-ratio: 4 / 3; overflow: hidden; background: var(--c-surface); border-bottom: 1px solid var(--c-line); }
+.vcard__media img, .scheda__media img { width: 100%; height: 100%; object-fit: cover; }
+.vcard__body, .scheda__body { padding: 1.2rem 1.2rem 1.4rem; display: flex; flex-direction: column; gap: .8rem; }
+.vcard h3, .scheda h3 { font-size: 1.12rem; line-height: 1.3; }
+.voci { list-style: none; padding: 0; display: grid; gap: .45rem; font-size: var(--fs-small); }
+.voci li { position: relative; padding-left: 1.1rem; }
+.voci li::before { content: ">"; position: absolute; left: 0; top: 0; font-family: var(--f-mono); color: var(--c-rosso); font-weight: 500; }
+.rimando { margin-top: 2.2rem; }
+.rimando .link-arrow { color: var(--c-primary); }
+
+/* Dati tecnici della scheda */
+.dati { display: grid; gap: .55rem; font-size: var(--fs-small); }
+.dati > div { display: grid; gap: .1rem; padding-bottom: .55rem; border-bottom: 1px dashed var(--c-line); }
+.dati dt { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--c-muted); }
+.dati dd { margin: 0; }
+.scheda__uso { font-size: var(--fs-small); color: var(--c-muted); }
+.scheda--vendita .scheda__uso { color: var(--c-text); }
+.cta-riga { margin-top: 2rem; padding: 1rem 1.2rem; border-left: 3px solid var(--c-primary); background: var(--c-surface); font-size: var(--fs-small); }
+.section--surface .cta-riga { background: #fff; }
+.cta-riga a { color: var(--c-primary); font-weight: 600; }
+
+/* ---------- Per chi lavoriamo ---------- */
+.settori { display: grid; gap: 0; border-top: 1px solid var(--c-line); border-left: 1px solid var(--c-line); margin: 0; }
+@media (min-width: 600px) { .settori { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .settori { grid-template-columns: repeat(3, 1fr); } }
+.settore { padding: 1.5rem 1.4rem 1.7rem; border-right: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line); }
+.settore__num { font-family: var(--f-mono); font-size: var(--fs-small); color: var(--c-accent); }
+.settore h3 { margin-top: .4rem; font-size: 1.2rem; }
+.settore p { margin-top: .4rem; color: var(--c-muted); font-size: var(--fs-small); }
+
+/* ---------- Chi siamo: l'unico tocco caldo ---------- */
+.chi-siamo { background: var(--c-caldo); }
+.chi-siamo__foto { max-width: 519px; }
+.chi-siamo__foto img { width: 100%; height: auto; border: 8px solid #fff; box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+.chi-siamo .stack p { max-width: 36rem; }
+
+@media (min-width: 900px) { .chi-siamo__foto { justify-self: end; } }
+
+/* ---------- Testata della pagina Prodotti ---------- */
+.testata-pagina { padding-block: clamp(3rem, 7vw, 5rem); background-color: var(--c-surface); border-bottom: 1px solid var(--c-line); }
+.testata-pagina h1 { color: var(--c-primary); }
+.testata-pagina .lead { margin-top: 1.2rem; max-width: 40rem; }
+.indice { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
+.indice a { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem 1rem; border: 1px solid var(--c-primary); background: #fff; color: var(--c-primary); text-decoration: none; font-size: var(--fs-small); font-weight: 600; }
+.indice a:hover { background: var(--c-primary); color: #fff; }
+[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
+
+/* ---------- Contatti ---------- */
+.contatti { background: var(--c-dark); }
+.contatti .section__index { color: #9DB0FF; }
+.contatti dd a { color: #fff; }
+.link-indicazioni { display: inline-flex; align-items: center; gap: .4rem; margin-top: .6rem; font-size: var(--fs-small); }
+.link-indicazioni svg { width: 16px; height: 16px; }
+.contatti-azioni { display: grid; gap: .8rem; margin-top: 2rem; }
+@media (min-width: 560px) { .contatti-azioni { grid-template-columns: 1fr 1fr; } }
+.contatti-azioni .btn { width: 100%; }
+.section--dark .btn--light { background: #fff; color: var(--c-primary); border-color: #fff; }
+.section--dark .btn--light:hover { background: transparent; color: #fff; }
+.map { min-height: 360px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.14); }
+.map p { color: rgba(238,241,248,.7); }
+
+/* ---------- Footer ---------- */
+.brand--footer .logo { width: 120px; }
+.footer-frase { margin-top: 1rem; max-width: 22rem; opacity: .8; }
+.footer-legal { opacity: .8; }
+
+/* ---------- Barra azioni sempre visibile sul telefono ---------- */
+.barra-azioni { display: none; }
+@media (max-width: 860px) {
+  .barra-azioni {
+    display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 80;
+    height: calc(var(--barra-h) + env(safe-area-inset-bottom)); background: var(--c-dark); border-top: 1px solid rgba(255,255,255,.12);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .barra-azioni a { display: flex; align-items: center; justify-content: center; gap: .5rem; color: #fff; text-decoration: none;
+    font-size: .9rem; font-weight: 600; letter-spacing: .03em; }
+  .barra-azioni a:first-child { background: var(--c-primary); }
+  .barra-azioni a + a { border-left: 1px solid rgba(255,255,255,.12); }
+  .barra-azioni svg { width: 18px; height: 18px; }
+  .demo-tag { bottom: calc(var(--barra-h) + 10px); }
+  .menu-open .barra-azioni { display: none; }
+  .site-footer { padding-bottom: calc(2rem + var(--barra-h)); }
+  .logo { width: 116px; }
+}
+
+/* Correzioni dopo gli screenshot */
+.chi-siamo .section__index { display: inline; }
+.dati > div:last-child { border-bottom: 0; padding-bottom: 0; }
